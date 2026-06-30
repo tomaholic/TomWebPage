@@ -5,616 +5,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- === PRIMARY META === -->
     <title>GardenMind by Tomaholic – Der Garten der sich selbst pflegt</title>
-    <meta name="description" content="GardenMind by Tomaholic ist die weltweit führende KI-Plattform für vollautonome Garten-Automatisierung. Vom smarten Sensor bis zum symbiotischen Ökosystem – in 6 Stufen zum Garten der Zukunft.">
-    <meta name="keywords" content="Garten Automatisierung, AI Gartenpflege, Smart Garden, Autonomer Garten, Garten Roboter, KI Bewässerung, Garten der Zukunft, Tomaholic, GardenMind">
+    <meta name="description" content="GardenMind by Tomaholic ist die weltweit führende KI-Plattform für vollautonome Garten-Automatisierung. In 6 Stufen zum Garten der Zukunft.">
+    <meta name="keywords" content="Garten Automatisierung, AI Gartenpflege, Smart Garden, Autonomer Garten, Garten Roboter, KI Bewässerung, Tomaholic, GardenMind">
     <meta name="author" content="Tomaholic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tomaholic.ch">
 
-    <!-- === OPEN GRAPH (LinkedIn, WhatsApp, Slack, Facebook) === -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tomaholic.ch">
     <meta property="og:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
-    <meta property="og:description" content="Die KI-Plattform für Gärten, die denken, blühen und sich pflegen. Vom Sensor bis zum symbiotischen Ökosystem.">
+    <meta property="og:description" content="Die KI-Plattform für Gärten, die denken, blühen und sich pflegen.">
     <meta property="og:image" content="https://tomaholic.ch/og-image.png">
     <meta property="og:locale" content="de_CH">
     <meta property="og:site_name" content="GardenMind by Tomaholic">
 
-    <!-- === TWITTER CARD === -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://tomaholic.ch">
     <meta name="twitter:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
     <meta name="twitter:description" content="Die KI-Plattform für vollautonome Garten-Automatisierung.">
     <meta name="twitter:image" content="https://tomaholic.ch/og-image.png">
 
-    <!-- === FAVICON (SVG inline – immer scharf) === -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2386efac'/%3E%3Cstop offset='60%25' stop-color='%234ade80'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56 L32 36' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M32 36 Q14 28 10 14 Q24 18 32 36 Z' fill='url(%23g)'/%3E%3Cpath d='M32 36 Q50 28 54 14 Q40 18 32 36 Z' fill='url(%23g)' opacity='0.7'/%3E%3Ccircle cx='32' cy='32' r='2.5' fill='%2322d3ee'/%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2386efac'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' fill='%230a1a0f'/%3E%3Cpath d='M32 56 L32 36' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M32 36 Q14 28 10 14 Q24 18 32 36 Z' fill='url(%23g)'/%3E%3Cpath d='M32 36 Q50 28 54 14 Q40 18 32 36 Z' fill='url(%23g)' opacity='0.7'/%3E%3C/svg%3E">
 
-    <!-- === THEME COLOR (für mobile Browser-Bar) === -->
     <meta name="theme-color" content="#0a1a0f">
 
-    <!-- === FONT === -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- === STYLES === -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0a1a0f; color: #e8f5ec; line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0a1a0f;
-            color: #e8f5ec;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* === SCROLL-ANIMATIONS === */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal-left.visible { opacity: 1; transform: translateX(0); }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-        /* === NAVBAR === */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 60px;
-            position: sticky;
-            top: 0;
-            background: rgba(10, 26, 15, 0.85);
-            backdrop-filter: blur(14px);
-            z-index: 999;
-            border-bottom: 1px solid rgba(134, 239, 172, 0.08);
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 60px; position: sticky; top: 0; background: rgba(10, 26, 15, 0.85); backdrop-filter: blur(14px); z-index: 999; border-bottom: 1px solid rgba(134, 239, 172, 0.08); }
         .logo-wrap { display: flex; align-items: center; gap: 10px; }
         .logo-svg { width: 36px; height: 36px; }
-        .logo-text {
-            font-weight: 900;
-            font-size: 22px;
-            background: linear-gradient(90deg, #86efac, #4ade80, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-        .logo-sub {
-            font-size: 11px;
-            font-weight: 600;
-            color: #64748b;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: block;
-            margin-top: 2px;
-        }
+        .logo-text { font-weight: 900; font-size: 22px; background: linear-gradient(90deg, #86efac, #4ade80, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; line-height: 1; }
+        .logo-sub { font-size: 11px; font-weight: 600; color: #64748b; letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 2px; }
         nav ul { display: flex; list-style: none; gap: 30px; }
-        nav a {
-            text-decoration: none;
-            color: #cbd5e1;
-            font-size: 15px;
-            font-weight: 500;
-            transition: 0.2s;
-        }
+        nav a { text-decoration: none; color: #cbd5e1; font-size: 15px; font-weight: 500; transition: 0.2s; }
         nav a:hover { color: #86efac; }
 
-        /* === HERO === */
-        .hero {
-            text-align: center;
-            padding: 100px 20px 60px;
-            background:
-                radial-gradient(ellipse at top, rgba(34, 211, 238, 0.15), transparent 60%),
-                radial-gradient(ellipse at 30% 70%, rgba(74, 222, 128, 0.25), transparent 60%),
-                radial-gradient(ellipse at 80% 80%, rgba(134, 239, 172, 0.18), transparent 60%);
-            position: relative;
-            overflow: hidden;
-        }
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 999px;
-            border: 1px solid rgba(134, 239, 172, 0.3);
-            background: rgba(74, 222, 128, 0.08);
-            color: #86efac;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        .hero h1 {
-            font-size: 76px;
-            font-weight: 900;
-            background: linear-gradient(90deg, #ffffff 0%, #86efac 60%, #22d3ee 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-            line-height: 1.05;
-            letter-spacing: -2px;
-        }
+        .hero { text-align: center; padding: 100px 20px 60px; background: radial-gradient(ellipse at top, rgba(34,211,238,0.15), transparent 60%), radial-gradient(ellipse at 30% 70%, rgba(74,222,128,0.25), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(134,239,172,0.18), transparent 60%); position: relative; overflow: hidden; }
+        .badge { display: inline-block; padding: 6px 16px; border-radius: 999px; border: 1px solid rgba(134,239,172,0.3); background: rgba(74,222,128,0.08); color: #86efac; font-size: 13px; font-weight: 600; margin-bottom: 30px; }
+        .hero h1 { font-size: 76px; font-weight: 900; background: linear-gradient(90deg, #ffffff 0%, #86efac 60%, #22d3ee 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; line-height: 1.05; letter-spacing: -2px; }
         .hero h1 .underline { position: relative; display: inline-block; }
-        .hero h1 .underline::after {
-            content: '';
-            position: absolute;
-            bottom: 4px; left: 0;
-            width: 100%; height: 8px;
-            background: linear-gradient(90deg, #4ade80, #22d3ee);
-            opacity: 0.3;
-            border-radius: 4px;
-            z-index: -1;
-        }
-        .hero p.subtitle {
-            font-size: 22px;
-            color: #a7f3d0;
-            max-width: 720px;
-            margin: 0 auto 16px;
-            font-weight: 500;
-        }
-        .hero p.subtext {
-            font-size: 17px;
-            color: #94a3b8;
-            max-width: 640px;
-            margin: 0 auto 40px;
-        }
+        .hero h1 .underline::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: linear-gradient(90deg, #4ade80, #22d3ee); opacity: 0.3; border-radius: 4px; z-index: -1; }
+        .hero p.subtitle { font-size: 22px; color: #a7f3d0; max-width: 720px; margin: 0 auto 16px; font-weight: 500; }
+        .hero p.subtext { font-size: 17px; color: #94a3b8; max-width: 640px; margin: 0 auto 40px; }
 
-        /* === BUTTONS === */
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: 0.3s;
-            margin: 6px;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary {
-            background: linear-gradient(90deg, #22c55e, #10b981);
-            color: #0a1a0f;
-            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.4);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 50px rgba(34, 197, 94, 0.6);
-        }
-        .btn-secondary {
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: #86efac;
-        }
+        .btn { display: inline-block; padding: 16px 32px; font-size: 16px; font-weight: 700; border-radius: 10px; text-decoration: none; transition: 0.3s; margin: 6px; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(90deg, #22c55e, #10b981); color: #0a1a0f; box-shadow: 0 10px 40px rgba(34,197,94,0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(34,197,94,0.6); }
+        .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: #86efac; }
 
-        /* === ROBOT SCENE === */
-        .scene {
-            position: relative;
-            max-width: 900px;
-            margin: 60px auto 20px;
-            height: 200px;
-            background: linear-gradient(180deg, transparent 60%, rgba(74, 222, 128, 0.08) 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(134, 239, 172, 0.1);
-        }
-        .ground {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 30px;
-            background: linear-gradient(180deg, rgba(74, 222, 128, 0.15), rgba(34, 197, 94, 0.4));
-            border-top: 2px solid rgba(134, 239, 172, 0.3);
-        }
-        .grass {
-            position: absolute;
-            bottom: 25px;
-            width: 4px; height: 12px;
-            background: #4ade80;
-            border-radius: 2px;
-        }
+        .scene { position: relative; max-width: 900px; margin: 60px auto 20px; height: 200px; background: linear-gradient(180deg, transparent 60%, rgba(74,222,128,0.08) 100%); border-radius: 20px; overflow: hidden; border: 1px solid rgba(134,239,172,0.1); }
+        .ground { position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(180deg, rgba(74,222,128,0.15), rgba(34,197,94,0.4)); border-top: 2px solid rgba(134,239,172,0.3); }
+        .grass { position: absolute; bottom: 25px; width: 4px; height: 12px; background: #4ade80; border-radius: 2px; }
         .tree { position: absolute; bottom: 28px; font-size: 38px; }
-        .flower {
-            position: absolute;
-            bottom: 30px;
-            font-size: 20px;
-            animation: sway 3s ease-in-out infinite;
-        }
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-        .sun {
-            position: absolute;
-            top: 20px; right: 40px;
-            font-size: 44px;
-            animation: pulse 4s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-        .cloud {
-            position: absolute;
-            top: 30px;
-            font-size: 32px;
-            opacity: 0.8;
-            animation: drift 15s linear infinite;
-        }
-        @keyframes drift {
-            from { left: -10%; }
-            to { left: 110%; }
-        }
-        .robot {
-            position: absolute;
-            bottom: 30px;
-            width: 70px; height: 60px;
-            animation: drive 12s linear infinite;
-        }
-        @keyframes drive {
-            0% { left: -10%; transform: scaleX(1); }
-            45% { left: 95%; transform: scaleX(1); }
-            50% { left: 95%; transform: scaleX(-1); }
-            95% { left: -10%; transform: scaleX(-1); }
-            100% { left: -10%; transform: scaleX(1); }
-        }
-        .robot-body {
-            position: absolute;
-            bottom: 12px; left: 5px;
-            width: 60px; height: 32px;
-            background: linear-gradient(180deg, #4ade80, #22c55e);
-            border-radius: 14px 14px 6px 6px;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.5);
-        }
-        .robot-eye {
-            position: absolute;
-            top: 8px;
-            width: 10px; height: 10px;
-            background: #0a1a0f;
-            border-radius: 50%;
-            border: 2px solid #86efac;
-            animation: blink 3s infinite;
-        }
+        .flower { position: absolute; bottom: 30px; font-size: 20px; animation: sway 3s ease-in-out infinite; }
+        @keyframes sway { 0%,100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+        .sun { position: absolute; top: 20px; right: 40px; font-size: 44px; animation: pulse 4s ease-in-out infinite; }
+        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.1); opacity: 1; } }
+        .cloud { position: absolute; top: 30px; font-size: 32px; opacity: 0.8; animation: drift 15s linear infinite; }
+        @keyframes drift { from { left: -10%; } to { left: 110%; } }
+        .robot { position: absolute; bottom: 30px; width: 70px; height: 60px; animation: drive 12s linear infinite; }
+        @keyframes drive { 0% { left: -10%; transform: scaleX(1); } 45% { left: 95%; transform: scaleX(1); } 50% { left: 95%; transform: scaleX(-1); } 95% { left: -10%; transform: scaleX(-1); } 100% { left: -10%; transform: scaleX(1); } }
+        .robot-body { position: absolute; bottom: 12px; left: 5px; width: 60px; height: 32px; background: linear-gradient(180deg, #4ade80, #22c55e); border-radius: 14px 14px 6px 6px; box-shadow: 0 4px 15px rgba(34,197,94,0.5); }
+        .robot-eye { position: absolute; top: 8px; width: 10px; height: 10px; background: #0a1a0f; border-radius: 50%; border: 2px solid #86efac; animation: blink 3s infinite; }
         .robot-eye.left { left: 12px; }
         .robot-eye.right { right: 12px; }
-        @keyframes blink {
-            0%, 95%, 100% { transform: scaleY(1); }
-            97% { transform: scaleY(0.1); }
-        }
-        .robot-antenna {
-            position: absolute;
-            top: -10px; left: 50%;
-            transform: translateX(-50%);
-            width: 2px; height: 12px;
-            background: #86efac;
-        }
-        .robot-antenna::after {
-            content: '';
-            position: absolute;
-            top: -6px; left: -3px;
-            width: 8px; height: 8px;
-            background: #22d3ee;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22d3ee;
-            animation: signal 1.2s ease-in-out infinite;
-        }
-        @keyframes signal {
-            0%, 100% { opacity: 0.4; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
-        .robot-wheel {
-            position: absolute;
-            bottom: 0;
-            width: 14px; height: 14px;
-            background: #1f2937;
-            border-radius: 50%;
-            border: 2px solid #4ade80;
-            animation: spin 0.5s linear infinite;
-        }
+        @keyframes blink { 0%,95%,100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+        .robot-antenna { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 12px; background: #86efac; }
+        .robot-antenna::after { content: ''; position: absolute; top: -6px; left: -3px; width: 8px; height: 8px; background: #22d3ee; border-radius: 50%; box-shadow: 0 0 10px #22d3ee; animation: signal 1.2s ease-in-out infinite; }
+        @keyframes signal { 0%,100% { opacity: 0.4; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } }
+        .robot-wheel { position: absolute; bottom: 0; width: 14px; height: 14px; background: #1f2937; border-radius: 50%; border: 2px solid #4ade80; animation: spin 0.5s linear infinite; }
         .robot-wheel.left { left: 8px; }
         .robot-wheel.right { right: 8px; }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .scan-beam {
-            position: absolute;
-            bottom: 12px; left: 30px;
-            width: 12px; height: 30px;
-            background: linear-gradient(180deg, rgba(34, 211, 238, 0.6), transparent);
-            transform-origin: top;
-            animation: scan 2s ease-in-out infinite;
-        }
-        @keyframes scan {
-            0%, 100% { transform: rotate(-15deg); opacity: 0.8; }
-            50% { transform: rotate(15deg); opacity: 0.4; }
-        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .scan-beam { position: absolute; bottom: 12px; left: 30px; width: 12px; height: 30px; background: linear-gradient(180deg, rgba(34,211,238,0.6), transparent); transform-origin: top; animation: scan 2s ease-in-out infinite; }
+        @keyframes scan { 0%,100% { transform: rotate(-15deg); opacity: 0.8; } 50% { transform: rotate(15deg); opacity: 0.4; } }
 
-        /* === STATS === */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-        }
+        .stats { display: flex; justify-content: center; gap: 60px; margin-top: 60px; flex-wrap: wrap; }
         .stat { text-align: center; }
-        .stat-number {
-            font-size: 40px;
-            font-weight: 900;
-            color: #86efac;
-            display: inline-block;
-        }
-        .stat-label {
-            color: #94a3b8;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 6px;
-        }
+        .stat-number { font-size: 40px; font-weight: 900; color: #86efac; display: inline-block; }
+        .stat-label { color: #94a3b8; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
 
-        /* === SECTIONS === */
-        section {
-            padding: 120px 60px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .section-tag {
-            text-align: center;
-            color: #4ade80;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            margin-bottom: 16px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #f1f5f9;
-            letter-spacing: -1px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 18px;
-            max-width: 650px;
-            margin: 0 auto 70px;
-        }
+        section { padding: 120px 60px; max-width: 1280px; margin: 0 auto; }
+        .section-tag { text-align: center; color: #4ade80; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; margin-bottom: 16px; }
+        .section-title { text-align: center; font-size: 48px; font-weight: 800; margin-bottom: 20px; color: #f1f5f9; letter-spacing: -1px; }
+        .section-subtitle { text-align: center; color: #94a3b8; font-size: 18px; max-width: 650px; margin: 0 auto 70px; }
 
-        /* === LEVELS === */
         .levels { display: grid; gap: 20px; }
-        .level {
-            display: grid;
-            grid-template-columns: 100px 1fr auto;
-            align-items: center;
-            gap: 30px;
-            padding: 28px 32px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-            border: 1px solid rgba(134, 239, 172, 0.1);
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-        .level:hover {
-            transform: translateX(8px);
-            border-color: rgba(134, 239, 172, 0.4);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-        }
-        .level-num {
-            font-size: 72px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #4ade80, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-        }
+        .level { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; gap: 30px; padding: 28px 32px; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid rgba(134,239,172,0.1); border-radius: 16px; transition: 0.3s; }
+        .level:hover { transform: translateX(8px); border-color: rgba(134,239,172,0.4); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+        .level-num { font-size: 72px; font-weight: 900; background: linear-gradient(135deg, #4ade80, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
         .level-content h3 { font-size: 22px; color: #fff; margin-bottom: 6px; }
         .level-content p { color: #94a3b8; font-size: 15px; }
-        .level-tag {
-            padding: 6px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
+        .level-tag { padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .level-tag.now { background: rgba(148,163,184,0.15); color: #cbd5e1; }
         .level-tag.soon { background: rgba(96,165,250,0.15); color: #60a5fa; }
         .level-tag.future { background: rgba(167,139,250,0.15); color: #a78bfa; }
         .level-tag.vision { background: rgba(34,211,238,0.15); color: #22d3ee; }
 
-        /* === ROADMAP === */
         .roadmap { position: relative; padding: 40px 0; }
-        .roadmap::before {
-            content: '';
-            position: absolute;
-            left: 50%; top: 0; bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #4ade80, #22d3ee, #a78bfa);
-            transform: translateX(-50%);
-            border-radius: 3px;
-        }
-        .milestone {
-            display: grid;
-            grid-template-columns: 1fr 80px 1fr;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        .milestone-dot {
-            width: 22px; height: 22px;
-            background: #0a1a0f;
-            border: 4px solid #4ade80;
-            border-radius: 50%;
-            justify-self: center;
-            z-index: 2;
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
-        }
-        .milestone-card {
-            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-            border: 1px solid rgba(134, 239, 172, 0.15);
-            border-radius: 14px;
-            padding: 24px;
-            transition: 0.3s;
-        }
-        .milestone-card:hover {
-            transform: scale(1.03);
-            border-color: rgba(134, 239, 172, 0.4);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .milestone-year {
-            font-size: 14px;
-            font-weight: 800;
-            color: #4ade80;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+        .roadmap::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #4ade80, #22d3ee, #a78bfa); transform: translateX(-50%); border-radius: 3px; }
+        .milestone { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 30px; margin-bottom: 50px; position: relative; }
+        .milestone-dot { width: 22px; height: 22px; background: #0a1a0f; border: 4px solid #4ade80; border-radius: 50%; justify-self: center; z-index: 2; box-shadow: 0 0 20px rgba(74,222,128,0.6); }
+        .milestone-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(134,239,172,0.15); border-radius: 14px; padding: 24px; transition: 0.3s; }
+        .milestone-card:hover { transform: scale(1.03); border-color: rgba(134,239,172,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .milestone-year { font-size: 14px; font-weight: 800; color: #4ade80; letter-spacing: 2px; margin-bottom: 8px; }
         .milestone-card h3 { font-size: 19px; color: #fff; margin-bottom: 8px; }
         .milestone-card p { color: #94a3b8; font-size: 14px; }
         .milestone.right .milestone-card { grid-column: 3; }
         .milestone.left .milestone-card { grid-column: 1; text-align: right; }
 
-        /* === FEATURES === */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .feature {
-            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 18px;
-            padding: 32px;
-            transition: 0.3s;
-        }
-        .feature:hover {
-            transform: translateY(-8px);
-            border-color: rgba(134, 239, 172, 0.4);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .feature { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 32px; transition: 0.3s; }
+        .feature:hover { transform: translateY(-8px); border-color: rgba(134,239,172,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .feature .emoji { font-size: 42px; margin-bottom: 16px; display: block; }
         .feature h3 { font-size: 20px; color: #fff; margin-bottom: 10px; }
         .feature p { color: #94a3b8; font-size: 15px; }
 
-        /* === VISION === */
-        .vision {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,211,238,0.08));
-            border: 1px solid rgba(134, 239, 172, 0.15);
-            border-radius: 28px;
-            padding: 80px 40px;
-            margin: 80px 60px;
-        }
+        .vision { text-align: center; background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,211,238,0.08)); border: 1px solid rgba(134,239,172,0.15); border-radius: 28px; padding: 80px 40px; margin: 80px 60px; }
         .vision h2 { font-size: 44px; margin-bottom: 24px; color: #fff; }
-        .vision p {
-            color: #cbd5e1;
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
+        .vision p { color: #cbd5e1; font-size: 18px; max-width: 700px; margin: 0 auto 30px; }
 
-        /* === FOOTER === */
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            color: #64748b;
-            font-size: 14px;
-            border-top: 1px solid rgba(134, 239, 172, 0.06);
-        }
+        footer { text-align: center; padding: 50px 20px; color: #64748b; font-size: 14px; border-top: 1px solid rgba(134,239,172,0.06); }
         footer .logo-wrap { justify-content: center; margin-bottom: 12px; }
-        footer a { color: #86efac; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
 
-        /* === SCROLL-TO-TOP BUTTON === */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px; height: 50px;
-            background: linear-gradient(135deg, #22c55e, #10b981);
-            color: #0a1a0f;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s, transform 0.3s;
-            z-index: 998;
-        }
-        .scroll-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, #22c55e, #10b981); color: #0a1a0f; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 6px 20px rgba(34,197,94,0.4); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; z-index: 998; }
+        .scroll-top.visible { opacity: 1; pointer-events: auto; }
         .scroll-top:hover { transform: translateY(-4px); }
 
-        /* === COOKIE BANNER === */
-        .cookie-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(10, 26, 15, 0.98);
-            border: 1px solid rgba(134, 239, 172, 0.3);
-            border-radius: 16px;
-            padding: 24px;
-            color: #e8f5ec;
-            font-size: 14px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            z-index: 9999;
-            backdrop-filter: blur(20px);
-            display: none;
-            line-height: 1.5;
-        }
+        .cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 600px; margin: 0 auto; background: rgba(10,26,15,0.98); border: 1px solid rgba(134,239,172,0.3); border-radius: 16px; padding: 24px; color: #e8f5ec; font-size: 14px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); z-index: 9999; backdrop-filter: blur(20px); display: none; line-height: 1.5; }
         .cookie-banner.show { display: block; }
         .cookie-banner h4 { color: #86efac; margin-bottom: 8px; font-size: 16px; }
         .cookie-banner p { margin-bottom: 16px; color: #cbd5e1; }
         .cookie-banner .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
-        .cookie-banner button {
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-        }
-        .cookie-banner .accept {
-            background: linear-gradient(90deg, #22c55e, #10b981);
-            color: #0a1a0f;
-        }
-        .cookie-banner .decline {
-            background: transparent;
-            color: #cbd5e1;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+        .cookie-banner button { padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+        .cookie-banner .accept { background: linear-gradient(90deg, #22c55e, #10b981); color: #0a1a0f; }
+        .cookie-banner .decline { background: transparent; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.2); }
 
-        /* === RESPONSIVE === */
         @media (max-width: 768px) {
             .hero h1 { font-size: 44px; }
             .hero p.subtitle { font-size: 17px; }
@@ -632,42 +169,13 @@
             .roadmap::before { left: 20px; }
             .milestone { grid-template-columns: 50px 1fr; gap: 16px; }
             .milestone-dot { grid-column: 1; }
-            .milestone.right .milestone-card,
-            .milestone.left .milestone-card { grid-column: 2; text-align: left; }
+            .milestone.right .milestone-card, .milestone.left .milestone-card { grid-column: 2; text-align: left; }
             .scroll-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
         }
     </style>
 </head>
-
-<!-- === SCROLL-TO-TOP BUTTON === -->
-<button class="scroll-top" id="scrollTopBtn" aria-label="Nach oben scrollen">⬆</button>
-
-<!-- === COOKIE BANNER (DSG/revDSG-konform) === -->
-<div class="cookie-banner" id="cookieBanner">
-    <h4>🍪 Wir respektieren deine Privatsphäre</h4>
-    <p>Diese Website verwendet anonyme Analyse-Cookies (Microsoft Clarity), um die Nutzererfahrung zu verbessern. Du kannst der Nutzung jederzeit widersprechen. <strong>Es werden keine personenbezogenen Daten verkauft.</strong></p>
-    <div class="btn-row">
-        <button class="accept" onclick="acceptCookies()">Akzeptieren</button>
-        <button class="decline" onclick="declineCookies()">Ablehnen</button>
-    </div>
-</div>
-
-<!-- === MICROSOFT CLARITY ANALYTICS (lädt nur nach Cookie-Consent) === -->
-<script id="clarity-script"></script>
-
-<script>
-    // === SCROLL REVEAL ANIMATIONS ===
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-wrap">
         <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -678,13 +186,9 @@
                     <stop offset="100%" stop-color="#22d3ee"/>
                 </linearGradient>
             </defs>
-            <!-- Stem -->
             <path d="M32 56 L32 36" stroke="url(#leafGrad)" stroke-width="3" stroke-linecap="round"/>
-            <!-- Left leaf -->
             <path d="M32 36 Q14 28 10 14 Q24 18 32 36 Z" fill="url(#leafGrad)" opacity="0.95"/>
-            <!-- Right leaf -->
             <path d="M32 36 Q50 28 54 14 Q40 18 32 36 Z" fill="url(#leafGrad)" opacity="0.7"/>
-            <!-- Circuit dots -->
             <circle cx="20" cy="22" r="2" fill="#0a1a0f"/>
             <circle cx="44" cy="22" r="2" fill="#0a1a0f"/>
             <circle cx="32" cy="32" r="2.5" fill="#22d3ee"/>
@@ -703,30 +207,24 @@
     </ul>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
     <div class="badge">🤖 Powered by AI · Driven by Nature</div>
-    <h1>Der Garten der<br><span class="underline">Zukunft</span> pflegt sich selbst.</h1>
+    <h1>Der Garten der<br>sich <span class="underline">selbst</span> pflegt.</h1>
     <p class="subtitle">Willkommen bei <strong>GardenMind by Tomaholic</strong> – die weltweit führende Plattform für vollautonome Garten-Automatisierung.</p>
     <p class="subtext">Rasenmäher und Bewässerung waren erst der Anfang. Wir bauen die KI-Infrastruktur für Gärten, die denken, pflegen und blühen – ganz ohne dich.</p>
     <a href="#levels" class="btn btn-primary">🌿 Stufenmodell entdecken</a>
     <a href="#vision" class="btn btn-secondary">Unsere Vision</a>
 
-    <!-- Animierte Roboter-Szene -->
     <div class="scene">
         <div class="sun">☀️</div>
         <div class="cloud" style="animation-delay: 0s;">☁️</div>
         <div class="cloud" style="top: 60px; animation-delay: -8s; font-size: 24px;">☁️</div>
-
-        <!-- Bäume und Blumen -->
         <div class="tree" style="left: 8%;">🌳</div>
         <div class="tree" style="left: 78%; font-size: 32px;">🌲</div>
         <div class="flower" style="left: 25%;">🌷</div>
         <div class="flower" style="left: 40%; animation-delay: -1s;">🌸</div>
         <div class="flower" style="left: 60%; animation-delay: -2s;">🌺</div>
         <div class="flower" style="left: 90%; animation-delay: -0.5s;">🌼</div>
-
-        <!-- Gras -->
         <div class="grass" style="left: 15%;"></div>
         <div class="grass" style="left: 20%;"></div>
         <div class="grass" style="left: 33%;"></div>
@@ -734,11 +232,7 @@
         <div class="grass" style="left: 55%;"></div>
         <div class="grass" style="left: 68%;"></div>
         <div class="grass" style="left: 85%;"></div>
-
-        <!-- Boden -->
         <div class="ground"></div>
-
-        <!-- Roboter -->
         <div class="robot">
             <div class="robot-antenna"></div>
             <div class="robot-body">
@@ -751,226 +245,66 @@
         </div>
     </div>
 
-    <!-- STATS -->
-    <div class="stats">
-        <div class="stat">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Automatisierung</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">0h</div>
-            <div class="stat-label">Manuelle Arbeit</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Maturity Levels</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">KI-Überwachung</div>
-        </div>
+    <div class="stats reveal">
+        <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Automatisierung</div></div>
+        <div class="stat"><div class="stat-number">0h</div><div class="stat-label">Manuelle Arbeit</div></div>
+        <div class="stat"><div class="stat-number">6</div><div class="stat-label">Maturity Levels</div></div>
+        <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">KI-Überwachung</div></div>
     </div>
 </header>
 
-<!-- LEVELS -->
-<section id="levels">
+<section id="levels" class="reveal">
     <div class="section-tag">⚙️ The Garden Autonomy Framework</div>
     <h2 class="section-title">Die 6 Stufen der Garten-Autonomie</h2>
     <p class="section-subtitle">Wie die Levels beim autonomen Fahren – nur für Gärten. Wo steht deiner heute?</p>
-
     <div class="levels">
-
-        <div class="level">
-            <div class="level-num">0</div>
-            <div class="level-content">
-                <h3>Manuell – „Der gute alte Spaten"</h3>
-                <p>Mensch macht alles. Schweiss, Rückenschmerzen, gelegentlicher Erfolg.</p>
-            </div>
-            <span class="level-tag now">Status Quo</span>
-        </div>
-
-        <div class="level">
-            <div class="level-num">1</div>
-            <div class="level-content">
-                <h3>Connected – „Smarte Sensoren"</h3>
-                <p>Bodenfeuchte-, Licht- und Temperatursensoren melden Daten an deine App. Du entscheidest noch.</p>
-            </div>
-            <span class="level-tag now">Heute</span>
-        </div>
-
-        <div class="level">
-            <div class="level-num">2</div>
-            <div class="level-content">
-                <h3>Assisted – „Rasenmäher & Bewässerung"</h3>
-                <p>Einzelne Aufgaben laufen automatisch: Mähroboter, Sprinklersysteme, Lichtsteuerung. Klassisch – aber begrenzt.</p>
-            </div>
-            <span class="level-tag now">Verbreitet</span>
-        </div>
-
-        <div class="level">
-            <div class="level-num">3</div>
-            <div class="level-content">
-                <h3>Cooperative – „Roboter im Team"</h3>
-                <p>Mehrere KI-Roboter koordinieren sich: Unkrautjäter, Schneider, Düngerroboter. Sie sprechen miteinander.</p>
-            </div>
-            <span class="level-tag soon">2026–2028</span>
-        </div>
-
-        <div class="level">
-            <div class="level-num">4</div>
-            <div class="level-content">
-                <h3>Autonomous – „Selbstpflegender Garten"</h3>
-                <p>Sträucher beschneiden, Bäume pflegen, Schädlinge bekämpfen, Nährstoffe ergänzen – alles automatisch. Du beobachtest nur noch.</p>
-            </div>
-            <span class="level-tag future">2028–2032</span>
-        </div>
-
-        <div class="level">
-            <div class="level-num">5</div>
-            <div class="level-content">
-                <h3>Symbiotic – „Der lebende Garten"</h3>
-                <p>Der Garten optimiert sich selbst. KI lernt aus Wetter, Klima, Pflanzenverhalten – und entwickelt deinen Garten weiter. Du bist nur noch Geniesser.</p>
-            </div>
-            <span class="level-tag vision">Vision 2035</span>
-        </div>
-
+        <div class="level"><div class="level-num">0</div><div class="level-content"><h3>Manuell – „Der gute alte Spaten"</h3><p>Mensch macht alles. Schweiss, Rückenschmerzen, gelegentlicher Erfolg.</p></div><span class="level-tag now">Status Quo</span></div>
+        <div class="level"><div class="level-num">1</div><div class="level-content"><h3>Connected – „Smarte Sensoren"</h3><p>Bodenfeuchte-, Licht- und Temperatursensoren melden Daten an deine App. Du entscheidest noch.</p></div><span class="level-tag now">Heute</span></div>
+        <div class="level"><div class="level-num">2</div><div class="level-content"><h3>Assisted – „Rasenmäher & Bewässerung"</h3><p>Einzelne Aufgaben laufen automatisch: Mähroboter, Sprinklersysteme, Lichtsteuerung.</p></div><span class="level-tag now">Verbreitet</span></div>
+        <div class="level"><div class="level-num">3</div><div class="level-content"><h3>Cooperative – „Roboter im Team"</h3><p>Mehrere KI-Roboter koordinieren sich: Unkrautjäter, Schneider, Düngerroboter. Sie sprechen miteinander.</p></div><span class="level-tag soon">2026–2028</span></div>
+        <div class="level"><div class="level-num">4</div><div class="level-content"><h3>Autonomous – „Selbstpflegender Garten"</h3><p>Sträucher beschneiden, Bäume pflegen, Schädlinge bekämpfen, Nährstoffe ergänzen – alles automatisch.</p></div><span class="level-tag future">2028–2032</span></div>
+        <div class="level"><div class="level-num">5</div><div class="level-content"><h3>Symbiotic – „Der lebende Garten"</h3><p>Der Garten optimiert sich selbst. KI lernt aus Wetter, Klima, Pflanzenverhalten – und entwickelt deinen Garten weiter.</p></div><span class="level-tag vision">Vision 2035</span></div>
     </div>
 </section>
 
-<!-- ROADMAP -->
-<section id="roadmap">
+<section id="roadmap" class="reveal">
     <div class="section-tag">📅 Roadmap</div>
     <h2 class="section-title">Der Weg zum lebenden Garten</h2>
     <p class="section-subtitle">Unsere Vision in konkreten Schritten – von heute bis 2035.</p>
-
     <div class="roadmap">
-
-        <div class="milestone left">
-            <div class="milestone-card">
-                <div class="milestone-year">2026</div>
-                <h3>🚀 Foundation</h3>
-                <p>Launch von GardenMind. Sensor-Netzwerk und KI-Plattform gehen live. Erste Pilotgärten in der Schweiz.</p>
-            </div>
-            <div class="milestone-dot"></div>
-        </div>
-
-        <div class="milestone right">
-            <div class="milestone-dot"></div>
-            <div class="milestone-card">
-                <div class="milestone-year">2027</div>
-                <h3>🤖 First Robot Fleet</h3>
-                <p>Erste autonome Garten-Roboter im Einsatz: Unkrautjäter, Präzisions-Bewässerung, KI-Düngung.</p>
-            </div>
-        </div>
-
-        <div class="milestone left">
-            <div class="milestone-card">
-                <div class="milestone-year">2028</div>
-                <h3>🌐 Cooperative AI</h3>
-                <p>Roboter koordinieren sich untereinander. Predictive Pest Control geht in Serie. Internationale Expansion.</p>
-            </div>
-            <div class="milestone-dot"></div>
-        </div>
-
-        <div class="milestone right">
-            <div class="milestone-dot"></div>
-            <div class="milestone-card">
-                <div class="milestone-year">2030</div>
-                <h3>🌳 Tree & Shrub Care</h3>
-                <p>Drohnen-basierte Baum- und Strauchpflege. Vollautomatischer Schnitt mit Computer Vision.</p>
-            </div>
-        </div>
-
-        <div class="milestone left">
-            <div class="milestone-card">
-                <div class="milestone-year">2032</div>
-                <h3>🧠 Autonomous Gardens</h3>
-                <p>Komplett selbstpflegende Gärten in Serie. Level 4 erreicht. Erste 10.000 GardenMind-Gärten weltweit.</p>
-            </div>
-            <div class="milestone-dot"></div>
-        </div>
-
-        <div class="milestone right">
-            <div class="milestone-dot"></div>
-            <div class="milestone-card">
-                <div class="milestone-year">2035</div>
-                <h3>🌸 Symbiotic Vision</h3>
-                <p>Level 5: Der lebende Garten. KI optimiert das gesamte Ökosystem eigenständig. Mensch wird Geniesser.</p>
-            </div>
-        </div>
-
+        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2026</div><h3>🚀 Foundation</h3><p>Launch von GardenMind. Sensor-Netzwerk und KI-Plattform gehen live. Erste Pilotgärten in der Schweiz.</p></div><div class="milestone-dot"></div></div>
+        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2027</div><h3>🤖 First Robot Fleet</h3><p>Erste autonome Garten-Roboter im Einsatz: Unkrautjäter, Präzisions-Bewässerung, KI-Düngung.</p></div></div>
+        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2028</div><h3>🌐 Cooperative AI</h3><p>Roboter koordinieren sich untereinander. Predictive Pest Control geht in Serie. Internationale Expansion.</p></div><div class="milestone-dot"></div></div>
+        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2030</div><h3>🌳 Tree & Shrub Care</h3><p>Drohnen-basierte Baum- und Strauchpflege. Vollautomatischer Schnitt mit Computer Vision.</p></div></div>
+        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2032</div><h3>🧠 Autonomous Gardens</h3><p>Komplett selbstpflegende Gärten in Serie. Level 4 erreicht. Erste 10.000 GardenMind-Gärten weltweit.</p></div><div class="milestone-dot"></div></div>
+        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2035</div><h3>🌸 Symbiotic Vision</h3><p>Level 5: Der lebende Garten. KI optimiert das gesamte Ökosystem eigenständig.</p></div></div>
     </div>
 </section>
 
-<!-- FEATURES -->
-<section id="features">
+<section id="features" class="reveal">
     <div class="section-tag">🛠 Technology Stack</div>
     <h2 class="section-title">Was unsere KI im Garten kann</h2>
     <p class="section-subtitle">Vergiss Rasenmäher. Hier ist, was bei uns Standard wird.</p>
-
     <div class="features">
-
-        <div class="feature">
-            <span class="emoji">🌳</span>
-            <h3>Baum- & Strauchpflege</h3>
-            <p>Drohnen und Greifarme schneiden Hecken millimetergenau, erkennen kranke Äste und entfernen sie.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🌾</span>
-            <h3>Unkraut-KI</h3>
-            <p>Computer Vision identifiziert Unkraut pflanzengenau – mechanisch oder per Mikro-Laser entfernt. Kein Glyphosat. Kein Kompromiss.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">💧</span>
-            <h3>Precision Hydration</h3>
-            <p>Jede Pflanze bekommt exakt die Wassermenge, die sie braucht. Wettervorhersage-integriert. Bis zu 60% Wasserersparnis.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🧪</span>
-            <h3>Auto-Düngung</h3>
-            <p>Sensoren analysieren Boden in Echtzeit. Nährstoffe werden automatisch dosiert. Stickstoff? pH? Kalzium? Erledigt.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🐛</span>
-            <h3>Predictive Pest Control</h3>
-            <p>KI erkennt Schädlinge bevor sie sich vermehren – und reagiert biologisch, gezielt, ohne Chemie.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🌸</span>
-            <h3>Blüh-Choreografie</h3>
-            <p>Dein Garten blüht nicht zufällig – sondern strategisch. KI plant das Farbspiel über die ganze Saison.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🌙</span>
-            <h3>Adaptive Lichtsteuerung</h3>
-            <p>Stimmungslicht abends, UV-Pflege nachts, Insektenfreundlich immer. Vollautomatisch dimmbar.</p>
-        </div>
-
-        <div class="feature">
-            <span class="emoji">🛰</span>
-            <h3>Satelliten-Klima</h3>
-            <p>Hyperlokale Wetterdaten + Klimaprognosen. Dein Garten ist vorbereitet, bevor der Sturm kommt.</p>
-        </div>
-
+        <div class="feature"><span class="emoji">🌳</span><h3>Baum- & Strauchpflege</h3><p>Drohnen und Greifarme schneiden Hecken millimetergenau, erkennen kranke Äste und entfernen sie.</p></div>
+        <div class="feature"><span class="emoji">🌾</span><h3>Unkraut-KI</h3><p>Computer Vision identifiziert Unkraut pflanzengenau – mechanisch oder per Mikro-Laser entfernt.</p></div>
+        <div class="feature"><span class="emoji">💧</span><h3>Precision Hydration</h3><p>Jede Pflanze bekommt exakt die Wassermenge, die sie braucht. Bis zu 60% Wasserersparnis.</p></div>
+        <div class="feature"><span class="emoji">🧪</span><h3>Auto-Düngung</h3><p>Sensoren analysieren Boden in Echtzeit. Nährstoffe werden automatisch dosiert.</p></div>
+        <div class="feature"><span class="emoji">🐛</span><h3>Predictive Pest Control</h3><p>KI erkennt Schädlinge bevor sie sich vermehren – und reagiert biologisch, gezielt, ohne Chemie.</p></div>
+        <div class="feature"><span class="emoji">🌸</span><h3>Blüh-Choreografie</h3><p>Dein Garten blüht nicht zufällig – sondern strategisch. KI plant das Farbspiel über die ganze Saison.</p></div>
+        <div class="feature"><span class="emoji">🌙</span><h3>Adaptive Lichtsteuerung</h3><p>Stimmungslicht abends, UV-Pflege nachts, Insektenfreundlich immer.</p></div>
+        <div class="feature"><span class="emoji">🛰</span><h3>Satelliten-Klima</h3><p>Hyperlokale Wetterdaten + Klimaprognosen. Dein Garten ist vorbereitet, bevor der Sturm kommt.</p></div>
     </div>
 </section>
 
-<!-- VISION -->
-<div class="vision" id="vision">
+<div class="vision reveal" id="vision">
     <h2>Unsere Mission</h2>
     <p>Wir glauben, dass jeder Mensch einen blühenden Garten verdient – ohne dafür sein Wochenende, seinen Rücken oder seinen Kalender zu opfern. <strong>GardenMind by Tomaholic</strong> macht aus deinem Garten ein lebendiges, selbstpflegendes Ökosystem.</p>
     <p style="color: #86efac; font-weight: 600;">Gärtnern ist Liebe. Den Rest übernehmen wir.</p>
     <a href="#contact" class="btn btn-primary">🌱 Werde Pionier</a>
 </div>
 
-<!-- CONTACT -->
-<section id="contact" style="text-align:center;">
+<section id="contact" class="reveal" style="text-align:center;">
     <div class="section-tag">🚀 Join the Movement</div>
     <h2 class="section-title">Bereit für den Garten von morgen?</h2>
     <p class="section-subtitle">Wir suchen Pioniere, Partner und neugierige Geister. Werde Teil der grünen KI-Revolution.</p>
@@ -978,7 +312,6 @@
     <a href="#" class="btn btn-secondary">Newsletter abonnieren</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="logo-wrap">
         <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -1003,6 +336,80 @@
     </div>
     <p>© 2026 Tomaholic · Building the future of autonomous gardens · Made with 💚 in Switzerland</p>
 </footer>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Nach oben scrollen">⬆</button>
+
+<div class="cookie-banner" id="cookieBanner">
+    <h4>🍪 Wir respektieren deine Privatsphäre</h4>
+    <p>Diese Website verwendet anonyme Analyse-Cookies, um die Nutzererfahrung zu verbessern. Du kannst der Nutzung jederzeit widersprechen.</p>
+    <div class="btn-row">
+        <button class="accept" onclick="acceptCookies()">Akzeptieren</button>
+        <button class="decline" onclick="declineCookies()">Ablehnen</button>
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                animateCounter(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    function animateCounter(el) {
+        const text = el.textContent.trim();
+        const match = text.match(/^(\d+)(.*)/);
+        if (!match) return;
+        const target = parseInt(match[1]);
+        const suffix = match[2];
+        let current = 0;
+        const duration = 1500;
+        const step = target / (duration / 16);
+        const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                el.textContent = target + suffix;
+                clearInterval(interval);
+            } else {
+                el.textContent = Math.floor(current) + suffix;
+            }
+        }, 16);
+    }
+
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) scrollBtn.classList.add('visible');
+        else scrollBtn.classList.remove('visible');
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) setTimeout(() => cookieBanner.classList.add('show'), 1500);
+
+    function acceptCookies() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        cookieBanner.classList.remove('show');
+    }
+    function declineCookies() {
+        localStorage.setItem('cookie-consent', 'declined');
+        cookieBanner.classList.remove('show');
+    }
+</script>
 
 </body>
 </html>
