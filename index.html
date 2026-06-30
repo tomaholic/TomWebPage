@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://tomaholic.ch">
     <meta property="og:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
     <meta property="og:description" content="Die KI-Plattform für Gärten, die denken, blühen und sich pflegen.">
-    <meta property="og:image" content="https://tomaholic.ch/og-image.png">
+    <meta property="og:image" content="https://tomaholic.ch/hero.png">
     <meta property="og:locale" content="de_CH">
     <meta property="og:site_name" content="GardenMind by Tomaholic">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
     <meta name="twitter:description" content="Die KI-Plattform für vollautonome Garten-Automatisierung.">
-    <meta name="twitter:image" content="https://tomaholic.ch/og-image.png">
+    <meta name="twitter:image" content="https://tomaholic.ch/hero.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2386efac'/%3E%3Cstop offset='60%25' stop-color='%234ade80'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56 L32 36' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M32 36 Q14 28 10 14 Q24 18 32 36 Z' fill='url(%23g)'/%3E%3Cpath d='M32 36 Q50 28 54 14 Q40 18 32 36 Z' fill='url(%23g)' opacity='0.7'/%3E%3Ccircle cx='32' cy='32' r='2.5' fill='%2322d3ee'/%3E%3C/svg%3E">
 
@@ -64,32 +64,34 @@
         .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: #fff; }
         .btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: #86efac; }
 
-        .scene { position: relative; max-width: 900px; margin: 60px auto 20px; height: 200px; background: linear-gradient(180deg, transparent 60%, rgba(74,222,128,0.08) 100%); border-radius: 20px; overflow: hidden; border: 1px solid rgba(134,239,172,0.1); }
-        .ground { position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(180deg, rgba(74,222,128,0.15), rgba(34,197,94,0.4)); border-top: 2px solid rgba(134,239,172,0.3); }
-        .grass { position: absolute; bottom: 25px; width: 4px; height: 12px; background: #4ade80; border-radius: 2px; }
-        .tree { position: absolute; bottom: 28px; font-size: 38px; }
-        .flower { position: absolute; bottom: 30px; font-size: 20px; animation: sway 3s ease-in-out infinite; }
-        @keyframes sway { 0%,100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
-        .sun { position: absolute; top: 20px; right: 40px; font-size: 44px; animation: pulse 4s ease-in-out infinite; }
-        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.1); opacity: 1; } }
-        .cloud { position: absolute; top: 30px; font-size: 32px; opacity: 0.8; animation: drift 15s linear infinite; }
-        @keyframes drift { from { left: -10%; } to { left: 110%; } }
-        .robot { position: absolute; bottom: 30px; width: 70px; height: 60px; animation: drive 12s linear infinite; }
-        @keyframes drive { 0% { left: -10%; transform: scaleX(1); } 45% { left: 95%; transform: scaleX(1); } 50% { left: 95%; transform: scaleX(-1); } 95% { left: -10%; transform: scaleX(-1); } 100% { left: -10%; transform: scaleX(1); } }
-        .robot-body { position: absolute; bottom: 12px; left: 5px; width: 60px; height: 32px; background: linear-gradient(180deg, #4ade80, #22c55e); border-radius: 14px 14px 6px 6px; box-shadow: 0 4px 15px rgba(34,197,94,0.5); }
-        .robot-eye { position: absolute; top: 8px; width: 10px; height: 10px; background: #0a1a0f; border-radius: 50%; border: 2px solid #86efac; animation: blink 3s infinite; }
-        .robot-eye.left { left: 12px; }
-        .robot-eye.right { right: 12px; }
-        @keyframes blink { 0%,95%,100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
-        .robot-antenna { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 12px; background: #86efac; }
-        .robot-antenna::after { content: ''; position: absolute; top: -6px; left: -3px; width: 8px; height: 8px; background: #22d3ee; border-radius: 50%; box-shadow: 0 0 10px #22d3ee; animation: signal 1.2s ease-in-out infinite; }
-        @keyframes signal { 0%,100% { opacity: 0.4; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } }
-        .robot-wheel { position: absolute; bottom: 0; width: 14px; height: 14px; background: #1f2937; border-radius: 50%; border: 2px solid #4ade80; animation: spin 0.5s linear infinite; }
-        .robot-wheel.left { left: 8px; }
-        .robot-wheel.right { right: 8px; }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .scan-beam { position: absolute; bottom: 12px; left: 30px; width: 12px; height: 30px; background: linear-gradient(180deg, rgba(34,211,238,0.6), transparent); transform-origin: top; animation: scan 2s ease-in-out infinite; }
-        @keyframes scan { 0%,100% { transform: rotate(-15deg); opacity: 0.8; } 50% { transform: rotate(15deg); opacity: 0.4; } }
+        /* === HERO VISUAL (Bild + Mini-Roboter + Sensoren) === */
+        .hero-visual { position: relative; max-width: 1100px; margin: 80px auto 20px; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(34,197,94,0.25), 0 0 60px rgba(34,211,238,0.15); border: 1px solid rgba(134,239,172,0.2); animation: heroEntrance 1.2s ease-out; }
+        @keyframes heroEntrance { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .hero-image { display: block; width: 100%; height: auto; transition: transform 0.6s ease; }
+        .hero-visual:hover .hero-image { transform: scale(1.02); }
+        .hero-glow { position: absolute; inset: -20px; background: radial-gradient(ellipse at center, rgba(74,222,128,0.15), transparent 70%); z-index: -1; animation: glowPulse 4s ease-in-out infinite; pointer-events: none; }
+        @keyframes glowPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+
+        .mini-robot { position: absolute; bottom: 8%; width: 50px; height: 45px; animation: miniDrive 14s linear infinite; filter: drop-shadow(0 4px 12px rgba(34,211,238,0.6)); z-index: 5; }
+        @keyframes miniDrive { 0% { left: -8%; transform: scaleX(1); } 45% { left: 92%; transform: scaleX(1); } 50% { left: 92%; transform: scaleX(-1); } 95% { left: -8%; transform: scaleX(-1); } 100% { left: -8%; transform: scaleX(1); } }
+        .mini-robot-body { position: absolute; bottom: 10px; left: 3px; width: 44px; height: 26px; background: linear-gradient(180deg, #86efac, #22c55e); border-radius: 12px 12px 5px 5px; box-shadow: 0 2px 10px rgba(34,197,94,0.6), inset 0 1px 0 rgba(255,255,255,0.3); }
+        .mini-robot-eye { position: absolute; top: 6px; width: 8px; height: 8px; background: #0a1a0f; border-radius: 50%; border: 1.5px solid #22d3ee; animation: miniBlink 3s infinite; box-shadow: 0 0 8px #22d3ee; }
+        .mini-robot-eye.left { left: 9px; }
+        .mini-robot-eye.right { right: 9px; }
+        @keyframes miniBlink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+        .mini-robot-antenna { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 2px; height: 10px; background: #86efac; }
+        .mini-robot-antenna::after { content: ''; position: absolute; top: -5px; left: -3px; width: 8px; height: 8px; background: #22d3ee; border-radius: 50%; box-shadow: 0 0 12px #22d3ee, 0 0 20px #22d3ee; animation: miniSignal 1s ease-in-out infinite; }
+        @keyframes miniSignal { 0%,100% { opacity: 0.5; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.4); } }
+        .mini-robot-wheel { position: absolute; bottom: 0; width: 11px; height: 11px; background: #1f2937; border-radius: 50%; border: 1.5px solid #4ade80; animation: miniSpin 0.4s linear infinite; }
+        .mini-robot-wheel.left { left: 6px; }
+        .mini-robot-wheel.right { right: 6px; }
+        @keyframes miniSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .floating-sensor { position: absolute; font-size: 28px; filter: drop-shadow(0 4px 12px rgba(34,211,238,0.5)); animation: float 5s ease-in-out infinite; pointer-events: none; z-index: 4; }
+        .floating-sensor.s1 { top: 15%; right: 8%; animation-delay: 0s; }
+        .floating-sensor.s2 { top: 25%; left: 6%; animation-delay: -1.5s; font-size: 24px; }
+        .floating-sensor.s3 { bottom: 30%; right: 12%; animation-delay: -3s; font-size: 22px; }
+        @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(5deg); } }
 
         .stats { display: flex; justify-content: center; gap: 60px; margin-top: 60px; flex-wrap: wrap; }
         .stat { text-align: center; }
@@ -165,12 +167,16 @@
             .stat-number { font-size: 30px; }
             .vision { margin: 40px 20px; padding: 50px 20px; }
             .vision h2 { font-size: 32px; }
-            .scene { height: 160px; margin: 40px auto 10px; }
             .roadmap::before { left: 20px; }
             .milestone { grid-template-columns: 50px 1fr; gap: 16px; }
             .milestone-dot { grid-column: 1; }
             .milestone.right .milestone-card, .milestone.left .milestone-card { grid-column: 2; text-align: left; }
             .scroll-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
+            .hero-visual { margin: 40px 15px 10px; border-radius: 16px; }
+            .mini-robot { width: 35px; height: 32px; }
+            .mini-robot-body { width: 32px; height: 18px; }
+            .floating-sensor { font-size: 20px; }
+            .floating-sensor.s2, .floating-sensor.s3 { font-size: 16px; }
         }
     </style>
 </head>
@@ -215,34 +221,26 @@
     <a href="#levels" class="btn btn-primary">🌿 Stufenmodell entdecken</a>
     <a href="#vision" class="btn btn-secondary">Unsere Vision</a>
 
-    <div class="scene">
-        <div class="sun">☀️</div>
-        <div class="cloud" style="animation-delay: 0s;">☁️</div>
-        <div class="cloud" style="top: 60px; animation-delay: -8s; font-size: 24px;">☁️</div>
-        <div class="tree" style="left: 8%;">🌳</div>
-        <div class="tree" style="left: 78%; font-size: 32px;">🌲</div>
-        <div class="flower" style="left: 25%;">🌷</div>
-        <div class="flower" style="left: 40%; animation-delay: -1s;">🌸</div>
-        <div class="flower" style="left: 60%; animation-delay: -2s;">🌺</div>
-        <div class="flower" style="left: 90%; animation-delay: -0.5s;">🌼</div>
-        <div class="grass" style="left: 15%;"></div>
-        <div class="grass" style="left: 20%;"></div>
-        <div class="grass" style="left: 33%;"></div>
-        <div class="grass" style="left: 48%;"></div>
-        <div class="grass" style="left: 55%;"></div>
-        <div class="grass" style="left: 68%;"></div>
-        <div class="grass" style="left: 85%;"></div>
-        <div class="ground"></div>
-        <div class="robot">
-            <div class="robot-antenna"></div>
-            <div class="robot-body">
-                <div class="robot-eye left"></div>
-                <div class="robot-eye right"></div>
+    <!-- HERO IMAGE mit Mini-Roboter und schwebenden Sensoren -->
+    <div class="hero-visual">
+        <img src="hero.png" alt="GardenMind AI – Autonomer Garten der Zukunft" class="hero-image">
+        <div class="hero-glow"></div>
+
+        <!-- Mini-Roboter fährt unten am Bild -->
+        <div class="mini-robot">
+            <div class="mini-robot-antenna"></div>
+            <div class="mini-robot-body">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
             </div>
-            <div class="scan-beam"></div>
-            <div class="robot-wheel left"></div>
-            <div class="robot-wheel right"></div>
+            <div class="mini-robot-wheel left"></div>
+            <div class="mini-robot-wheel right"></div>
         </div>
+
+        <!-- Schwebende Sensoren -->
+        <div class="floating-sensor s1">📡</div>
+        <div class="floating-sensor s2">🛰</div>
+        <div class="floating-sensor s3">💧</div>
     </div>
 
     <div class="stats reveal">
@@ -354,7 +352,6 @@
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     const counters = document.querySelectorAll('.stat-number');
