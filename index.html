@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomaholic@GardenMind – The Future of Autonomous Gardens</title>
-    https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap
+    <title>GardenMind by Tomaholic – The Future of Autonomous Gardens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,12 +41,16 @@
             letter-spacing: -0.5px;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
+        .logo-sub {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-left: 6px;
         }
 
+        nav ul { display: flex; list-style: none; gap: 30px; }
         nav a {
             text-decoration: none;
             color: #cbd5e1;
@@ -91,11 +95,7 @@
             letter-spacing: -2px;
         }
 
-        .hero h1 .underline {
-            position: relative;
-            display: inline-block;
-        }
-
+        .hero h1 .underline { position: relative; display: inline-block; }
         .hero h1 .underline::after {
             content: '';
             position: absolute;
@@ -132,7 +132,7 @@
             border-radius: 10px;
             text-decoration: none;
             transition: 0.3s;
-            margin: 0 6px;
+            margin: 6px;
         }
 
         .btn-primary {
@@ -154,7 +154,7 @@
             border-color: #86efac;
         }
 
-        /* === STATS BAR === */
+        /* === STATS === */
         .stats {
             display: flex;
             justify-content: center;
@@ -162,14 +162,8 @@
             margin-top: 80px;
             flex-wrap: wrap;
         }
-        .stat {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 40px;
-            font-weight: 900;
-            color: #86efac;
-        }
+        .stat { text-align: center; }
+        .stat-number { font-size: 40px; font-weight: 900; color: #86efac; }
         .stat-label {
             color: #94a3b8;
             font-size: 14px;
@@ -211,11 +205,8 @@
             margin: 0 auto 70px;
         }
 
-        /* === MATURITY LEVELS === */
-        .levels {
-            display: grid;
-            gap: 20px;
-        }
+        /* === LEVELS === */
+        .levels { display: grid; gap: 20px; }
 
         .level {
             display: grid;
@@ -242,16 +233,8 @@
             -webkit-text-fill-color: transparent;
             line-height: 1;
         }
-
-        .level-content h3 {
-            font-size: 22px;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-        .level-content p {
-            color: #94a3b8;
-            font-size: 15px;
-        }
+        .level-content h3 { font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .level-content p { color: #94a3b8; font-size: 15px; }
 
         .level-tag {
             padding: 6px 14px;
@@ -266,7 +249,7 @@
         .level-tag.future { background: rgba(167,139,250,0.15); color: #a78bfa; }
         .level-tag.vision { background: rgba(34,211,238,0.15); color: #22d3ee; }
 
-        /* === FEATURES GRID === */
+        /* === FEATURES === */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -286,22 +269,11 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        .feature .emoji {
-            font-size: 42px;
-            margin-bottom: 16px;
-            display: block;
-        }
-        .feature h3 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .feature p {
-            color: #94a3b8;
-            font-size: 15px;
-        }
+        .feature .emoji { font-size: 42px; margin-bottom: 16px; display: block; }
+        .feature h3 { font-size: 20px; color: #fff; margin-bottom: 10px; }
+        .feature p { color: #94a3b8; font-size: 15px; }
 
-        /* === VISION SECTION === */
+        /* === VISION === */
         .vision {
             text-align: center;
             background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,211,238,0.08));
@@ -310,11 +282,7 @@
             padding: 80px 40px;
             margin: 80px 60px;
         }
-        .vision h2 {
-            font-size: 44px;
-            margin-bottom: 24px;
-            color: #fff;
-        }
+        .vision h2 { font-size: 44px; margin-bottom: 24px; color: #fff; }
         .vision p {
             color: #cbd5e1;
             font-size: 18px;
@@ -330,9 +298,7 @@
             font-size: 14px;
             border-top: 1px solid rgba(134, 239, 172, 0.06);
         }
-        footer .logo {
-            margin-bottom: 12px;
-        }
+        footer .logo { margin-bottom: 12px; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 44px; }
@@ -355,12 +321,12 @@
 
 <!-- NAVBAR -->
 <nav>
-    <div class="logo">🌱 GardenMind</div>
+    <div class="logo">🌱 GardenMind <span class="logo-sub">by Tomaholic</span></div>
     <ul>
-        <li><a href="#levels">Stufen</a></li>
+        <li><a href="#levels">Stufenmodell</a></li>
         <li><a href="#features">Technologie</a></li>
-        <li>#vision</li>
-        <li>#contact</li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#contact">Kontakt</a></li>
     </ul>
 </nav>
 
@@ -368,10 +334,10 @@
 <header class="hero">
     <div class="badge">🤖 Powered by AI · Driven by Nature</div>
     <h1>Der Garten der<br><span class="underline">Zukunft</span> sich selbst pflegt.</h1>
-    <p class="subtitle">Willkommen bei <strong>GardenMind</strong> – die weltweit führende Plattform für vollautonome Garten-Automatisierung.</p>
+    <p class="subtitle">Willkommen bei <strong>GardenMind by Tomaholic</strong> – die weltweit führende Plattform für vollautonome Garten-Automatisierung.</p>
     <p class="subtext">Rasenmäher und Bewässerung waren erst der Anfang. Wir bauen die KI-Lösung für Gärten, die denken, pflegen und blühen – ganz ohne dich.</p>
     <a href="#levels" class="btn btn-primary">🌿 Stufenmodell entdecken</a>
-    #vision
+    <a href="#vision" class="btn btn-secondary">Unsere Vision</a>
 
     <!-- STATS -->
     <div class="stats">
@@ -394,7 +360,7 @@
     </div>
 </header>
 
-<!-- MATURITY LEVELS -->
+<!-- LEVELS -->
 <section id="levels">
     <div class="section-tag">⚙️ The Garden Autonomy Framework</div>
     <h2 class="section-title">Die 6 Stufen der Garten-Autonomie</h2>
@@ -521,24 +487,24 @@
 <!-- VISION -->
 <div class="vision" id="vision">
     <h2>Unsere Mission</h2>
-    <p>Wir glauben, dass jeder Mensch einen blühenden Garten verdient – ohne dafür sein Wochenende, seinen Rücken oder seinen Kalender zu opfern. <strong>GardenMind</strong> macht aus deinem Garten ein lebendiges, selbstpflegendes Ökosystem.</p>
+    <p>Wir glauben, dass jeder Mensch einen blühenden Garten verdient – ohne dafür sein Wochenende, seinen Rücken oder seinen Kalender zu opfern. <strong>GardenMind by Tomaholic</strong> macht aus deinem Garten ein lebendiges, selbstpflegendes Ökosystem.</p>
     <p style="color: #86efac; font-weight: 600;">Gärtnern ist Liebe. Den Rest übernehmen wir.</p>
     <a href="#contact" class="btn btn-primary">🌱 Werde Pionier</a>
 </div>
 
-<!-- CTA / CONTACT -->
+<!-- CONTACT -->
 <section id="contact" style="text-align:center;">
     <div class="section-tag">🚀 Join the Movement</div>
     <h2 class="section-title">Bereit für den Garten von morgen?</h2>
     <p class="section-subtitle">Wir suchen Pioniere, Partner und neugierige Geister. Werde Teil der grünen KI-Revolution.</p>
-    <a href="mailto:hello@gardenmind.io" class="btn btn-primary">📩 Kontakt aufnehmen</a>
+    <a href="mailto:hello@tomaholic.ch" class="btn btn-primary">📩 Kontakt aufnehmen</a>
     <a href="#" class="btn btn-secondary">Newsletter abonnieren</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="logo">🌱 GardenMind</div>
-    <p>© 2026 · Building the future of autonomous gardens · Made with 💚 in Switzerland</p>
+    <div class="logo">🌱 GardenMind <span class="logo-sub">by Tomaholic</span></div>
+    <p>© 2026 Tomaholic · Building the future of autonomous gardens · Made with 💚 in Switzerland</p>
 </footer>
 
 </body>
