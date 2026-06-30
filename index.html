@@ -1,1 +1,283 @@
-<h1>Hello wordld 🚀</h1
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Dude</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b1020;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ NAVBAR ============ */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            position: sticky;
+            top: 0;
+            background: rgba(11, 16, 32, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 999;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav .logo {
+            font-weight: 800;
+            font-size: 22px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        nav a:hover { color: #fff; }
+
+        /* ============ HERO ============ */
+        .hero {
+            text-align: center;
+            padding: 140px 20px 100px;
+            background: radial-gradient(ellipse at top, rgba(96, 165, 250, 0.25), transparent 60%),
+                        radial-gradient(ellipse at bottom, rgba(167, 139, 250, 0.2), transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 0 6px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ============ FEATURES ============ */
+        section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 60px;
+            color: #f1f5f9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 32px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* ============ CTA ============ */
+        .cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15));
+            border-radius: 20px;
+            margin: 60px;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 42px; }
+            section { padding: 60px 20px; }
+            nav { padding: 20px; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">◆ Brand</div>
+    <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <h1>Build. Deploy. Scale.</h1>
+    <p>Eine moderne Cloud-Plattform, gehostet auf Microsoft Azure. Schnell, sicher und automatisiert.</p>
+    <a href="#features" class="btn btn-primary">Jetzt starten</a>
+    <a href="#about" class="btn btn-secondary">Mehr erfahren</a>
+</header>
+
+<!-- FEATURES -->
+<section id="features">
+    <h2 class="section-title">Warum diese Plattform?</h2>
+    <div class="features">
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Schnell</h3>
+            <p>Globales CDN sorgt für blitzschnelle Ladezeiten weltweit – ohne Konfiguration.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h3>Sicher</h3>
+            <p>Automatisches HTTPS, Microsoft-Sicherheit und Schutz vor Angriffen out of the box.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Automatisch</h3>
+            <p>CI/CD via GitHub Actions: Jeder Commit deployt automatisch deine Seite.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Skalierbar</h3>
+            <p>Von der Visitenkarte bis zur Enterprise-App – Azure skaliert mit dir.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="text-align:center;">
+    <h2 class="section-title">Über das Projekt</h2>
+    <p style="max-width:700px;margin:0 auto;color:#94a3b8;font-size:17px;">
+        Diese Seite wurde mit modernen Web-Standards entwickelt und auf Azure Static Web Apps bereitgestellt.
+        Jede Änderung wird automatisch über GitHub ausgeliefert – ohne manuelles Deployment.
+    </p>
+</section>
+
+<!-- CTA -->
+<div class="cta" id="contact">
+    <h2>Bereit loszulegen?</h2>
+    <p>Starte mit deiner eigenen Cloud-Lösung in wenigen Minuten.</p>
+    <a href="#" class="btn btn-primary">Jetzt loslegen</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 – Hosted on Microsoft Azure
+</footer>
+
+</body>
+</html>
