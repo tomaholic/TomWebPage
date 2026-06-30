@@ -23,7 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 60px;
+            padding: 18px 60px;
             position: sticky;
             top: 0;
             background: rgba(10, 26, 15, 0.85);
@@ -32,22 +32,35 @@
             border-bottom: 1px solid rgba(134, 239, 172, 0.08);
         }
 
-        .logo {
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
             font-weight: 900;
             font-size: 22px;
             background: linear-gradient(90deg, #86efac, #4ade80, #22d3ee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
+            line-height: 1;
         }
 
         .logo-sub {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #64748b;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-left: 6px;
+            display: block;
+            margin-top: 2px;
         }
 
         nav ul { display: flex; list-style: none; gap: 30px; }
@@ -63,7 +76,7 @@
         /* === HERO === */
         .hero {
             text-align: center;
-            padding: 140px 20px 100px;
+            padding: 100px 20px 60px;
             background:
                 radial-gradient(ellipse at top, rgba(34, 211, 238, 0.15), transparent 60%),
                 radial-gradient(ellipse at 30% 70%, rgba(74, 222, 128, 0.25), transparent 60%),
@@ -154,12 +167,194 @@
             border-color: #86efac;
         }
 
+        /* === ROBOT SCENE === */
+        .scene {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 20px;
+            height: 200px;
+            background: linear-gradient(180deg, transparent 60%, rgba(74, 222, 128, 0.08) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(134, 239, 172, 0.1);
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(180deg, rgba(74, 222, 128, 0.15), rgba(34, 197, 94, 0.4));
+            border-top: 2px solid rgba(134, 239, 172, 0.3);
+        }
+
+        .grass {
+            position: absolute;
+            bottom: 25px;
+            width: 4px;
+            height: 12px;
+            background: #4ade80;
+            border-radius: 2px;
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 28px;
+            font-size: 38px;
+        }
+
+        .flower {
+            position: absolute;
+            bottom: 30px;
+            font-size: 20px;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 44px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .cloud {
+            position: absolute;
+            top: 30px;
+            font-size: 32px;
+            opacity: 0.8;
+            animation: drift 15s linear infinite;
+        }
+
+        @keyframes drift {
+            from { left: -10%; }
+            to { left: 110%; }
+        }
+
+        /* Roboter */
+        .robot {
+            position: absolute;
+            bottom: 30px;
+            width: 70px;
+            height: 60px;
+            animation: drive 12s linear infinite;
+        }
+
+        @keyframes drive {
+            0% { left: -10%; transform: scaleX(1); }
+            45% { left: 95%; transform: scaleX(1); }
+            50% { left: 95%; transform: scaleX(-1); }
+            95% { left: -10%; transform: scaleX(-1); }
+            100% { left: -10%; transform: scaleX(1); }
+        }
+
+        .robot-body {
+            position: absolute;
+            bottom: 12px;
+            left: 5px;
+            width: 60px;
+            height: 32px;
+            background: linear-gradient(180deg, #4ade80, #22c55e);
+            border-radius: 14px 14px 6px 6px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.5);
+        }
+
+        .robot-eye {
+            position: absolute;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: #0a1a0f;
+            border-radius: 50%;
+            border: 2px solid #86efac;
+            animation: blink 3s infinite;
+        }
+        .robot-eye.left { left: 12px; }
+        .robot-eye.right { right: 12px; }
+
+        @keyframes blink {
+            0%, 95%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+
+        .robot-antenna {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 12px;
+            background: #86efac;
+        }
+        .robot-antenna::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -3px;
+            width: 8px;
+            height: 8px;
+            background: #22d3ee;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22d3ee;
+            animation: signal 1.2s ease-in-out infinite;
+        }
+
+        @keyframes signal {
+            0%, 100% { opacity: 0.4; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        .robot-wheel {
+            position: absolute;
+            bottom: 0;
+            width: 14px;
+            height: 14px;
+            background: #1f2937;
+            border-radius: 50%;
+            border: 2px solid #4ade80;
+            animation: spin 0.5s linear infinite;
+        }
+        .robot-wheel.left { left: 8px; }
+        .robot-wheel.right { right: 8px; }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .scan-beam {
+            position: absolute;
+            bottom: 12px;
+            left: 30px;
+            width: 12px;
+            height: 30px;
+            background: linear-gradient(180deg, rgba(34, 211, 238, 0.6), transparent);
+            transform-origin: top;
+            animation: scan 2s ease-in-out infinite;
+        }
+
+        @keyframes scan {
+            0%, 100% { transform: rotate(-15deg); opacity: 0.8; }
+            50% { transform: rotate(15deg); opacity: 0.4; }
+        }
+
         /* === STATS === */
         .stats {
             display: flex;
             justify-content: center;
             gap: 60px;
-            margin-top: 80px;
+            margin-top: 60px;
             flex-wrap: wrap;
         }
         .stat { text-align: center; }
@@ -243,11 +438,76 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
         .level-tag.now { background: rgba(148,163,184,0.15); color: #cbd5e1; }
         .level-tag.soon { background: rgba(96,165,250,0.15); color: #60a5fa; }
         .level-tag.future { background: rgba(167,139,250,0.15); color: #a78bfa; }
         .level-tag.vision { background: rgba(34,211,238,0.15); color: #22d3ee; }
+
+        /* === ROADMAP === */
+        .roadmap {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #4ade80, #22d3ee, #a78bfa);
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .milestone {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .milestone-dot {
+            width: 22px;
+            height: 22px;
+            background: #0a1a0f;
+            border: 4px solid #4ade80;
+            border-radius: 50%;
+            justify-self: center;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+        }
+
+        .milestone-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(134, 239, 172, 0.15);
+            border-radius: 14px;
+            padding: 24px;
+            transition: 0.3s;
+        }
+        .milestone-card:hover {
+            transform: scale(1.03);
+            border-color: rgba(134, 239, 172, 0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .milestone-year {
+            font-size: 14px;
+            font-weight: 800;
+            color: #4ade80;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .milestone-card h3 { font-size: 19px; color: #fff; margin-bottom: 8px; }
+        .milestone-card p { color: #94a3b8; font-size: 14px; }
+
+        .milestone.right .milestone-card { grid-column: 3; }
+        .milestone.left .milestone-card { grid-column: 1; text-align: right; }
 
         /* === FEATURES === */
         .features {
@@ -298,13 +558,16 @@
             font-size: 14px;
             border-top: 1px solid rgba(134, 239, 172, 0.06);
         }
-        footer .logo { margin-bottom: 12px; }
+        footer .logo-wrap {
+            justify-content: center;
+            margin-bottom: 12px;
+        }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 44px; }
             .hero p.subtitle { font-size: 17px; }
             section { padding: 70px 20px; }
-            nav { padding: 20px; }
+            nav { padding: 16px 20px; }
             nav ul { display: none; }
             .level { grid-template-columns: 60px 1fr; }
             .level-num { font-size: 48px; }
@@ -313,6 +576,12 @@
             .stat-number { font-size: 30px; }
             .vision { margin: 40px 20px; padding: 50px 20px; }
             .vision h2 { font-size: 32px; }
+            .scene { height: 160px; margin: 40px auto 10px; }
+            .roadmap::before { left: 20px; }
+            .milestone { grid-template-columns: 50px 1fr; gap: 16px; }
+            .milestone-dot { grid-column: 1; }
+            .milestone.right .milestone-card,
+            .milestone.left .milestone-card { grid-column: 2; text-align: left; }
         }
     </style>
 </head>
@@ -321,9 +590,34 @@
 
 <!-- NAVBAR -->
 <nav>
-    <div class="logo">🌱 GardenMind <span class="logo-sub">by Tomaholic</span></div>
+    <div class="logo-wrap">
+        <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#86efac"/>
+                    <stop offset="60%" stop-color="#4ade80"/>
+                    <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+            </defs>
+            <!-- Stem -->
+            <path d="M32 56 L32 36" stroke="url(#leafGrad)" stroke-width="3" stroke-linecap="round"/>
+            <!-- Left leaf -->
+            <path d="M32 36 Q14 28 10 14 Q24 18 32 36 Z" fill="url(#leafGrad)" opacity="0.95"/>
+            <!-- Right leaf -->
+            <path d="M32 36 Q50 28 54 14 Q40 18 32 36 Z" fill="url(#leafGrad)" opacity="0.7"/>
+            <!-- Circuit dots -->
+            <circle cx="20" cy="22" r="2" fill="#0a1a0f"/>
+            <circle cx="44" cy="22" r="2" fill="#0a1a0f"/>
+            <circle cx="32" cy="32" r="2.5" fill="#22d3ee"/>
+        </svg>
+        <div>
+            <div class="logo-text">GardenMind</div>
+            <span class="logo-sub">by Tomaholic</span>
+        </div>
+    </div>
     <ul>
         <li><a href="#levels">Stufenmodell</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#features">Technologie</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="#contact">Kontakt</a></li>
@@ -333,11 +627,50 @@
 <!-- HERO -->
 <header class="hero">
     <div class="badge">🤖 Powered by AI · Driven by Nature</div>
-    <h1>Der Garten der<br><span class="underline">Zukunft</span> sich selbst pflegt.</h1>
+    <h1>Der Garten der<br><span class="underline">Zukunft</span> pflegt sich selbst.</h1>
     <p class="subtitle">Willkommen bei <strong>GardenMind by Tomaholic</strong> – die weltweit führende Plattform für vollautonome Garten-Automatisierung.</p>
-    <p class="subtext">Rasenmäher und Bewässerung waren erst der Anfang. Wir bauen die KI-Lösung für Gärten, die denken, pflegen und blühen – ganz ohne dich.</p>
+    <p class="subtext">Rasenmäher und Bewässerung waren erst der Anfang. Wir bauen die KI-Infrastruktur für Gärten, die denken, pflegen und blühen – ganz ohne dich.</p>
     <a href="#levels" class="btn btn-primary">🌿 Stufenmodell entdecken</a>
     <a href="#vision" class="btn btn-secondary">Unsere Vision</a>
+
+    <!-- Animierte Roboter-Szene -->
+    <div class="scene">
+        <div class="sun">☀️</div>
+        <div class="cloud" style="animation-delay: 0s;">☁️</div>
+        <div class="cloud" style="top: 60px; animation-delay: -8s; font-size: 24px;">☁️</div>
+
+        <!-- Bäume und Blumen -->
+        <div class="tree" style="left: 8%;">🌳</div>
+        <div class="tree" style="left: 78%; font-size: 32px;">🌲</div>
+        <div class="flower" style="left: 25%;">🌷</div>
+        <div class="flower" style="left: 40%; animation-delay: -1s;">🌸</div>
+        <div class="flower" style="left: 60%; animation-delay: -2s;">🌺</div>
+        <div class="flower" style="left: 90%; animation-delay: -0.5s;">🌼</div>
+
+        <!-- Gras -->
+        <div class="grass" style="left: 15%;"></div>
+        <div class="grass" style="left: 20%;"></div>
+        <div class="grass" style="left: 33%;"></div>
+        <div class="grass" style="left: 48%;"></div>
+        <div class="grass" style="left: 55%;"></div>
+        <div class="grass" style="left: 68%;"></div>
+        <div class="grass" style="left: 85%;"></div>
+
+        <!-- Boden -->
+        <div class="ground"></div>
+
+        <!-- Roboter -->
+        <div class="robot">
+            <div class="robot-antenna"></div>
+            <div class="robot-body">
+                <div class="robot-eye left"></div>
+                <div class="robot-eye right"></div>
+            </div>
+            <div class="scan-beam"></div>
+            <div class="robot-wheel left"></div>
+            <div class="robot-wheel right"></div>
+        </div>
+    </div>
 
     <!-- STATS -->
     <div class="stats">
@@ -425,6 +758,71 @@
     </div>
 </section>
 
+<!-- ROADMAP -->
+<section id="roadmap">
+    <div class="section-tag">📅 Roadmap</div>
+    <h2 class="section-title">Der Weg zum lebenden Garten</h2>
+    <p class="section-subtitle">Unsere Vision in konkreten Schritten – von heute bis 2035.</p>
+
+    <div class="roadmap">
+
+        <div class="milestone left">
+            <div class="milestone-card">
+                <div class="milestone-year">2026</div>
+                <h3>🚀 Foundation</h3>
+                <p>Launch von GardenMind. Sensor-Netzwerk und KI-Plattform gehen live. Erste Pilotgärten in der Schweiz.</p>
+            </div>
+            <div class="milestone-dot"></div>
+        </div>
+
+        <div class="milestone right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <div class="milestone-year">2027</div>
+                <h3>🤖 First Robot Fleet</h3>
+                <p>Erste autonome Garten-Roboter im Einsatz: Unkrautjäter, Präzisions-Bewässerung, KI-Düngung.</p>
+            </div>
+        </div>
+
+        <div class="milestone left">
+            <div class="milestone-card">
+                <div class="milestone-year">2028</div>
+                <h3>🌐 Cooperative AI</h3>
+                <p>Roboter koordinieren sich untereinander. Predictive Pest Control geht in Serie. Internationale Expansion.</p>
+            </div>
+            <div class="milestone-dot"></div>
+        </div>
+
+        <div class="milestone right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <div class="milestone-year">2030</div>
+                <h3>🌳 Tree & Shrub Care</h3>
+                <p>Drohnen-basierte Baum- und Strauchpflege. Vollautomatischer Schnitt mit Computer Vision.</p>
+            </div>
+        </div>
+
+        <div class="milestone left">
+            <div class="milestone-card">
+                <div class="milestone-year">2032</div>
+                <h3>🧠 Autonomous Gardens</h3>
+                <p>Komplett selbstpflegende Gärten in Serie. Level 4 erreicht. Erste 10.000 GardenMind-Gärten weltweit.</p>
+            </div>
+            <div class="milestone-dot"></div>
+        </div>
+
+        <div class="milestone right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <div class="milestone-year">2035</div>
+                <h3>🌸 Symbiotic Vision</h3>
+                <p>Level 5: Der lebende Garten. KI optimiert das gesamte Ökosystem eigenständig. Mensch wird Geniesser.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- FEATURES -->
 <section id="features">
     <div class="section-tag">🛠 Technology Stack</div>
@@ -503,7 +901,27 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="logo">🌱 GardenMind <span class="logo-sub">by Tomaholic</span></div>
+    <div class="logo-wrap">
+        <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="leafGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#86efac"/>
+                    <stop offset="60%" stop-color="#4ade80"/>
+                    <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+            </defs>
+            <path d="M32 56 L32 36" stroke="url(#leafGradFooter)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M32 36 Q14 28 10 14 Q24 18 32 36 Z" fill="url(#leafGradFooter)" opacity="0.95"/>
+            <path d="M32 36 Q50 28 54 14 Q40 18 32 36 Z" fill="url(#leafGradFooter)" opacity="0.7"/>
+            <circle cx="20" cy="22" r="2" fill="#0a1a0f"/>
+            <circle cx="44" cy="22" r="2" fill="#0a1a0f"/>
+            <circle cx="32" cy="32" r="2.5" fill="#22d3ee"/>
+        </svg>
+        <div>
+            <div class="logo-text">GardenMind</div>
+            <span class="logo-sub">by Tomaholic</span>
+        </div>
+    </div>
     <p>© 2026 Tomaholic · Building the future of autonomous gardens · Made with 💚 in Switzerland</p>
 </footer>
 
