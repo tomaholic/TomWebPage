@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison EquiMind by Tomaholic – Private Equine Residence · Bezirk Olten auf Colins Bauernhof</title>
-<meta name="description" content="Maison EquiMind: Private Equine Residence im Bezirk Olten. Rund 50 Luxus-Suiten für Pferde, Equine Spa, KI-Gesundheitsmonitoring und persönlicher Concierge. Pension ab CHF 2'000 pro Monat. Besichtigung nur auf Termin.">
+<title>Maison EquiMind by Tomaholic – Private Equine Residence · Colin's Bauernhof · Bezirk Olten</title>
+<meta name="description" content="Maison EquiMind: Private Equine Residence auf Colin's Bauernhof im Bezirk Olten. Rund 50 Luxus-Suiten für Pferde, Equine Spa, KI-Gesundheitsmonitoring und persönlicher Concierge. Pension ab CHF 2'000 pro Monat.">
 <meta property="og:title" content="Maison EquiMind – Private Equine Residence">
-<meta property="og:description" content="Wo aussergewöhnliche Pferde zu Hause sind. Bezirk Olten auf Colins Bauernho, Schweiz.">
+<meta property="og:description" content="Wo aussergewöhnliche Pferde zu Hause sind. Colin's Bauernhof, Bezirk Olten, Schweiz.">
+<meta property="og:image" content="https://tomaholic.ch/suite.png">
 <meta property="og:url" content="https://tomaholic.ch">
+<link rel="alternate" hreflang="de" href="https://tomaholic.ch">
+<link rel="alternate" hreflang="en" href="https://tomaholic.ch">
 <meta name="theme-color" content="#0e0d0b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -190,10 +193,47 @@ footer{border-top:1px solid var(--line);padding:70px 6vw 34px;color:var(--muted)
  section,.manifesto{padding:90px 6vw}
  .private{padding:32px 22px}
 }
+
+
+/* LANG SWITCH */
+.lang{display:flex;gap:2px;margin-left:8px;border:1px solid var(--line)}
+.lang button{background:none;border:0;color:var(--muted);font:inherit;font-size:11px;letter-spacing:2px;padding:7px 10px;cursor:pointer}
+.lang button.on{background:var(--gold);color:#0e0d0b}
+/* HERO MEDIA */
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-media .slide{position:absolute;inset:-4%;background-size:cover;background-position:center;opacity:0;animation:kb 18s ease-in-out infinite}
+.hero-media .slide.s1{background-image:url('suite.png')}
+.hero-media .slide.s2{background-image:url('spa.png');animation-delay:9s}
+@keyframes kb{0%{opacity:0;transform:scale(1.0) translate(0,0)}8%{opacity:1}50%{opacity:1;transform:scale(1.12) translate(-1.5%,-1%)}58%{opacity:0}100%{opacity:0;transform:scale(1.12)}}
+.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,13,11,0.78) 0%,rgba(14,13,11,0.55) 45%,rgba(14,13,11,0.92) 100%)}
+.hero::after{z-index:1}
+.overline{line-height:2}
+/* MODALS */
+.modal{position:fixed;inset:0;z-index:300;background:rgba(5,5,4,0.86);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:60px 5vw}
+.modal.open{display:flex}
+.modal-box{background:var(--bg2);border:1px solid var(--line);max-width:820px;width:100%;padding:50px;position:relative}
+.modal-box h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:40px;margin-bottom:24px}
+.modal-box h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;color:var(--gold2);margin:28px 0 10px}
+.modal-box p,.modal-box li{color:#cfc6b5;font-size:15px;margin-bottom:10px}
+.modal-box ul{margin-left:20px}
+.modal-box .todo{color:#ffb38a}
+.modal-close{position:absolute;top:18px;right:22px;background:none;border:0;color:var(--gold);font-size:30px;cursor:pointer}
+/* COOKIE */
+.cookie{position:fixed;left:20px;right:20px;bottom:20px;z-index:250;max-width:620px;margin:0 auto;background:rgba(21,19,15,0.98);border:1px solid var(--line);padding:26px;display:none}
+.cookie.show{display:block}
+.cookie p{color:#cfc6b5;font-size:14px;margin-bottom:16px}
+.cookie .row2{display:flex;gap:10px;flex-wrap:wrap}
+.cookie button{padding:11px 20px;font:inherit;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:1px solid var(--gold)}
+.cookie .ok{background:var(--gold);color:#0e0d0b}
+.cookie .no{background:none;color:var(--ivory);border-color:var(--line)}
+.linkbtn{background:none;border:0;color:inherit;font:inherit;cursor:pointer;display:block;margin-bottom:10px;text-align:left;padding:0}
+.linkbtn:hover{color:var(--gold2)}
+@media(max-width:960px){.lang{margin:6px 0 0}.modal-box{padding:30px 22px}}
+
 </style>
 </head>
 <body>
-
 <nav id="nav">
  <a href="#top" class="logo">
   <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -205,233 +245,311 @@ footer{border-top:1px solid var(--line);padding:70px 6vw 34px;color:var(--muted)
   </svg>
   <div><span class="logo-name">Maison EquiMind</span><span class="logo-sub">Private Equine Residence</span></div>
  </a>
- <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menü">☰</button>
+ <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menu">☰</button>
  <ul class="menu">
-  <li><a href="#suites">Suites</a></li>
-  <li><a href="#spa">Equine Spa</a></li>
-  <li><a href="#intelligence">Intelligence</a></li>
-  <li><a href="#concierge">Concierge</a></li>
-  <li><a href="#membership">Membership</a></li>
-  <li><a href="#private" class="cta">Private Viewing</a></li>
+  <li><a href="#suites"><span data-i18n="nav_suites">Suites</span></a></li>
+  <li><a href="#spa"><span data-i18n="nav_spa">Equine Spa</span></a></li>
+  <li><a href="#intelligence"><span data-i18n="nav_int">Intelligence</span></a></li>
+  <li><a href="#concierge"><span data-i18n="nav_con">Concierge</span></a></li>
+  <li><a href="#membership"><span data-i18n="nav_mem">Membership</span></a></li>
+  <li><a href="#private" class="cta"><span data-i18n="nav_cta">Private Viewing</span></a></li>
+  <li><div class="lang"><button data-l="de" onclick="setLang('de')">DE</button><button data-l="en" onclick="setLang('en')">EN</button></div></li>
  </ul>
 </nav>
 
 <header class="hero" id="top">
- <div class="hero-inner">
-  <div class="overline">Bezirk Olten · Schweiz</div>
-  <h1>Wo aussergewöhnliche<br>Pferde <em>zu Hause</em> sind.</h1>
-  <p class="lead">Eine Private Equine Residence für rund 50 Pferde. Handwerk, Architektur und künstliche Intelligenz im Dienst eines einzigen Anspruchs: das Beste für Ihr Pferd. Jeden Tag, rund um die Uhr.</p>
-  <a href="#private" class="btn btn-gold">Private Viewing vereinbaren</a>
-  <a href="#suites" class="btn btn-line">Die Residenz entdecken</a>
+ <div class="hero-media" aria-hidden="true">
+  <div class="slide s1"></div>
+  <div class="slide s2"></div>
+  <video autoplay muted loop playsinline preload="metadata" onerror="this.remove()" oncanplay="this.style.opacity=1" style="opacity:0;transition:opacity 1.5s">
+   <source src="hero.mp4" type="video/mp4" onerror="this.parentNode.remove()">
+  </video>
  </div>
- <div class="scroll-hint">Entdecken</div>
+ <div class="hero-shade"></div>
+ <div class="hero-inner">
+  <div class="overline"><span data-i18n="over">Colin's Bauernhof · Bezirk Olten · Schweiz</span></div>
+  <h1><span data-i18n="h1">Wo aussergewöhnliche<br>Pferde <em>zu Hause</em> sind.</span></h1>
+  <p class="lead" data-i18n="lead">Eine Private Equine Residence für rund 50 Pferde. Handwerk, Architektur und künstliche Intelligenz im Dienst eines einzigen Anspruchs: das Beste für Ihr Pferd. Jeden Tag, rund um die Uhr.</p>
+  <a href="#private" class="btn btn-gold"><span data-i18n="cta1">Private Viewing vereinbaren</span></a>
+  <a href="#suites" class="btn btn-line"><span data-i18n="cta2">Die Residenz entdecken</span></a>
+ </div>
+ <div class="scroll-hint"><span data-i18n="scroll">Entdecken</span></div>
 </header>
 
 <div class="manifesto reveal">
- <p>Ein Champion verdient mehr als eine Box.<br>Er verdient eine <em>Residenz</em>, ein Team, das ihn kennt, und eine Intelligenz, die nie schläft.</p>
+ <p data-i18n="manif">Ein Champion verdient mehr als eine Box.<br>Er verdient eine <em>Residenz</em>, ein Team, das ihn kennt, und eine Intelligenz, die nie schläft.</p>
 </div>
 
 <div class="facts reveal">
- <div class="fact"><b>~50</b><span>Private Suites</span></div>
- <div class="fact"><b>24/7</b><span>KI-Gesundheitsmonitoring</span></div>
- <div class="fact"><b>1 : 5</b><span>Groom-Betreuung*</span></div>
- <div class="fact"><b>ab 2'000</b><span>CHF pro Monat</span></div>
+ <div class="fact"><b>~50</b><span data-i18n="f1">Private Suites</span></div>
+ <div class="fact"><b>24/7</b><span data-i18n="f2">KI-Gesundheitsmonitoring</span></div>
+ <div class="fact"><b>1 : 5</b><span data-i18n="f3">Groom-Betreuung*</span></div>
+ <div class="fact"><b data-i18n="f4v">ab 2'000</b><span data-i18n="f4">CHF pro Monat</span></div>
 </div>
 
-<!-- SUITES -->
 <section id="suites" class="reveal">
- <div class="kicker">Die Suites</div>
- <h2 class="title">Nicht eine Box. <em>Eine Suite.</em></h2>
- <p class="sub">Jede Suite ist ein Rückzugsort mit eigenem Paddock, eigener Kamera und eigenem Klima. Gebaut für das Wohlbefinden des Pferdes und mit einer Ästhetik, die man spürt.</p>
+ <div class="kicker" data-i18n="su_k">Die Suites</div>
+ <h2 class="title"><span data-i18n="su_t">Nicht eine Box. <em>Eine Suite.</em></span></h2>
+ <p class="sub" data-i18n="su_s">Jede Suite ist ein Rückzugsort mit eigenem Paddock, eigener Kamera und eigenem Klima. Gebaut für das Wohlbefinden des Pferdes und mit einer Ästhetik, die man spürt.</p>
  <div class="suite">
   <div class="suite-visual photo">
-   <img src="suite.png" alt="Signature Suite der Maison EquiMind mit Eichenfront, Messingbeschlägen und Blick in den privaten Paddock" loading="lazy">
+   <img src="suite.png" alt="Signature Suite – Maison EquiMind" loading="lazy">
    <div class="suite-tag">Signature Suite · Nº 07</div>
-   <div class="ai-chip"><i></i><b>EQUIMIND AI</b><br>Verhalten · normal<br>Heu heute · 7.1 kg</div>
+   <div class="ai-chip"><i></i><b>EQUIMIND AI</b><br><span data-i18n="chip1">Verhalten · normal</span><br><span data-i18n="chip2">Heu heute · 7.1 kg</span></div>
   </div>
   <div>
-   <h3>Raum, Licht &amp; Ruhe</h3>
-   <p>Massive Eichenfronten, geschmiedete Messingbeschläge, Gewölbedecken mit Oberlichtern und warmes, dimmbares Licht. Unter den Hufen liegen gepolsterte Gummimatten über einer beheizten Bodenplatte. Durch die Stalltür sieht man direkt in den privaten Paddock.</p>
+   <h3><span data-i18n="su_h">Raum, Licht &amp; Ruhe</span></h3>
+   <p data-i18n="su_p">Massive Eichenfronten, geschmiedete Messingbeschläge, Gewölbedecken mit Oberlichtern und warmes, dimmbares Licht. Unter den Hufen liegen gepolsterte Gummimatten über einer beheizten Bodenplatte. Durch die Stalltür sieht man direkt in den privaten Paddock.</p>
    <ul class="spec">
-    <li><span>Suite-Fläche</span><span>deutlich über TSchV-Mindestmass</span></li>
-    <li><span>Privater Paddock</span><span>teilüberdacht, direkt angeschlossen</span></li>
-    <li><span>Boden</span><span>beheizt · gepolstert · rutschfest</span></li>
-    <li><span>Klima</span><span>individuell geregelt · gefilterte Luft</span></li>
-    <li><span>Licht</span><span>Tageslichtsimulation · Zirkadian-Steuerung</span></li>
-    <li><span>Sozialkontakt</span><span>Sicht-, Hör- &amp; Geruchkontakt</span></li>
-    <li><span>Einstreu</span><span>nach Wahl · staubarm</span></li>
+    <li><span data-i18n="sp1a">Suite-Fläche</span><span data-i18n="sp1b">deutlich über TSchV-Mindestmass</span></li>
+    <li><span data-i18n="sp2a">Privater Paddock</span><span data-i18n="sp2b">teilüberdacht, direkt angeschlossen</span></li>
+    <li><span data-i18n="sp3a">Boden</span><span data-i18n="sp3b">beheizt · gepolstert · rutschfest</span></li>
+    <li><span data-i18n="sp4a">Klima</span><span data-i18n="sp4b">individuell geregelt · gefilterte Luft</span></li>
+    <li><span data-i18n="sp5a">Licht</span><span data-i18n="sp5b">Tageslichtsimulation · Zirkadian-Steuerung</span></li>
+    <li><span data-i18n="sp6a">Sozialkontakt</span><span data-i18n="sp6b">Sicht-, Hör- &amp; Geruchkontakt</span></li>
+    <li><span data-i18n="sp7a">Einstreu</span><span data-i18n="sp7b">nach Wahl · staubarm</span></li>
    </ul>
   </div>
  </div>
 </section>
 
-<!-- RESIDENZ -->
 <div class="band">
 <section class="reveal">
- <div class="kicker">Die Residenz</div>
- <h2 class="title">Ein Anwesen, <em>keine Anlage.</em></h2>
- <p class="sub">Alles, was ein Sport- und Freizeitpferd der Spitzenklasse braucht, an einem Ort.</p>
+ <div class="kicker"><span data-i18n="re_k">Die Residenz</span></div>
+ <h2 class="title"><span data-i18n="re_t">Ein Anwesen, <em>keine Anlage.</em></span></h2>
+ <p class="sub"><span data-i18n="re_s">Alles, was ein Sport- und Freizeitpferd der Spitzenklasse braucht, an einem Ort.</span></p>
  <div class="grid">
-  <div class="card"><span class="num">I</span><h4>Grand Arena</h4><p>Lichtdurchflutete Reithalle mit Holzdachstuhl, Premium-Sand-Vlies-Belag und Unterbodenbewässerung. Mit Tribüne und Lounge-Blick.</p></div>
-  <div class="card"><span class="num">II</span><h4>Outdoor Arenas</h4><p>Beleuchtete Spring- und Dressurplätze mit Turnierbelag, dazu Roundpen und Longierzirkel.</p></div>
-  <div class="card"><span class="num">III</span><h4>Weiden &amp; Galoppbahn</h4><p>Gepflegte Weiden mit Rotationsmanagement, ein Paddock-Trail und eine Sandbahn für Kondition.</p></div>
-  <div class="card"><span class="num">IV</span><h4>Grooming Salon</h4><p>Beheizte Putz- und Waschplätze mit Warmwasser, Infrarot-Solarium und Turnier-Vorbereitung durch Profis.</p></div>
-  <div class="card"><span class="num">V</span><h4>Private Tack Suites</h4><p>Abschliessbare, klimatisierte Sattelkammern pro Besitzer, mit Lederpflege-Service und Deckenwäscherei.</p></div>
-  <div class="card"><span class="num">VI</span><h4>Owners' Club</h4><p>Lounge mit Kamin und Blick in die Arena, Garderoben mit Duschen, Besprechungsraum und Gästebewirtung.</p></div>
+  <div class="card"><span class="num">I</span><h4 data-i18n="re1_h">Grand Arena</h4><p data-i18n="re1_p">Lichtdurchflutete Reithalle mit Holzdachstuhl, Premium-Sand-Vlies-Belag und Unterbodenbewässerung. Mit Tribüne und Lounge-Blick.</p></div>
+  <div class="card"><span class="num">II</span><h4 data-i18n="re2_h">Outdoor Arenas</h4><p data-i18n="re2_p">Beleuchtete Spring- und Dressurplätze mit Turnierbelag, dazu Roundpen und Longierzirkel.</p></div>
+  <div class="card"><span class="num">III</span><h4 data-i18n="re3_h">Weiden &amp; Galoppbahn</h4><p data-i18n="re3_p">Gepflegte Weiden mit Rotationsmanagement, ein Paddock-Trail und eine Sandbahn für Kondition.</p></div>
+  <div class="card"><span class="num">IV</span><h4 data-i18n="re4_h">Grooming Salon</h4><p data-i18n="re4_p">Beheizte Putz- und Waschplätze mit Warmwasser, Infrarot-Solarium und Turnier-Vorbereitung durch Profis.</p></div>
+  <div class="card"><span class="num">V</span><h4 data-i18n="re5_h">Private Tack Suites</h4><p data-i18n="re5_p">Abschliessbare, klimatisierte Sattelkammern pro Besitzer, mit Lederpflege-Service und Deckenwäscherei.</p></div>
+  <div class="card"><span class="num">VI</span><h4 data-i18n="re6_h">Owners' Club</h4><p data-i18n="re6_p">Lounge mit Kamin und Blick in die Arena, Garderoben mit Duschen, Besprechungsraum und Gästebewirtung.</p></div>
  </div>
 </section>
 </div>
 
-<!-- SPA -->
 <section id="spa" class="reveal">
- <div class="kicker">Equine Spa &amp; Performance</div>
- <h2 class="title">Regeneration <em>auf Spitzenniveau.</em></h2>
- <p class="sub">Was sonst nur Rehabilitationszentren und Rennställe bieten, gibt es hier im eigenen Haus.</p>
- <div class="spa-photo"><img src="spa.png" alt="Equine Spa der Maison EquiMind mit Wasserlaufband und Blick ins Grüne" loading="lazy"><div class="suite-tag">Equine Spa · Aqua Treadmill</div></div>
+ <div class="kicker"><span data-i18n="spa_k">Equine Spa &amp; Performance</span></div>
+ <h2 class="title"><span data-i18n="spa_t">Regeneration <em>auf Spitzenniveau.</em></span></h2>
+ <p class="sub"><span data-i18n="spa_s">Was sonst nur Rehabilitationszentren und Rennställe bieten, gibt es hier im eigenen Haus.</span></p>
+ <div class="spa-photo"><img src="spa.png" alt="Equine Spa – Maison EquiMind" loading="lazy"><div class="suite-tag">Equine Spa · Aqua Treadmill</div></div>
  <div class="grid">
-  <div class="card"><span class="ic">🌊</span><h4>Aqua Treadmill</h4><p>Wasserlaufband mit einstellbarer Wassertiefe, Steigung und Geschwindigkeit. Für gelenkschonendes Konditionstraining und Rehabilitation.</p></div>
-  <div class="card"><span class="ic">❄️</span><h4>Cold Saltwater Spa</h4><p>Gekühltes, belüftetes Salzwasser für die Beine. Unterstützt die Regeneration nach dem Training und hilft bei Schwellungen.</p></div>
-  <div class="card"><span class="ic">🧊</span><h4>Lokale Kryotherapie</h4><p>Gezielte Kälteanwendung bei Entzündungen und Überlastung, auf tierärztliche Verordnung.</p></div>
-  <div class="card"><span class="ic">🔆</span><h4>Infrarot &amp; Vibrationsplatte</h4><p>Wärme und sanfte Vibration für Muskulatur, Durchblutung und Entspannung.</p></div>
-  <div class="card"><span class="ic">🧂</span><h4>Salz-Inhalationsraum</h4><p>Für Pferde mit empfindlichen Atemwegen, in Absprache mit dem Tierarzt.</p></div>
-  <div class="card"><span class="ic">🏃</span><h4>Laufband &amp; Führanlage</h4><p>Kontrolliertes Training bei jedem Wetter, mit Herzfrequenz- und Gangbildanalyse.</p></div>
+  <div class="card"><span class="ic">🌊</span><h4 data-i18n="spa1_h">Aqua Treadmill</h4><p data-i18n="spa1_p">Wasserlaufband mit einstellbarer Wassertiefe, Steigung und Geschwindigkeit. Für gelenkschonendes Konditionstraining und Rehabilitation.</p></div>
+  <div class="card"><span class="ic">❄️</span><h4 data-i18n="spa2_h">Cold Saltwater Spa</h4><p data-i18n="spa2_p">Gekühltes, belüftetes Salzwasser für die Beine. Unterstützt die Regeneration nach dem Training und hilft bei Schwellungen.</p></div>
+  <div class="card"><span class="ic">🧊</span><h4 data-i18n="spa3_h">Lokale Kryotherapie</h4><p data-i18n="spa3_p">Gezielte Kälteanwendung bei Entzündungen und Überlastung, auf tierärztliche Verordnung.</p></div>
+  <div class="card"><span class="ic">🔆</span><h4 data-i18n="spa4_h">Infrarot &amp; Vibrationsplatte</h4><p data-i18n="spa4_p">Wärme und sanfte Vibration für Muskulatur, Durchblutung und Entspannung.</p></div>
+  <div class="card"><span class="ic">🧂</span><h4 data-i18n="spa5_h">Salz-Inhalationsraum</h4><p data-i18n="spa5_p">Für Pferde mit empfindlichen Atemwegen, in Absprache mit dem Tierarzt.</p></div>
+  <div class="card"><span class="ic">🏃</span><h4 data-i18n="spa6_h">Laufband &amp; Führanlage</h4><p data-i18n="spa6_p">Kontrolliertes Training bei jedem Wetter, mit Herzfrequenz- und Gangbildanalyse.</p></div>
  </div>
 </section>
 
-<!-- INTELLIGENCE -->
 <div class="band">
 <section id="intelligence" class="reveal">
  <div class="kicker">EquiMind Intelligence</div>
- <h2 class="title">Eine Intelligenz, <em>die nie schläft.</em></h2>
- <p class="sub">Jede Suite ist mit Kamera, Futterwaage, smarter Tränke und Klimasensoren ausgestattet. Eine KI lernt das individuelle Normalverhalten Ihres Pferdes und meldet sich, sobald sich etwas verändert.</p>
-
+ <h2 class="title"><span data-i18n="in_t">Eine Intelligenz, <em>die nie schläft.</em></span></h2>
+ <p class="sub"><span data-i18n="in_s">Jede Suite ist mit Kamera, Futterwaage, smarter Tränke und Klimasensoren ausgestattet. Eine KI lernt das individuelle Normalverhalten Ihres Pferdes und meldet sich, sobald sich etwas verändert.</span></p>
  <div class="dash">
   <div class="dash-head"><span class="who">„Belle Étoile" · Suite Nº 07</span><span class="live">Live</span></div>
   <div class="dash-body">
-   <div class="cam"><div class="scan"></div><div class="bbox"><span>frisst · ruhig</span></div><div class="h">🐴</div><div class="lbl">Suite-Kamera · Verhaltensanalyse aktiv</div></div>
+   <div class="cam"><div class="scan"></div><div class="bbox"><span data-i18n="bbox">frisst · ruhig</span></div><div class="h">🐴</div><div class="lbl"><span data-i18n="lbl">Suite-Kamera · Verhaltensanalyse aktiv</span></div></div>
    <div class="kpis">
-    <div class="kpi"><small>Raufutter heute</small><b>7.1 kg</b><em>● im persönlichen Normbereich</em></div>
-    <div class="kpi"><small>Wasser heute</small><b>24 l</b><em>● normal</em></div>
-    <div class="kpi"><small>Liegezeit</small><b>2 h 55</b><em>● erholsam</em></div>
-    <div class="kpi"><small>Gewicht</small><b>562 kg</b><em>● stabil · 30 Tage</em></div>
-    <div class="kpi"><small>Körpertemperatur</small><b>37.6 °C</b><em>● Wärmebild-Scan</em></div>
-    <div class="kpi"><small>Stallklima</small><b>14 °C</b><em>● Luftqualität sehr gut</em></div>
+    <div class="kpi"><small data-i18n="k1s">Raufutter heute</small><b>7.1 kg</b><em data-i18n="k1e">● im persönlichen Normbereich</em></div>
+    <div class="kpi"><small data-i18n="k2s">Wasser heute</small><b>24 l</b><em data-i18n="k2e">● normal</em></div>
+    <div class="kpi"><small data-i18n="k3s">Liegezeit</small><b>2 h 55</b><em data-i18n="k3e">● erholsam</em></div>
+    <div class="kpi"><small data-i18n="k4s">Gewicht</small><b>562 kg</b><em data-i18n="k4e">● stabil · 30 Tage</em></div>
+    <div class="kpi"><small data-i18n="k5s">Körpertemperatur</small><b>37.6 °C</b><em data-i18n="k5e">● Wärmebild-Scan</em></div>
+    <div class="kpi"><small data-i18n="k6s">Stallklima</small><b>14 °C</b><em data-i18n="k6e">● Luftqualität sehr gut</em></div>
    </div>
   </div>
-  <div class="dash-note">Beispielhafte Darstellung der EquiMind Owner App</div>
+  <div class="dash-note"><span data-i18n="dnote">Beispielhafte Darstellung der EquiMind Owner App</span></div>
  </div>
-
  <div class="grid" style="margin-top:70px">
-  <div class="card"><span class="ic">📷</span><h4>Verhaltens-KI</h4><p>Frühwarnung bei Anzeichen von Kolik, Festliegen oder Unruhe. Die Meldung geht sofort an den diensthabenden Groom und, wenn Sie es wünschen, auch an Sie.</p></div>
-  <div class="card"><span class="ic">⚖️</span><h4>Futterwaage &amp; Fressanalyse</h4><p>Misst, wie viel Raufutter tatsächlich gefressen wird. Erkennt Fressunlust lange bevor man sie sieht.</p></div>
-  <div class="card"><span class="ic">🌡️</span><h4>Wärmebild-Check</h4><p>Kontaktlose Temperaturmessung im Stallgang als täglicher Gesundheitscheck.</p></div>
-  <div class="card"><span class="ic">⚖️</span><h4>Walk-over-Waage</h4><p>Ihr Pferd wird beim Gang zum Paddock automatisch gewogen. So entsteht ein lückenloser Gewichtsverlauf.</p></div>
-  <div class="card"><span class="ic">🧬</span><h4>Digital Health Passport</h4><p>Impfungen, Hufschmied, Tierarzt, Fütterung und Training in einem verschlüsselten Dossier, das Sie gezielt mit Tierarzt oder Trainer teilen.</p></div>
-  <div class="card"><span class="ic">📈</span><h4>Performance Tracking</h4><p>Sensoren am Sattelgurt erfassen Takt, Symmetrie, Belastung und Herzfrequenz. Ihr Trainer sieht den Fortschritt in Echtzeit.</p></div>
-  <div class="card"><span class="ic">🔖</span><h4>RFID-Präzisionsfütterung</h4><p>Kraftfutter und Supplemente werden individuell dosiert, erfasst und dokumentiert.</p></div>
-  <div class="card"><span class="ic">🤰</span><h4>Foaling Watch</h4><p>KI-gestützte Abfohlüberwachung mit automatischem Alarm an Team und Tierarzt.</p></div>
-  <div class="card"><span class="ic">🔐</span><h4>Security by Design</h4><p>Biometrischer Zutritt, Brandfrüherkennung und verschlüsselte Videodaten. Betrieben nach den Standards eines professionellen Security Operations Center.</p></div>
+  <div class="card"><span class="ic">📷</span><h4 data-i18n="i1_h">Verhaltens-KI</h4><p data-i18n="i1_p">Frühwarnung bei Anzeichen von Kolik, Festliegen oder Unruhe. Die Meldung geht sofort an den diensthabenden Groom und, wenn Sie es wünschen, auch an Sie.</p></div>
+  <div class="card"><span class="ic">⚖️</span><h4 data-i18n="i2_h">Futterwaage &amp; Fressanalyse</h4><p data-i18n="i2_p">Misst, wie viel Raufutter tatsächlich gefressen wird. Erkennt Fressunlust lange bevor man sie sieht.</p></div>
+  <div class="card"><span class="ic">🌡️</span><h4 data-i18n="i3_h">Wärmebild-Check</h4><p data-i18n="i3_p">Kontaktlose Temperaturmessung im Stallgang als täglicher Gesundheitscheck.</p></div>
+  <div class="card"><span class="ic">⚖️</span><h4 data-i18n="i4_h">Walk-over-Waage</h4><p data-i18n="i4_p">Ihr Pferd wird beim Gang zum Paddock automatisch gewogen. So entsteht ein lückenloser Gewichtsverlauf.</p></div>
+  <div class="card"><span class="ic">🧬</span><h4 data-i18n="i5_h">Digital Health Passport</h4><p data-i18n="i5_p">Impfungen, Hufschmied, Tierarzt, Fütterung und Training in einem verschlüsselten Dossier, das Sie gezielt mit Tierarzt oder Trainer teilen.</p></div>
+  <div class="card"><span class="ic">📈</span><h4 data-i18n="i6_h">Performance Tracking</h4><p data-i18n="i6_p">Sensoren am Sattelgurt erfassen Takt, Symmetrie, Belastung und Herzfrequenz. Ihr Trainer sieht den Fortschritt in Echtzeit.</p></div>
+  <div class="card"><span class="ic">🔖</span><h4 data-i18n="i7_h">RFID-Präzisionsfütterung</h4><p data-i18n="i7_p">Kraftfutter und Supplemente werden individuell dosiert, erfasst und dokumentiert.</p></div>
+  <div class="card"><span class="ic">🤰</span><h4 data-i18n="i8_h">Foaling Watch</h4><p data-i18n="i8_p">KI-gestützte Abfohlüberwachung mit automatischem Alarm an Team und Tierarzt.</p></div>
+  <div class="card"><span class="ic">🔐</span><h4 data-i18n="i9_h">Security by Design</h4><p data-i18n="i9_p">Biometrischer Zutritt, Brandfrüherkennung und verschlüsselte Videodaten. Betrieben nach den Standards eines professionellen Security Operations Center.</p></div>
  </div>
 </section>
 </div>
 
-<!-- CONCIERGE -->
 <section id="concierge" class="reveal">
  <div class="kicker">Concierge</div>
- <h2 class="title">Sie wünschen. <em>Wir ermöglichen.</em></h2>
- <p class="sub">Ein persönlicher Ansprechpartner für alles rund um Ihr Pferd. Diskret, verlässlich, rund um die Uhr erreichbar.</p>
+ <h2 class="title"><span data-i18n="co_t">Sie wünschen. <em>Wir ermöglichen.</em></span></h2>
+ <p class="sub"><span data-i18n="co_s">Ein persönlicher Ansprechpartner für alles rund um Ihr Pferd. Diskret, verlässlich, rund um die Uhr erreichbar.</span></p>
  <div class="grid">
-  <div class="card"><span class="num">01</span><h4>Persönlicher Groom</h4><p>Ein fester Groom, der Ihr Pferd kennt. Kleine Betreuungsgruppen statt Fliessband.</p></div>
-  <div class="card"><span class="num">02</span><h4>Nutrition Design</h4><p>Individueller Futterplan auf Basis von Heu-Analyse, Gewichtsverlauf und Trainingslast.</p></div>
-  <div class="card"><span class="num">03</span><h4>Medical Network</h4><p>Koordination von Tierarzt, Hufschmied, Osteopath, Physiotherapie und Zahnarzt, inklusive Begleitung bei Terminen.</p></div>
-  <div class="card"><span class="num">04</span><h4>Beritt &amp; Training</h4><p>Bewegung, Beritt und Unterricht durch qualifizierte Ausbilder, auf Wunsch auch mit Ihrem eigenen Trainer.</p></div>
-  <div class="card"><span class="num">05</span><h4>Show Service</h4><p>Turniervorbereitung, Transport im klimatisierten Pferdetransporter, Grooming vor Ort.</p></div>
-  <div class="card"><span class="num">06</span><h4>Absence Care</h4><p>Sie sind auf Reisen, Ihr Pferd bleibt in Bewegung. Und Sie sehen es jeden Tag live in der App.</p></div>
+  <div class="card"><span class="num">01</span><h4 data-i18n="c1_h">Persönlicher Groom</h4><p data-i18n="c1_p">Ein fester Groom, der Ihr Pferd kennt. Kleine Betreuungsgruppen statt Fliessband.</p></div>
+  <div class="card"><span class="num">02</span><h4 data-i18n="c2_h">Nutrition Design</h4><p data-i18n="c2_p">Individueller Futterplan auf Basis von Heu-Analyse, Gewichtsverlauf und Trainingslast.</p></div>
+  <div class="card"><span class="num">03</span><h4 data-i18n="c3_h">Medical Network</h4><p data-i18n="c3_p">Koordination von Tierarzt, Hufschmied, Osteopath, Physiotherapie und Zahnarzt, inklusive Begleitung bei Terminen.</p></div>
+  <div class="card"><span class="num">04</span><h4 data-i18n="c4_h">Beritt &amp; Training</h4><p data-i18n="c4_p">Bewegung, Beritt und Unterricht durch qualifizierte Ausbilder, auf Wunsch auch mit Ihrem eigenen Trainer.</p></div>
+  <div class="card"><span class="num">05</span><h4 data-i18n="c5_h">Show Service</h4><p data-i18n="c5_p">Turniervorbereitung, Transport im klimatisierten Pferdetransporter, Grooming vor Ort.</p></div>
+  <div class="card"><span class="num">06</span><h4 data-i18n="c6_h">Absence Care</h4><p data-i18n="c6_p">Sie sind auf Reisen, Ihr Pferd bleibt in Bewegung. Und Sie sehen es jeden Tag live in der App.</p></div>
  </div>
 </section>
 
 <div class="band">
 <section class="reveal">
- <div class="quote"><p>„Luxus ist nicht, was glänzt.<br>Luxus ist, dass nichts übersehen wird."</p></div>
+ <div class="quote"><p><span data-i18n="quote">„Luxus ist nicht, was glänzt.<br>Luxus ist, dass nichts übersehen wird."</span></p></div>
 </section>
 </div>
 
-<!-- MEMBERSHIP -->
 <section id="membership" class="reveal">
  <div class="kicker">Membership</div>
- <h2 class="title">Drei Wege, <em>Teil der Maison</em> zu werden.</h2>
- <p class="sub">Pension ab CHF 2'000 pro Pferd und Monat. Das individuelle Angebot stellen wir nach einem persönlichen Gespräch zusammen. Die Plätze sind limitiert.</p>
+ <h2 class="title"><span data-i18n="me_t">Drei Wege, <em>Teil der Maison</em> zu werden.</span></h2>
+ <p class="sub"><span data-i18n="me_s">Pension ab CHF 2'000 pro Pferd und Monat. Das individuelle Angebot stellen wir nach einem persönlichen Gespräch zusammen. Die Plätze sind limitiert.</span></p>
  <div class="tiers">
-  <div class="tier"><h4>Residence</h4><div class="price">ab CHF 2'000 / Monat</div><ul><li>Private Suite mit Paddock</li><li>Vollpension &amp; Nutrition Design</li><li>EquiMind Intelligence 24/7</li><li>Owner App mit Livestream</li><li>Zugang zu allen Arenen</li></ul></div>
-  <div class="tier signature"><span class="ribbon">Signature</span><h4>Signature</h4><div class="price">auf Anfrage</div><ul><li>Alles aus Residence</li><li>Signature Suite</li><li>Persönlicher Groom</li><li>Equine Spa inklusive</li><li>Private Tack Suite</li></ul></div>
-  <div class="tier"><h4>Champion</h4><div class="price">auf Anfrage</div><ul><li>Alles aus Signature</li><li>Beritt &amp; Performance Tracking</li><li>Show Service &amp; Transport</li><li>Medical Network Begleitung</li><li>24/7 Concierge-Linie</li></ul></div>
+  <div class="tier"><h4>Residence</h4><div class="price"><span data-i18n="p1">ab CHF 2'000 / Monat</span></div><ul><li data-i18n="m1a">Private Suite mit Paddock</li><li data-i18n="m1b">Vollpension &amp; Nutrition Design</li><li data-i18n="m1c">EquiMind Intelligence 24/7</li><li data-i18n="m1d">Owner App mit Livestream</li><li data-i18n="m1e">Zugang zu allen Arenen</li></ul></div>
+  <div class="tier signature"><span class="ribbon">Signature</span><h4>Signature</h4><div class="price"><span data-i18n="p2">auf Anfrage</span></div><ul><li data-i18n="m2a">Alles aus Residence</li><li data-i18n="m2b">Signature Suite</li><li data-i18n="m2c">Persönlicher Groom</li><li data-i18n="m2d">Equine Spa inklusive</li><li data-i18n="m2e">Private Tack Suite</li></ul></div>
+  <div class="tier"><h4>Champion</h4><div class="price"><span data-i18n="p3">auf Anfrage</span></div><ul><li data-i18n="m3a">Alles aus Signature</li><li data-i18n="m3b">Beritt &amp; Performance Tracking</li><li data-i18n="m3c">Show Service &amp; Transport</li><li data-i18n="m3d">Medical Network Begleitung</li><li data-i18n="m3e">24/7 Concierge-Linie</li></ul></div>
  </div>
 </section>
 
-<!-- FAQ -->
 <div class="band">
 <section class="reveal">
- <div class="kicker">Fragen</div>
- <h2 class="title">Gut zu <em>wissen.</em></h2>
+ <div class="kicker"><span data-i18n="fq_k">Fragen</span></div>
+ <h2 class="title"><span data-i18n="fq_t">Gut zu <em>wissen.</em></span></h2>
  <p class="sub">&nbsp;</p>
- <details><summary>Wo befindet sich die Maison EquiMind?</summary><p>Im Bezirk Olten im Kanton Solothurn. Die Lage ist zentral, mit kurzen Wegen nach Basel, Bern, Zürich und Luzern. Die genaue Adresse teilen wir nach der Anmeldung zu einem Private Viewing mit.</p></details>
- <details><summary>Wie werden Plätze vergeben?</summary><p>Die Zahl der Suites ist bewusst limitiert. Nach einem persönlichen Gespräch und einer Besichtigung erstellen wir Ihnen ein individuelles Angebot.</p></details>
- <details><summary>Ersetzt die KI das Personal?</summary><p>Nein. Die Technik ist ein zusätzliches Paar Augen. Die Pflege leistet ein erfahrenes Team, und die KI sorgt dafür, dass ihm nichts entgeht.</p></details>
- <details><summary>Wer sieht die Daten und den Livestream meines Pferdes?</summary><p>Nur Sie und die Personen, die Sie freigeben. Alle Daten werden verschlüsselt und nach Schweizer Datenschutzrecht behandelt.</p></details>
- <details><summary>Kann mein eigener Trainer oder Tierarzt kommen?</summary><p>Selbstverständlich. Wir koordinieren gerne mit Ihrem bestehenden Team.</p></details>
+ <details><summary data-i18n="q1q">Wo befindet sich die Maison EquiMind?</summary><p data-i18n="q1a">Auf Colin's Bauernhof im Bezirk Olten, Kanton Solothurn. Die Lage ist zentral, mit kurzen Wegen nach Basel, Bern, Zürich und Luzern. Die genaue Adresse teilen wir nach der Anmeldung zu einem Private Viewing mit.</p></details>
+ <details><summary data-i18n="q2q">Wie werden Plätze vergeben?</summary><p data-i18n="q2a">Die Zahl der Suites ist bewusst limitiert. Nach einem persönlichen Gespräch und einer Besichtigung erstellen wir Ihnen ein individuelles Angebot.</p></details>
+ <details><summary data-i18n="q3q">Ersetzt die KI das Personal?</summary><p data-i18n="q3a">Nein. Die Technik ist ein zusätzliches Paar Augen. Die Pflege leistet ein erfahrenes Team, und die KI sorgt dafür, dass ihm nichts entgeht.</p></details>
+ <details><summary data-i18n="q4q">Wer sieht die Daten und den Livestream meines Pferdes?</summary><p data-i18n="q4a">Nur Sie und die Personen, die Sie freigeben. Alle Daten werden verschlüsselt und nach Schweizer Datenschutzrecht behandelt.</p></details>
+ <details><summary data-i18n="q5q">Kann mein eigener Trainer oder Tierarzt kommen?</summary><p data-i18n="q5a">Selbstverständlich. Wir koordinieren gerne mit Ihrem bestehenden Team.</p></details>
 </section>
 </div>
 
-<!-- PRIVATE VIEWING -->
 <section id="private" class="reveal">
  <div class="kicker">Private Viewing</div>
- <h2 class="title">Lernen Sie die <em>Maison</em> kennen.</h2>
- <p class="sub">Besichtigungen finden ausschliesslich nach persönlicher Vereinbarung statt.</p>
+ <h2 class="title"><span data-i18n="pv_t">Lernen Sie die <em>Maison</em> kennen.</span></h2>
+ <p class="sub"><span data-i18n="pv_s">Besichtigungen finden ausschliesslich nach persönlicher Vereinbarung statt.</span></p>
  <form class="private" onsubmit="sendForm(event)">
   <div class="row">
-   <div><label for="n">Name</label><input id="n" required></div>
-   <div><label for="e">E-Mail</label><input id="e" type="email" required></div>
+   <div><label for="n"><span data-i18n="l_n">Name</span></label><input id="n" required></div>
+   <div><label for="e"><span data-i18n="l_e">E-Mail</span></label><input id="e" type="email" required></div>
   </div>
   <div class="row">
-   <div><label for="t">Telefon</label><input id="t" type="tel"></div>
-   <div><label for="m">Membership</label><select id="m"><option>Residence</option><option>Signature</option><option>Champion</option><option>Noch offen</option></select></div>
+   <div><label for="tel"><span data-i18n="l_t">Telefon</span></label><input id="tel" type="tel"></div>
+   <div><label for="m">Membership</label><select id="m"><option>Residence</option><option>Signature</option><option>Champion</option><option data-i18n="o_open">Noch offen</option></select></div>
   </div>
   <div class="row">
-   <div><label for="h">Name des Pferdes</label><input id="h"></div>
-   <div><label for="d">Disziplin</label><select id="d"><option>Dressur</option><option>Springen</option><option>Vielseitigkeit</option><option>Freizeit</option><option>Zucht</option><option>Andere</option></select></div>
+   <div><label for="h"><span data-i18n="l_h">Name des Pferdes</span></label><input id="h"></div>
+   <div><label for="d"><span data-i18n="l_d">Disziplin</span></label><select id="d"><option data-i18n="o1">Dressur</option><option data-i18n="o2">Springen</option><option data-i18n="o3">Vielseitigkeit</option><option data-i18n="o4">Freizeit</option><option data-i18n="o5">Zucht</option><option data-i18n="o6">Andere</option></select></div>
   </div>
-  <label for="x">Ihre Nachricht</label><textarea id="x"></textarea>
-  <button class="btn btn-gold" style="width:100%;margin:36px 0 0" type="submit">Private Viewing anfragen</button>
-  <p class="discreet">Ihre Anfrage wird vertraulich behandelt.</p>
+  <label for="x"><span data-i18n="l_x">Ihre Nachricht</span></label><textarea id="x"></textarea>
+  <button class="btn btn-gold" style="width:100%;margin:36px 0 0" type="submit"><span data-i18n="send">Private Viewing anfragen</span></button>
+  <p class="discreet"><span data-i18n="disc">Ihre Anfrage wird vertraulich behandelt.</span></p>
  </form>
 </section>
 
 <footer>
  <div class="foot">
-  <div><span class="logo-name">Maison EquiMind</span><span class="logo-sub">by Tomaholic</span><p style="margin-top:18px;max-width:360px">Private Equine Residence im Bezirk Olten, Kanton Solothurn, Schweiz.</p></div>
+  <div><span class="logo-name">Maison EquiMind</span><span class="logo-sub">by Tomaholic</span><p style="margin-top:18px;max-width:360px"><span data-i18n="ft">Private Equine Residence auf Colin's Bauernhof, Bezirk Olten, Kanton Solothurn, Schweiz.</span></p></div>
   <div><h5>Maison</h5><a href="#suites">Suites</a><a href="#spa">Equine Spa</a><a href="#intelligence">Intelligence</a><a href="#concierge">Concierge</a></div>
-  <div><h5>Kontakt</h5><a href="mailto:hello@tomaholic.ch">hello@tomaholic.ch</a><a href="#private">Private Viewing</a></div>
+  <div><h5><span data-i18n="ft_c">Kontakt &amp; Rechtliches</span></h5><a href="mailto:hello@tomaholic.ch">hello@tomaholic.ch</a><a href="#private">Private Viewing</a>
+   <button class="linkbtn" onclick="openModal('imprint')"><span data-i18n="ft_i">Impressum</span></button>
+   <button class="linkbtn" onclick="openModal('privacy')"><span data-i18n="ft_p">Datenschutz</span></button>
+   <button class="linkbtn" onclick="showCookie()"><span data-i18n="ft_ck">Cookie-Einstellungen</span></button></div>
  </div>
- <p style="text-align:center;font-size:11.5px;margin-bottom:22px">* Zielwert für die Betreuungsrelation im Signature- und Champion-Membership.</p>
+ <p style="text-align:center;font-size:11.5px;margin-bottom:22px"><span data-i18n="star">* Zielwert für die Betreuungsrelation im Signature- und Champion-Membership.</span></p>
  <div class="copy">© 2026 Tomaholic · Maison EquiMind</div>
 </footer>
 
+<!-- IMPRESSUM -->
+<div class="modal" id="imprint" onclick="if(event.target===this)closeModal(this.id)">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('imprint')" aria-label="Close">×</button>
+  <h2><span data-i18n="im_h">Impressum</span></h2>
+  <h3><span data-i18n="im_1">Betreiberin der Website</span></h3>
+  <p>Tomaholic<br>Thomas Reichmuth<br><span class="todo">[<span data-i18n="im_adr">Strasse, Nr., PLZ Ort – bitte ergänzen</span>]</span><br><span data-i18n="im_ch">Schweiz</span></p>
+  <h3><span data-i18n="im_2">Standort der Residenz</span></h3>
+  <p>Colin's Bauernhof<br><span data-i18n="im_loc">Bezirk Olten, Kanton Solothurn</span></p>
+  <h3><span data-i18n="im_3">Kontakt</span></h3>
+  <p>E-Mail: hello@tomaholic.ch</p>
+  <h3><span data-i18n="im_4">Handelsregister / UID</span></h3>
+  <p class="todo">[<span data-i18n="im_uid">UID-Nummer, falls im Handelsregister eingetragen – bitte ergänzen oder diesen Abschnitt entfernen</span>]</p>
+  <h3><span data-i18n="im_5">Haftungsausschluss</span></h3>
+  <p><span data-i18n="im_5p">Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr. Darstellungen der Anlage und der App sind teilweise Visualisierungen und können vom tatsächlichen Angebot abweichen. Für Inhalte verlinkter externer Seiten sind ausschliesslich deren Betreiber verantwortlich.</span></p>
+  <h3><span data-i18n="im_6">Urheberrechte</span></h3>
+  <p><span data-i18n="im_6p">Texte, Bilder und Grafiken dieser Website gehören Tomaholic oder den jeweiligen Rechteinhabern. Eine Verwendung bedarf der vorherigen schriftlichen Zustimmung.</span></p>
+ </div>
+</div>
+
+<!-- DATENSCHUTZ -->
+<div class="modal" id="privacy" onclick="if(event.target===this)closeModal(this.id)">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close">×</button>
+  <h2><span data-i18n="pr_h">Datenschutzerklärung</span></h2>
+  <p><span data-i18n="pr_0">Diese Datenschutzerklärung informiert darüber, welche Personendaten wir beim Besuch dieser Website bearbeiten. Massgebend ist das Schweizer Datenschutzgesetz (DSG).</span></p>
+  <h3><span data-i18n="pr_1">Verantwortliche Stelle</span></h3>
+  <p>Tomaholic, Thomas Reichmuth, <span class="todo">[<span data-i18n="pr_adr">Adresse ergänzen</span>]</span>, hello@tomaholic.ch</p>
+  <h3><span data-i18n="pr_2">Hosting</span></h3>
+  <p><span data-i18n="pr_2p">Die Website wird über Microsoft Azure Static Web Apps bereitgestellt. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Daten wie IP-Adresse, Datum, Uhrzeit und Browser-Informationen.</span></p>
+  <h3><span data-i18n="pr_3">Schriftarten</span></h3>
+  <p><span data-i18n="pr_3p">Für die Darstellung werden Schriftarten von Google Fonts (Google LLC) geladen. Dabei wird Ihre IP-Adresse an Google übermittelt.</span></p>
+  <h3><span data-i18n="pr_4">Webanalyse mit Microsoft Clarity</span></h3>
+  <p><span data-i18n="pr_4p">Nur wenn Sie im Cookie-Hinweis einwilligen, setzen wir Microsoft Clarity (Microsoft Corporation) ein. Clarity erfasst Nutzungsdaten wie Klicks, Scrollverhalten und Sitzungsaufzeichnungen, um die Website zu verbessern. Dabei können Daten in die USA übermittelt werden. Sie können Ihre Einwilligung jederzeit über „Cookie-Einstellungen" im Footer widerrufen.</span></p>
+  <h3><span data-i18n="pr_5">Kontaktaufnahme</span></h3>
+  <p><span data-i18n="pr_5p">Das Anfrageformular öffnet Ihr E-Mail-Programm. Die Angaben werden erst übermittelt, wenn Sie die E-Mail selbst absenden. Wir verwenden sie ausschliesslich zur Bearbeitung Ihrer Anfrage.</span></p>
+  <h3><span data-i18n="pr_6">Ihre Rechte</span></h3>
+  <p><span data-i18n="pr_6p">Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten sowie das Recht, der Bearbeitung zu widersprechen. Wenden Sie sich dazu an hello@tomaholic.ch.</span></p>
+  <p style="margin-top:24px;font-size:13px"><span data-i18n="pr_d">Stand: Oktober 2026</span></p>
+ </div>
+</div>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie">
+ <p><span data-i18n="ck_p">Wir möchten mit Microsoft Clarity anonym verstehen, wie unsere Website genutzt wird. Dürfen wir dafür Cookies setzen?</span> <button class="linkbtn" style="display:inline;color:var(--gold2)" onclick="openModal('privacy')"><span data-i18n="ck_more">Mehr erfahren</span></button></p>
+ <div class="row2"><button class="ok" onclick="consent(true)"><span data-i18n="ck_ok">Akzeptieren</span></button><button class="no" onclick="consent(false)"><span data-i18n="ck_no">Ablehnen</span></button></div>
+</div>
+
 <script>
+const I18N = {"nav_suites": ["Suites", "Suites"], "nav_spa": ["Equine Spa", "Equine Spa"], "nav_int": ["Intelligence", "Intelligence"], "nav_con": ["Concierge", "Concierge"], "nav_mem": ["Membership", "Membership"], "nav_cta": ["Private Viewing", "Private Viewing"], "over": ["Colin's Bauernhof · Bezirk Olten · Schweiz", "Colin's Bauernhof · District of Olten · Switzerland"], "h1": ["Wo aussergewöhnliche<br>Pferde <em>zu Hause</em> sind.", "Where exceptional<br>horses are <em>at home</em>."], "lead": ["Eine Private Equine Residence für rund 50 Pferde. Handwerk, Architektur und künstliche Intelligenz im Dienst eines einzigen Anspruchs: das Beste für Ihr Pferd. Jeden Tag, rund um die Uhr.", "A private equine residence for around 50 horses. Craftsmanship, architecture and artificial intelligence serving one single ambition: the very best for your horse. Every day, around the clock."], "cta1": ["Private Viewing vereinbaren", "Arrange a private viewing"], "cta2": ["Die Residenz entdecken", "Discover the residence"], "scroll": ["Entdecken", "Discover"], "manif": ["Ein Champion verdient mehr als eine Box.<br>Er verdient eine <em>Residenz</em>, ein Team, das ihn kennt, und eine Intelligenz, die nie schläft.", "A champion deserves more than a stall.<br>He deserves a <em>residence</em>, a team that knows him, and an intelligence that never sleeps."], "f1": ["Private Suites", "Private suites"], "f2": ["KI-Gesundheitsmonitoring", "AI health monitoring"], "f3": ["Groom-Betreuung*", "Groom ratio*"], "f4v": ["ab 2'000", "from 2,000"], "f4": ["CHF pro Monat", "CHF per month"], "su_k": ["Die Suites", "The Suites"], "su_t": ["Nicht eine Box. <em>Eine Suite.</em>", "Not a stall. <em>A suite.</em>"], "su_s": ["Jede Suite ist ein Rückzugsort mit eigenem Paddock, eigener Kamera und eigenem Klima. Gebaut für das Wohlbefinden des Pferdes und mit einer Ästhetik, die man spürt.", "Every suite is a retreat with its own paddock, its own camera and its own climate. Built for the wellbeing of the horse, with an aesthetic you can feel."], "chip1": ["Verhalten · normal", "Behaviour · normal"], "chip2": ["Heu heute · 7.1 kg", "Hay today · 7.1 kg"], "su_h": ["Raum, Licht &amp; Ruhe", "Space, light &amp; calm"], "su_p": ["Massive Eichenfronten, geschmiedete Messingbeschläge, Gewölbedecken mit Oberlichtern und warmes, dimmbares Licht. Unter den Hufen liegen gepolsterte Gummimatten über einer beheizten Bodenplatte. Durch die Stalltür sieht man direkt in den privaten Paddock.", "Solid oak fronts, forged brass fittings, vaulted ceilings with skylights and warm, dimmable light. Beneath the hooves: cushioned rubber mats over a heated floor slab. The stable door opens directly onto the private paddock."], "sp1a": ["Suite-Fläche", "Suite size"], "sp1b": ["deutlich über TSchV-Mindestmass", "well above Swiss legal minimum"], "sp2a": ["Privater Paddock", "Private paddock"], "sp2b": ["teilüberdacht, direkt angeschlossen", "partly covered, directly attached"], "sp3a": ["Boden", "Floor"], "sp3b": ["beheizt · gepolstert · rutschfest", "heated · cushioned · non-slip"], "sp4a": ["Klima", "Climate"], "sp4b": ["individuell geregelt · gefilterte Luft", "individually controlled · filtered air"], "sp5a": ["Licht", "Light"], "sp5b": ["Tageslichtsimulation · Zirkadian-Steuerung", "daylight simulation · circadian control"], "sp6a": ["Sozialkontakt", "Social contact"], "sp6b": ["Sicht-, Hör- &amp; Geruchkontakt", "sight, sound &amp; scent contact"], "sp7a": ["Einstreu", "Bedding"], "sp7b": ["nach Wahl · staubarm", "of your choice · low-dust"], "re_k": ["Die Residenz", "The Residence"], "re_t": ["Ein Anwesen, <em>keine Anlage.</em>", "An estate, <em>not a facility.</em>"], "re_s": ["Alles, was ein Sport- und Freizeitpferd der Spitzenklasse braucht, an einem Ort.", "Everything a top-class sport or leisure horse needs, in one place."], "re1_h": ["Grand Arena", "Grand Arena"], "re1_p": ["Lichtdurchflutete Reithalle mit Holzdachstuhl, Premium-Sand-Vlies-Belag und Unterbodenbewässerung. Mit Tribüne und Lounge-Blick.", "Light-flooded indoor arena with timber roof, premium sand-fibre footing and sub-irrigation. With stand and lounge view."], "re2_h": ["Outdoor Arenas", "Outdoor Arenas"], "re2_p": ["Beleuchtete Spring- und Dressurplätze mit Turnierbelag, dazu Roundpen und Longierzirkel.", "Floodlit jumping and dressage arenas with competition footing, plus round pen and lunging ring."], "re3_h": ["Weiden &amp; Galoppbahn", "Pastures &amp; Gallop Track"], "re3_p": ["Gepflegte Weiden mit Rotationsmanagement, ein Paddock-Trail und eine Sandbahn für Kondition.", "Well-kept pastures with rotational management, a paddock trail and a sand track for conditioning."], "re4_h": ["Grooming Salon", "Grooming Salon"], "re4_p": ["Beheizte Putz- und Waschplätze mit Warmwasser, Infrarot-Solarium und Turnier-Vorbereitung durch Profis.", "Heated grooming and wash bays with hot water, infrared solarium and professional show preparation."], "re5_h": ["Private Tack Suites", "Private Tack Suites"], "re5_p": ["Abschliessbare, klimatisierte Sattelkammern pro Besitzer, mit Lederpflege-Service und Deckenwäscherei.", "Lockable, climate-controlled tack rooms per owner, with leather care and rug laundry service."], "re6_h": ["Owners' Club", "Owners' Club"], "re6_p": ["Lounge mit Kamin und Blick in die Arena, Garderoben mit Duschen, Besprechungsraum und Gästebewirtung.", "Lounge with fireplace overlooking the arena, changing rooms with showers, meeting room and hospitality for guests."], "spa_k": ["Equine Spa &amp; Performance", "Equine Spa &amp; Performance"], "spa_t": ["Regeneration <em>auf Spitzenniveau.</em>", "Recovery <em>at the highest level.</em>"], "spa_s": ["Was sonst nur Rehabilitationszentren und Rennställe bieten, gibt es hier im eigenen Haus.", "What is usually only found in rehabilitation centres and racing yards is available right here, in-house."], "spa1_h": ["Aqua Treadmill", "Aqua Treadmill"], "spa1_p": ["Wasserlaufband mit einstellbarer Wassertiefe, Steigung und Geschwindigkeit. Für gelenkschonendes Konditionstraining und Rehabilitation.", "Water treadmill with adjustable depth, incline and speed. For joint-friendly conditioning and rehabilitation."], "spa2_h": ["Cold Saltwater Spa", "Cold Saltwater Spa"], "spa2_p": ["Gekühltes, belüftetes Salzwasser für die Beine. Unterstützt die Regeneration nach dem Training und hilft bei Schwellungen.", "Chilled, aerated salt water for the legs. Supports recovery after training and helps reduce swelling."], "spa3_h": ["Lokale Kryotherapie", "Local cryotherapy"], "spa3_p": ["Gezielte Kälteanwendung bei Entzündungen und Überlastung, auf tierärztliche Verordnung.", "Targeted cold therapy for inflammation and strain, on veterinary prescription."], "spa4_h": ["Infrarot &amp; Vibrationsplatte", "Infrared &amp; vibration plate"], "spa4_p": ["Wärme und sanfte Vibration für Muskulatur, Durchblutung und Entspannung.", "Warmth and gentle vibration for muscles, circulation and relaxation."], "spa5_h": ["Salz-Inhalationsraum", "Salt inhalation room"], "spa5_p": ["Für Pferde mit empfindlichen Atemwegen, in Absprache mit dem Tierarzt.", "For horses with sensitive airways, in consultation with the vet."], "spa6_h": ["Laufband &amp; Führanlage", "Treadmill &amp; horse walker"], "spa6_p": ["Kontrolliertes Training bei jedem Wetter, mit Herzfrequenz- und Gangbildanalyse.", "Controlled training in any weather, with heart-rate and gait analysis."], "in_t": ["Eine Intelligenz, <em>die nie schläft.</em>", "An intelligence <em>that never sleeps.</em>"], "in_s": ["Jede Suite ist mit Kamera, Futterwaage, smarter Tränke und Klimasensoren ausgestattet. Eine KI lernt das individuelle Normalverhalten Ihres Pferdes und meldet sich, sobald sich etwas verändert.", "Every suite is equipped with a camera, feed scale, smart waterer and climate sensors. An AI learns your horse's individual normal behaviour and alerts us as soon as something changes."], "bbox": ["frisst · ruhig", "eating · calm"], "lbl": ["Suite-Kamera · Verhaltensanalyse aktiv", "Suite camera · behaviour analysis active"], "k1s": ["Raufutter heute", "Forage today"], "k1e": ["● im persönlichen Normbereich", "● within personal norm"], "k2s": ["Wasser heute", "Water today"], "k2e": ["● normal", "● normal"], "k3s": ["Liegezeit", "Lying time"], "k3e": ["● erholsam", "● restful"], "k4s": ["Gewicht", "Weight"], "k4e": ["● stabil · 30 Tage", "● stable · 30 days"], "k5s": ["Körpertemperatur", "Body temperature"], "k5e": ["● Wärmebild-Scan", "● thermal scan"], "k6s": ["Stallklima", "Stable climate"], "k6e": ["● Luftqualität sehr gut", "● air quality excellent"], "dnote": ["Beispielhafte Darstellung der EquiMind Owner App", "Illustrative view of the EquiMind Owner App"], "i1_h": ["Verhaltens-KI", "Behaviour AI"], "i1_p": ["Frühwarnung bei Anzeichen von Kolik, Festliegen oder Unruhe. Die Meldung geht sofort an den diensthabenden Groom und, wenn Sie es wünschen, auch an Sie.", "Early warning of signs of colic, being cast or restlessness. The alert goes straight to the groom on duty and, if you wish, to you."], "i2_h": ["Futterwaage &amp; Fressanalyse", "Feed scale &amp; intake analysis"], "i2_p": ["Misst, wie viel Raufutter tatsächlich gefressen wird. Erkennt Fressunlust lange bevor man sie sieht.", "Measures how much forage is actually eaten. Detects loss of appetite long before it becomes visible."], "i3_h": ["Wärmebild-Check", "Thermal check"], "i3_p": ["Kontaktlose Temperaturmessung im Stallgang als täglicher Gesundheitscheck.", "Contact-free temperature reading in the aisle as a daily health check."], "i4_h": ["Walk-over-Waage", "Walk-over scale"], "i4_p": ["Ihr Pferd wird beim Gang zum Paddock automatisch gewogen. So entsteht ein lückenloser Gewichtsverlauf.", "Your horse is weighed automatically on the way to the paddock, creating a complete weight history."], "i5_h": ["Digital Health Passport", "Digital Health Passport"], "i5_p": ["Impfungen, Hufschmied, Tierarzt, Fütterung und Training in einem verschlüsselten Dossier, das Sie gezielt mit Tierarzt oder Trainer teilen.", "Vaccinations, farrier, vet, feeding and training in one encrypted record you can share selectively with your vet or trainer."], "i6_h": ["Performance Tracking", "Performance Tracking"], "i6_p": ["Sensoren am Sattelgurt erfassen Takt, Symmetrie, Belastung und Herzfrequenz. Ihr Trainer sieht den Fortschritt in Echtzeit.", "Girth sensors capture rhythm, symmetry, workload and heart rate. Your trainer sees progress in real time."], "i7_h": ["RFID-Präzisionsfütterung", "RFID precision feeding"], "i7_p": ["Kraftfutter und Supplemente werden individuell dosiert, erfasst und dokumentiert.", "Concentrates and supplements are individually dosed, recorded and documented."], "i8_h": ["Foaling Watch", "Foaling Watch"], "i8_p": ["KI-gestützte Abfohlüberwachung mit automatischem Alarm an Team und Tierarzt.", "AI-assisted foaling monitoring with automatic alerts to the team and vet."], "i9_h": ["Security by Design", "Security by Design"], "i9_p": ["Biometrischer Zutritt, Brandfrüherkennung und verschlüsselte Videodaten. Betrieben nach den Standards eines professionellen Security Operations Center.", "Biometric access, early fire detection and encrypted video data. Operated to the standards of a professional Security Operations Center."], "co_t": ["Sie wünschen. <em>Wir ermöglichen.</em>", "You wish. <em>We make it happen.</em>"], "co_s": ["Ein persönlicher Ansprechpartner für alles rund um Ihr Pferd. Diskret, verlässlich, rund um die Uhr erreichbar.", "One personal contact for everything concerning your horse. Discreet, reliable, available around the clock."], "c1_h": ["Persönlicher Groom", "Personal groom"], "c1_p": ["Ein fester Groom, der Ihr Pferd kennt. Kleine Betreuungsgruppen statt Fliessband.", "A dedicated groom who knows your horse. Small care groups instead of a conveyor belt."], "c2_h": ["Nutrition Design", "Nutrition Design"], "c2_p": ["Individueller Futterplan auf Basis von Heu-Analyse, Gewichtsverlauf und Trainingslast.", "Individual feeding plan based on hay analysis, weight history and training load."], "c3_h": ["Medical Network", "Medical Network"], "c3_p": ["Koordination von Tierarzt, Hufschmied, Osteopath, Physiotherapie und Zahnarzt, inklusive Begleitung bei Terminen.", "Coordination of vet, farrier, osteopath, physiotherapy and equine dentist, including attendance at appointments."], "c4_h": ["Beritt &amp; Training", "Riding &amp; training"], "c4_p": ["Bewegung, Beritt und Unterricht durch qualifizierte Ausbilder, auf Wunsch auch mit Ihrem eigenen Trainer.", "Exercise, schooling and lessons by qualified trainers, or with your own trainer if you prefer."], "c5_h": ["Show Service", "Show Service"], "c5_p": ["Turniervorbereitung, Transport im klimatisierten Pferdetransporter, Grooming vor Ort.", "Show preparation, transport in a climate-controlled horsebox, on-site grooming."], "c6_h": ["Absence Care", "Absence Care"], "c6_p": ["Sie sind auf Reisen, Ihr Pferd bleibt in Bewegung. Und Sie sehen es jeden Tag live in der App.", "While you travel, your horse stays in work. And you see it live in the app every day."], "quote": ["„Luxus ist nicht, was glänzt.<br>Luxus ist, dass nichts übersehen wird.\"", "“Luxury is not what glitters.<br>Luxury is that nothing is overlooked.”"], "me_t": ["Drei Wege, <em>Teil der Maison</em> zu werden.", "Three ways to <em>join the Maison</em>."], "me_s": ["Pension ab CHF 2'000 pro Pferd und Monat. Das individuelle Angebot stellen wir nach einem persönlichen Gespräch zusammen. Die Plätze sind limitiert.", "Livery from CHF 2,000 per horse and month. Your individual offer is put together after a personal conversation. Places are limited."], "p1": ["ab CHF 2'000 / Monat", "from CHF 2,000 / month"], "m1a": ["Private Suite mit Paddock", "Private suite with paddock"], "m1b": ["Vollpension &amp; Nutrition Design", "Full livery &amp; nutrition design"], "m1c": ["EquiMind Intelligence 24/7", "EquiMind Intelligence 24/7"], "m1d": ["Owner App mit Livestream", "Owner app with live stream"], "m1e": ["Zugang zu allen Arenen", "Access to all arenas"], "p2": ["auf Anfrage", "on request"], "m2a": ["Alles aus Residence", "Everything in Residence"], "m2b": ["Signature Suite", "Signature suite"], "m2c": ["Persönlicher Groom", "Personal groom"], "m2d": ["Equine Spa inklusive", "Equine spa included"], "m2e": ["Private Tack Suite", "Private tack suite"], "p3": ["auf Anfrage", "on request"], "m3a": ["Alles aus Signature", "Everything in Signature"], "m3b": ["Beritt &amp; Performance Tracking", "Schooling &amp; performance tracking"], "m3c": ["Show Service &amp; Transport", "Show service &amp; transport"], "m3d": ["Medical Network Begleitung", "Medical network attendance"], "m3e": ["24/7 Concierge-Linie", "24/7 concierge line"], "fq_k": ["Fragen", "Questions"], "fq_t": ["Gut zu <em>wissen.</em>", "Good to <em>know.</em>"], "q1q": ["Wo befindet sich die Maison EquiMind?", "Where is Maison EquiMind located?"], "q1a": ["Auf Colin's Bauernhof im Bezirk Olten, Kanton Solothurn. Die Lage ist zentral, mit kurzen Wegen nach Basel, Bern, Zürich und Luzern. Die genaue Adresse teilen wir nach der Anmeldung zu einem Private Viewing mit.", "At Colin's Bauernhof in the district of Olten, canton of Solothurn. The location is central, with short journeys to Basel, Bern, Zurich and Lucerne. We share the exact address once you have registered for a private viewing."], "q2q": ["Wie werden Plätze vergeben?", "How are places allocated?"], "q2a": ["Die Zahl der Suites ist bewusst limitiert. Nach einem persönlichen Gespräch und einer Besichtigung erstellen wir Ihnen ein individuelles Angebot.", "The number of suites is deliberately limited. After a personal conversation and a viewing, we prepare an individual offer for you."], "q3q": ["Ersetzt die KI das Personal?", "Does the AI replace the staff?"], "q3a": ["Nein. Die Technik ist ein zusätzliches Paar Augen. Die Pflege leistet ein erfahrenes Team, und die KI sorgt dafür, dass ihm nichts entgeht.", "No. The technology is an additional pair of eyes. Care is provided by an experienced team, and the AI makes sure nothing escapes their attention."], "q4q": ["Wer sieht die Daten und den Livestream meines Pferdes?", "Who can see my horse's data and live stream?"], "q4a": ["Nur Sie und die Personen, die Sie freigeben. Alle Daten werden verschlüsselt und nach Schweizer Datenschutzrecht behandelt.", "Only you and the people you authorise. All data is encrypted and handled in accordance with Swiss data protection law."], "q5q": ["Kann mein eigener Trainer oder Tierarzt kommen?", "Can my own trainer or vet come?"], "q5a": ["Selbstverständlich. Wir koordinieren gerne mit Ihrem bestehenden Team.", "Of course. We are happy to coordinate with your existing team."], "pv_t": ["Lernen Sie die <em>Maison</em> kennen.", "Get to know <em>the Maison</em>."], "pv_s": ["Besichtigungen finden ausschliesslich nach persönlicher Vereinbarung statt.", "Viewings take place by personal appointment only."], "l_n": ["Name", "Name"], "l_e": ["E-Mail", "Email"], "l_t": ["Telefon", "Phone"], "l_h": ["Name des Pferdes", "Horse's name"], "l_d": ["Disziplin", "Discipline"], "l_x": ["Ihre Nachricht", "Your message"], "send": ["Private Viewing anfragen", "Request a private viewing"], "disc": ["Ihre Anfrage wird vertraulich behandelt.", "Your enquiry will be treated confidentially."], "ft": ["Private Equine Residence auf Colin's Bauernhof, Bezirk Olten, Kanton Solothurn, Schweiz.", "Private equine residence at Colin's Bauernhof, district of Olten, canton of Solothurn, Switzerland."], "ft_c": ["Kontakt &amp; Rechtliches", "Contact &amp; legal"], "ft_i": ["Impressum", "Legal notice"], "ft_p": ["Datenschutz", "Privacy policy"], "ft_ck": ["Cookie-Einstellungen", "Cookie settings"], "star": ["* Zielwert für die Betreuungsrelation im Signature- und Champion-Membership.", "* Target ratio for the Signature and Champion memberships."], "im_h": ["Impressum", "Legal notice"], "im_1": ["Betreiberin der Website", "Website operator"], "im_adr": ["Strasse, Nr., PLZ Ort – bitte ergänzen", "Street, no., postcode, town – please complete"], "im_ch": ["Schweiz", "Switzerland"], "im_2": ["Standort der Residenz", "Location of the residence"], "im_loc": ["Bezirk Olten, Kanton Solothurn", "District of Olten, canton of Solothurn"], "im_3": ["Kontakt", "Contact"], "im_4": ["Handelsregister / UID", "Commercial register / UID"], "im_uid": ["UID-Nummer, falls im Handelsregister eingetragen – bitte ergänzen oder diesen Abschnitt entfernen", "UID number, if registered in the commercial register – please complete or remove this section"], "im_5": ["Haftungsausschluss", "Disclaimer"], "im_5p": ["Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr. Darstellungen der Anlage und der App sind teilweise Visualisierungen und können vom tatsächlichen Angebot abweichen. Für Inhalte verlinkter externer Seiten sind ausschliesslich deren Betreiber verantwortlich.", "The content of this website has been prepared with care. We accept no liability for the accuracy, completeness or timeliness of the content. Depictions of the facility and the app are partly visualisations and may differ from the actual offering. Operators of linked external sites are solely responsible for their content."], "im_6": ["Urheberrechte", "Copyright"], "im_6p": ["Texte, Bilder und Grafiken dieser Website gehören Tomaholic oder den jeweiligen Rechteinhabern. Eine Verwendung bedarf der vorherigen schriftlichen Zustimmung.", "Texts, images and graphics on this website belong to Tomaholic or the respective rights holders. Any use requires prior written consent."], "pr_h": ["Datenschutzerklärung", "Privacy policy"], "pr_0": ["Diese Datenschutzerklärung informiert darüber, welche Personendaten wir beim Besuch dieser Website bearbeiten. Massgebend ist das Schweizer Datenschutzgesetz (DSG).", "This privacy policy explains which personal data we process when you visit this website. The Swiss Federal Act on Data Protection (FADP) applies."], "pr_1": ["Verantwortliche Stelle", "Controller"], "pr_adr": ["Adresse ergänzen", "add address"], "pr_2": ["Hosting", "Hosting"], "pr_2p": ["Die Website wird über Microsoft Azure Static Web Apps bereitgestellt. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Daten wie IP-Adresse, Datum, Uhrzeit und Browser-Informationen.", "The website is delivered via Microsoft Azure Static Web Apps. When you access it, the hosting provider processes technically necessary data such as IP address, date, time and browser information."], "pr_3": ["Schriftarten", "Fonts"], "pr_3p": ["Für die Darstellung werden Schriftarten von Google Fonts (Google LLC) geladen. Dabei wird Ihre IP-Adresse an Google übermittelt.", "Fonts from Google Fonts (Google LLC) are loaded to display the site. Your IP address is transmitted to Google in the process."], "pr_4": ["Webanalyse mit Microsoft Clarity", "Web analytics with Microsoft Clarity"], "pr_4p": ["Nur wenn Sie im Cookie-Hinweis einwilligen, setzen wir Microsoft Clarity (Microsoft Corporation) ein. Clarity erfasst Nutzungsdaten wie Klicks, Scrollverhalten und Sitzungsaufzeichnungen, um die Website zu verbessern. Dabei können Daten in die USA übermittelt werden. Sie können Ihre Einwilligung jederzeit über „Cookie-Einstellungen\" im Footer widerrufen.", "We use Microsoft Clarity (Microsoft Corporation) only if you consent in the cookie notice. Clarity records usage data such as clicks, scrolling and session recordings to improve the website. Data may be transferred to the USA. You can withdraw your consent at any time via “Cookie settings” in the footer."], "pr_5": ["Kontaktaufnahme", "Contacting us"], "pr_5p": ["Das Anfrageformular öffnet Ihr E-Mail-Programm. Die Angaben werden erst übermittelt, wenn Sie die E-Mail selbst absenden. Wir verwenden sie ausschliesslich zur Bearbeitung Ihrer Anfrage.", "The enquiry form opens your email program. The information is only transmitted when you send the email yourself. We use it exclusively to handle your enquiry."], "pr_6": ["Ihre Rechte", "Your rights"], "pr_6p": ["Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten sowie das Recht, der Bearbeitung zu widersprechen. Wenden Sie sich dazu an hello@tomaholic.ch.", "You have the right to access, rectify and delete your data and to object to its processing. Please contact hello@tomaholic.ch."], "pr_d": ["Stand: Oktober 2026", "Last updated: October 2026"], "ck_p": ["Wir möchten mit Microsoft Clarity anonym verstehen, wie unsere Website genutzt wird. Dürfen wir dafür Cookies setzen?", "We would like to use Microsoft Clarity to understand how our website is used. May we set cookies for this?"], "ck_more": ["Mehr erfahren", "Learn more"], "ck_ok": ["Akzeptieren", "Accept"], "ck_no": ["Ablehnen", "Decline"], "o_open": ["Noch offen", "Undecided"], "o1": ["Dressur", "Dressage"], "o2": ["Springen", "Show jumping"], "o3": ["Vielseitigkeit", "Eventing"], "o4": ["Freizeit", "Leisure"], "o5": ["Zucht", "Breeding"], "o6": ["Andere", "Other"], "_title": ["Maison EquiMind by Tomaholic – Private Equine Residence · Colin's Bauernhof · Bezirk Olten", "Maison EquiMind by Tomaholic – Private Equine Residence · Colin's Bauernhof · District of Olten"]};
+function setLang(l){
+  document.documentElement.lang = l;
+  const i = l==='en'?1:0;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=I18N[el.dataset.i18n]; if(v) el.innerHTML=v[i];});
+  document.title = I18N._title[i];
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+const saved=(()=>{try{return localStorage.getItem('lang')}catch(e){return null}})();
+setLang(saved || ((navigator.language||'de').toLowerCase().startsWith('de')?'de':'en'));
+
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
 document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.menu').classList.remove('open')));
+
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>closeModal(m.id))});
+
 function sendForm(ev){
  ev.preventDefault();
  const v=id=>document.getElementById(id).value;
  const subject=encodeURIComponent('[Maison EquiMind] Private Viewing – '+v('n'));
- const body=encodeURIComponent('Name: '+v('n')+'\nE-Mail: '+v('e')+'\nTelefon: '+v('t')+'\nMembership: '+v('m')+'\nPferd: '+v('h')+'\nDisziplin: '+v('d')+'\n\n'+v('x'));
+ const body=encodeURIComponent('Name: '+v('n')+'\nE-Mail: '+v('e')+'\nTelefon: '+v('tel')+'\nMembership: '+v('m')+'\nPferd: '+v('h')+'\nDisziplin: '+v('d')+'\nSprache: '+document.documentElement.lang+'\n\n'+v('x'));
  window.location.href='mailto:hello@tomaholic.ch?subject='+subject+'&body='+body;
 }
+
+function loadClarity(){
+ if(window.clarityLoaded)return; window.clarityLoaded=true;
+ (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xglxnos622");
+}
+function showCookie(){document.getElementById('cookie').classList.add('show')}
+function consent(ok){
+ try{localStorage.setItem('cookie-consent',ok?'accepted':'declined')}catch(e){}
+ document.getElementById('cookie').classList.remove('show');
+ if(ok)loadClarity(); else if(window.clarityLoaded){location.reload()}
+}
+const c=(()=>{try{return localStorage.getItem('cookie-consent')}catch(e){return null}})();
+if(c==='accepted')loadClarity(); else if(!c)setTimeout(showCookie,1500);
 </script>
-<script>
-(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xglxnos622");
-</script>
+
 </body>
 </html>
