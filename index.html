@@ -1,434 +1,431 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison EquiMind by Tomaholic – Private Equine Residence · Bezirk Olten</title>
+<meta name="description" content="Maison EquiMind: Private Equine Residence im Bezirk Olten. Rund 50 Luxus-Suiten für Pferde, Equine Spa, KI-Gesundheitsmonitoring und persönlicher Concierge. Pension ab CHF 2'000 pro Monat. Besichtigung nur auf Termin.">
+<meta property="og:title" content="Maison EquiMind – Private Equine Residence">
+<meta property="og:description" content="Wo aussergewöhnliche Pferde zu Hause sind. Bezirk Olten, Schweiz.">
+<meta property="og:url" content="https://tomaholic.ch">
+<meta name="theme-color" content="#0e0d0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0d0b; --bg2:#15130f; --card:rgba(255,255,255,0.025); --line:rgba(201,169,110,0.22);
+  --gold:#c9a96e; --gold2:#e8d5ad; --ivory:#f4efe6; --muted:#9d9483; --cyan:#8fc9d4; --green:#8fb896;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-weight:300;background:var(--bg);color:var(--ivory);line-height:1.75;overflow-x:hidden;letter-spacing:.1px}
+a{color:inherit}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
 
-    <title>GardenMind by Tomaholic – Der Garten der sich selbst pflegt</title>
-    <meta name="description" content="GardenMind by Tomaholic ist die weltweit führende KI-Plattform für vollautonome Garten-Automatisierung. In 6 Stufen zum Garten der Zukunft.">
-    <meta name="keywords" content="Garten Automatisierung, AI Gartenpflege, Smart Garden, Autonomer Garten, Garten Roboter, KI Bewässerung, Tomaholic, GardenMind">
-    <meta name="author" content="Tomaholic">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tomaholic.ch">
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 6vw;transition:.4s}
+nav.scrolled{background:rgba(14,13,11,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 6vw}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo svg{width:42px;height:42px}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:3px;color:var(--gold2);line-height:1;text-transform:uppercase}
+.logo-sub{display:block;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.menu{display:flex;gap:34px;list-style:none;align-items:center}
+.menu a{text-decoration:none;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:#d8cfbf;transition:.3s}
+.menu a:hover{color:var(--gold)}
+.menu .cta{padding:11px 22px;border:1px solid var(--gold);color:var(--gold2)}
+.menu .cta:hover{background:var(--gold);color:#0e0d0b}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:28px;cursor:pointer}
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tomaholic.ch">
-    <meta property="og:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
-    <meta property="og:description" content="Die KI-Plattform für Gärten, die denken, blühen und sich pflegen.">
-    <meta property="og:image" content="https://tomaholic.ch/hero.png">
-    <meta property="og:locale" content="de_CH">
-    <meta property="og:site_name" content="GardenMind by Tomaholic">
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:160px 6vw 100px;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,0.20),transparent 60%),radial-gradient(ellipse at 50% 120%,rgba(143,201,212,0.08),transparent 60%),var(--bg)}
+.hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 119px,rgba(201,169,110,0.04) 119px 120px);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:1000px}
+.overline{font-size:11.5px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:34px}
+.overline::before,.overline::after{content:'';display:inline-block;width:40px;height:1px;background:var(--gold);vertical-align:middle;margin:0 16px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(48px,8vw,110px);line-height:1;margin-bottom:30px;color:var(--ivory)}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p.lead{font-size:clamp(16px,1.8vw,19px);color:#cfc6b5;max-width:680px;margin:0 auto 48px}
+.btn{display:inline-block;padding:17px 38px;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;margin:8px;transition:.35s;cursor:pointer;font-family:inherit;font-weight:500}
+.btn-gold{background:var(--gold);color:#0e0d0b;border:1px solid var(--gold)}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2)}
+.btn-line{border:1px solid rgba(244,239,230,0.35);color:var(--ivory);background:transparent}
+.btn-line:hover{border-color:var(--gold);color:var(--gold2)}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
+.scroll-hint::after{content:'';display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GardenMind by Tomaholic – Der Garten der sich selbst pflegt">
-    <meta name="twitter:description" content="Die KI-Plattform für vollautonome Garten-Automatisierung.">
-    <meta name="twitter:image" content="https://tomaholic.ch/hero.png">
+/* MANIFESTO */
+.manifesto{padding:140px 6vw;text-align:center;max-width:1000px;margin:0 auto}
+.manifesto p{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.4vw,42px);line-height:1.35;font-weight:400}
+.manifesto p em{color:var(--gold2)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:1200px;margin:0 auto}
+.fact{padding:40px 20px;text-align:center;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;color:var(--gold2);line-height:1.1}
+.fact span{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2386efac'/%3E%3Cstop offset='60%25' stop-color='%234ade80'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56 L32 36' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M32 36 Q14 28 10 14 Q24 18 32 36 Z' fill='url(%23g)'/%3E%3Cpath d='M32 36 Q50 28 54 14 Q40 18 32 36 Z' fill='url(%23g)' opacity='0.7'/%3E%3Ccircle cx='32' cy='32' r='2.5' fill='%2322d3ee'/%3E%3C/svg%3E">
+/* SECTIONS */
+section{padding:130px 6vw;max-width:1320px;margin:0 auto}
+.kicker{text-align:center;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.title{text-align:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,5vw,62px);line-height:1.08;margin-bottom:22px}
+.title em{font-style:italic;color:var(--gold2)}
+.sub{text-align:center;color:var(--muted);font-size:17px;max-width:700px;margin:0 auto 80px}
 
-    <meta name="theme-color" content="#0a1a0f">
+/* Suite showcase */
+.suite{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.suite-visual{position:relative;aspect-ratio:4/5;border:1px solid var(--line);background:
+ linear-gradient(180deg,rgba(201,169,110,0.10),transparent 40%),
+ repeating-linear-gradient(90deg,#1d1914 0 38px,#211c16 38px 40px),#191510;overflow:hidden}
+.suite-visual::before{content:'';position:absolute;left:12%;right:12%;top:8%;height:32%;border:1px solid rgba(201,169,110,0.35);border-bottom:0;border-radius:200px 200px 0 0}
+.chandelier{position:absolute;top:10%;left:50%;transform:translateX(-50%);font-size:46px;filter:drop-shadow(0 0 30px rgba(232,213,173,0.6));animation:glow 4s ease-in-out infinite}
+@keyframes glow{50%{filter:drop-shadow(0 0 50px rgba(232,213,173,0.9))}}
+.suite-visual .horse{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);font-size:120px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.7))}
+.suite-visual .floor{position:absolute;bottom:0;left:0;right:0;height:14%;background:linear-gradient(180deg,#2a2219,#1a150f);border-top:1px solid var(--line)}
+.suite-tag{position:absolute;top:22px;left:22px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);border:1px solid var(--line);padding:6px 12px;background:rgba(14,13,11,0.6)}
+.ai-chip{position:absolute;right:22px;bottom:18%;background:rgba(14,13,11,0.85);border:1px solid rgba(143,201,212,0.5);padding:12px 16px;font-size:12px;line-height:1.5}
+.ai-chip b{color:var(--cyan);font-weight:500;letter-spacing:1px}
+.ai-chip i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.suite h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;line-height:1.1;margin-bottom:22px}
+.suite p{color:#cfc6b5;margin-bottom:26px}
+.spec{list-style:none;border-top:1px solid var(--line)}
+.spec li{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.spec li span:first-child{color:var(--muted);letter-spacing:1px}
+.spec li span:last-child{text-align:right;color:var(--ivory)}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:44px 36px;transition:.4s}
+.card:hover{background:#15130f}
+.card .num{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:22px;display:block}
+.card .ic{font-size:30px;display:block;margin-bottom:18px}
+.card h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.15;margin-bottom:12px}
+.card p{color:var(--muted);font-size:14.5px}
 
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: #0a1a0f; color: #e8f5ec; line-height: 1.6; overflow-x: hidden; }
+.band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+/* Dashboard */
+.dash{max-width:1000px;margin:0 auto;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);padding:30px}
+.dash-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.dash-head .who{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:1px;text-transform:none;color:var(--ivory)}
+.live{color:#ff8d7e}
+.live::before{content:'●';margin-right:6px;animation:pulse 1.4s infinite}
+.dash-body{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.cam{position:relative;min-height:240px;background:linear-gradient(135deg,#231d15,#141110);border:1px solid var(--line);overflow:hidden}
+.cam .h{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:96px;animation:graze 7s ease-in-out infinite}
+@keyframes graze{50%{transform:translate(-46%,-48%) rotate(-3deg)}}
+.cam .bbox{position:absolute;left:30%;top:22%;width:40%;height:56%;border:1.5px solid var(--cyan)}
+.cam .bbox span{position:absolute;top:-22px;left:-1px;background:var(--cyan);color:#0b1a1e;font-size:10px;font-weight:600;letter-spacing:1px;padding:2px 8px;text-transform:uppercase}
+.cam .scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:scan 3.5s linear infinite}
+@keyframes scan{from{top:0}to{top:100%}}
+.cam .lbl{position:absolute;left:12px;bottom:12px;font-size:11px;letter-spacing:1px;background:rgba(0,0,0,.55);padding:5px 10px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.kpi{background:var(--bg);padding:18px}
+.kpi small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.kpi b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;color:var(--gold2)}
+.kpi em{display:block;font-style:normal;font-size:11.5px;color:var(--green)}
+.dash-note{text-align:center;color:var(--muted);font-size:11.5px;letter-spacing:1px;margin-top:20px}
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 60px; position: sticky; top: 0; background: rgba(10, 26, 15, 0.85); backdrop-filter: blur(14px); z-index: 999; border-bottom: 1px solid rgba(134, 239, 172, 0.08); }
-        .logo-wrap { display: flex; align-items: center; gap: 10px; }
-        .logo-svg { width: 36px; height: 36px; }
-        .logo-text { font-weight: 900; font-size: 22px; background: linear-gradient(90deg, #86efac, #4ade80, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; line-height: 1; }
-        .logo-sub { font-size: 11px; font-weight: 600; color: #64748b; letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 2px; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav a { text-decoration: none; color: #cbd5e1; font-size: 15px; font-weight: 500; transition: 0.2s; }
-        nav a:hover { color: #86efac; }
+/* Memberships */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.tier{border:1px solid var(--line);padding:48px 38px;position:relative;background:var(--bg)}
+.tier.signature{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,169,110,0.08),transparent)}
+.tier .ribbon{position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--gold);color:#0e0d0b;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px}
+.tier h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;margin-bottom:6px}
+.tier .price{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.tier ul{list-style:none}
+.tier li{padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:#d8cfbf}
+.tier li:last-child{border-bottom:0}
 
-        .hero { text-align: center; padding: 100px 20px 60px; background: radial-gradient(ellipse at top, rgba(34,211,238,0.15), transparent 60%), radial-gradient(ellipse at 30% 70%, rgba(74,222,128,0.25), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(134,239,172,0.18), transparent 60%); position: relative; overflow: hidden; }
-        .badge { display: inline-block; padding: 6px 16px; border-radius: 999px; border: 1px solid rgba(134,239,172,0.3); background: rgba(74,222,128,0.08); color: #86efac; font-size: 13px; font-weight: 600; margin-bottom: 30px; }
-        .hero h1 { font-size: 76px; font-weight: 900; background: linear-gradient(90deg, #ffffff 0%, #86efac 60%, #22d3ee 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; line-height: 1.05; letter-spacing: -2px; }
-        .hero h1 .underline { position: relative; display: inline-block; }
-        .hero h1 .underline::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: linear-gradient(90deg, #4ade80, #22d3ee); opacity: 0.3; border-radius: 4px; z-index: -1; }
-        .hero p.subtitle { font-size: 22px; color: #a7f3d0; max-width: 720px; margin: 0 auto 16px; font-weight: 500; }
-        .hero p.subtext { font-size: 17px; color: #94a3b8; max-width: 640px; margin: 0 auto 40px; }
+/* Quote */
+.quote{text-align:center;max-width:900px;margin:0 auto}
+.quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,3.2vw,40px);line-height:1.35;color:var(--gold2)}
 
-        .btn { display: inline-block; padding: 16px 32px; font-size: 16px; font-weight: 700; border-radius: 10px; text-decoration: none; transition: 0.3s; margin: 6px; cursor: pointer; border: none; }
-        .btn-primary { background: linear-gradient(90deg, #22c55e, #10b981); color: #0a1a0f; box-shadow: 0 10px 40px rgba(34,197,94,0.4); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(34,197,94,0.6); }
-        .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: #fff; }
-        .btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: #86efac; }
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:24px 0;max-width:880px;margin:0 auto}
+summary{cursor:pointer;list-style:none;font-family:'Cormorant Garamond',serif;font-size:24px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';float:right;color:var(--gold);font-family:'Inter';font-weight:300}
+details[open] summary::after{content:'–'}
+details p{color:var(--muted);margin-top:12px;font-size:15.5px}
 
-        /* === HERO VISUAL (Bild + Mini-Roboter + Sensoren) === */
-        .hero-visual { position: relative; max-width: 1100px; margin: 80px auto 20px; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(34,197,94,0.25), 0 0 60px rgba(34,211,238,0.15); border: 1px solid rgba(134,239,172,0.2); animation: heroEntrance 1.2s ease-out; }
-        @keyframes heroEntrance { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-        .hero-image { display: block; width: 100%; height: auto; transition: transform 0.6s ease; }
-        .hero-visual:hover .hero-image { transform: scale(1.02); }
-        .hero-glow { position: absolute; inset: -20px; background: radial-gradient(ellipse at center, rgba(74,222,128,0.15), transparent 70%); z-index: -1; animation: glowPulse 4s ease-in-out infinite; pointer-events: none; }
-        @keyframes glowPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+/* Contact */
+.private{max-width:760px;margin:0 auto;border:1px solid var(--line);padding:56px;background:var(--bg)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+label{display:block;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin:22px 0 8px}
+input,select,textarea{width:100%;padding:14px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ivory);font:inherit;font-size:16px}
+select option{background:#15130f}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--gold)}
+textarea{min-height:110px;resize:vertical}
+.discreet{text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;letter-spacing:.5px}
 
-        .mini-robot { position: absolute; bottom: 8%; width: 50px; height: 45px; animation: miniDrive 14s linear infinite; filter: drop-shadow(0 4px 12px rgba(34,211,238,0.6)); z-index: 5; }
-        @keyframes miniDrive { 0% { left: -8%; transform: scaleX(1); } 45% { left: 92%; transform: scaleX(1); } 50% { left: 92%; transform: scaleX(-1); } 95% { left: -8%; transform: scaleX(-1); } 100% { left: -8%; transform: scaleX(1); } }
-        .mini-robot-body { position: absolute; bottom: 10px; left: 3px; width: 44px; height: 26px; background: linear-gradient(180deg, #86efac, #22c55e); border-radius: 12px 12px 5px 5px; box-shadow: 0 2px 10px rgba(34,197,94,0.6), inset 0 1px 0 rgba(255,255,255,0.3); }
-        .mini-robot-eye { position: absolute; top: 6px; width: 8px; height: 8px; background: #0a1a0f; border-radius: 50%; border: 1.5px solid #22d3ee; animation: miniBlink 3s infinite; box-shadow: 0 0 8px #22d3ee; }
-        .mini-robot-eye.left { left: 9px; }
-        .mini-robot-eye.right { right: 9px; }
-        @keyframes miniBlink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
-        .mini-robot-antenna { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 2px; height: 10px; background: #86efac; }
-        .mini-robot-antenna::after { content: ''; position: absolute; top: -5px; left: -3px; width: 8px; height: 8px; background: #22d3ee; border-radius: 50%; box-shadow: 0 0 12px #22d3ee, 0 0 20px #22d3ee; animation: miniSignal 1s ease-in-out infinite; }
-        @keyframes miniSignal { 0%,100% { opacity: 0.5; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.4); } }
-        .mini-robot-wheel { position: absolute; bottom: 0; width: 11px; height: 11px; background: #1f2937; border-radius: 50%; border: 1.5px solid #4ade80; animation: miniSpin 0.4s linear infinite; }
-        .mini-robot-wheel.left { left: 6px; }
-        .mini-robot-wheel.right { right: 6px; }
-        @keyframes miniSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+footer{border-top:1px solid var(--line);padding:70px 6vw 34px;color:var(--muted);font-size:13.5px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;max-width:1320px;margin:0 auto 40px}
+.foot h5{color:var(--gold);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:16px}
+.foot a{display:block;text-decoration:none;margin-bottom:10px}
+.foot a:hover{color:var(--gold2)}
+.copy{text-align:center;border-top:1px solid var(--line);padding-top:26px;font-size:11.5px;letter-spacing:2px;text-transform:uppercase}
 
-        .floating-sensor { position: absolute; font-size: 28px; filter: drop-shadow(0 4px 12px rgba(34,211,238,0.5)); animation: float 5s ease-in-out infinite; pointer-events: none; z-index: 4; }
-        .floating-sensor.s1 { top: 15%; right: 8%; animation-delay: 0s; }
-        .floating-sensor.s2 { top: 25%; left: 6%; animation-delay: -1.5s; font-size: 24px; }
-        .floating-sensor.s3 { bottom: 30%; right: 12%; animation-delay: -3s; font-size: 22px; }
-        @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(5deg); } }
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s ease,transform 1.1s ease}
+.reveal.visible{opacity:1;transform:none}
 
-        .stats { display: flex; justify-content: center; gap: 60px; margin-top: 60px; flex-wrap: wrap; }
-        .stat { text-align: center; }
-        .stat-number { font-size: 40px; font-weight: 900; color: #86efac; display: inline-block; }
-        .stat-label { color: #94a3b8; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
-
-        section { padding: 120px 60px; max-width: 1280px; margin: 0 auto; }
-        .section-tag { text-align: center; color: #4ade80; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; margin-bottom: 16px; }
-        .section-title { text-align: center; font-size: 48px; font-weight: 800; margin-bottom: 20px; color: #f1f5f9; letter-spacing: -1px; }
-        .section-subtitle { text-align: center; color: #94a3b8; font-size: 18px; max-width: 650px; margin: 0 auto 70px; }
-
-        .levels { display: grid; gap: 20px; }
-        .level { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; gap: 30px; padding: 28px 32px; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid rgba(134,239,172,0.1); border-radius: 16px; transition: 0.3s; }
-        .level:hover { transform: translateX(8px); border-color: rgba(134,239,172,0.4); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
-        .level-num { font-size: 72px; font-weight: 900; background: linear-gradient(135deg, #4ade80, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-        .level-content h3 { font-size: 22px; color: #fff; margin-bottom: 6px; }
-        .level-content p { color: #94a3b8; font-size: 15px; }
-        .level-tag { padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
-        .level-tag.now { background: rgba(148,163,184,0.15); color: #cbd5e1; }
-        .level-tag.soon { background: rgba(96,165,250,0.15); color: #60a5fa; }
-        .level-tag.future { background: rgba(167,139,250,0.15); color: #a78bfa; }
-        .level-tag.vision { background: rgba(34,211,238,0.15); color: #22d3ee; }
-
-        .roadmap { position: relative; padding: 40px 0; }
-        .roadmap::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #4ade80, #22d3ee, #a78bfa); transform: translateX(-50%); border-radius: 3px; }
-        .milestone { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 30px; margin-bottom: 50px; position: relative; }
-        .milestone-dot { width: 22px; height: 22px; background: #0a1a0f; border: 4px solid #4ade80; border-radius: 50%; justify-self: center; z-index: 2; box-shadow: 0 0 20px rgba(74,222,128,0.6); }
-        .milestone-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(134,239,172,0.15); border-radius: 14px; padding: 24px; transition: 0.3s; }
-        .milestone-card:hover { transform: scale(1.03); border-color: rgba(134,239,172,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .milestone-year { font-size: 14px; font-weight: 800; color: #4ade80; letter-spacing: 2px; margin-bottom: 8px; }
-        .milestone-card h3 { font-size: 19px; color: #fff; margin-bottom: 8px; }
-        .milestone-card p { color: #94a3b8; font-size: 14px; }
-        .milestone.right .milestone-card { grid-column: 3; }
-        .milestone.left .milestone-card { grid-column: 1; text-align: right; }
-
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .feature { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 32px; transition: 0.3s; }
-        .feature:hover { transform: translateY(-8px); border-color: rgba(134,239,172,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .feature .emoji { font-size: 42px; margin-bottom: 16px; display: block; }
-        .feature h3 { font-size: 20px; color: #fff; margin-bottom: 10px; }
-        .feature p { color: #94a3b8; font-size: 15px; }
-
-        .vision { text-align: center; background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,211,238,0.08)); border: 1px solid rgba(134,239,172,0.15); border-radius: 28px; padding: 80px 40px; margin: 80px 60px; }
-        .vision h2 { font-size: 44px; margin-bottom: 24px; color: #fff; }
-        .vision p { color: #cbd5e1; font-size: 18px; max-width: 700px; margin: 0 auto 30px; }
-
-        footer { text-align: center; padding: 50px 20px; color: #64748b; font-size: 14px; border-top: 1px solid rgba(134,239,172,0.06); }
-        footer .logo-wrap { justify-content: center; margin-bottom: 12px; }
-
-        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, #22c55e, #10b981); color: #0a1a0f; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 6px 20px rgba(34,197,94,0.4); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; z-index: 998; }
-        .scroll-top.visible { opacity: 1; pointer-events: auto; }
-        .scroll-top:hover { transform: translateY(-4px); }
-
-        .cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 600px; margin: 0 auto; background: rgba(10,26,15,0.98); border: 1px solid rgba(134,239,172,0.3); border-radius: 16px; padding: 24px; color: #e8f5ec; font-size: 14px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); z-index: 9999; backdrop-filter: blur(20px); display: none; line-height: 1.5; }
-        .cookie-banner.show { display: block; }
-        .cookie-banner h4 { color: #86efac; margin-bottom: 8px; font-size: 16px; }
-        .cookie-banner p { margin-bottom: 16px; color: #cbd5e1; }
-        .cookie-banner .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
-        .cookie-banner button { padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
-        .cookie-banner .accept { background: linear-gradient(90deg, #22c55e, #10b981); color: #0a1a0f; }
-        .cookie-banner .decline { background: transparent; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.2); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 44px; }
-            .hero p.subtitle { font-size: 17px; }
-            section { padding: 70px 20px; }
-            nav { padding: 16px 20px; }
-            nav ul { display: none; }
-            .level { grid-template-columns: 60px 1fr; }
-            .level-num { font-size: 48px; }
-            .level-tag { grid-column: 2; justify-self: start; }
-            .stats { gap: 30px; }
-            .stat-number { font-size: 30px; }
-            .vision { margin: 40px 20px; padding: 50px 20px; }
-            .vision h2 { font-size: 32px; }
-            .roadmap::before { left: 20px; }
-            .milestone { grid-template-columns: 50px 1fr; gap: 16px; }
-            .milestone-dot { grid-column: 1; }
-            .milestone.right .milestone-card, .milestone.left .milestone-card { grid-column: 2; text-align: left; }
-            .scroll-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
-            .hero-visual { margin: 40px 15px 10px; border-radius: 16px; }
-            .mini-robot { width: 35px; height: 32px; }
-            .mini-robot-body { width: 32px; height: 18px; }
-            .floating-sensor { font-size: 20px; }
-            .floating-sensor.s2, .floating-sensor.s3 { font-size: 16px; }
-        }
-    </style>
+@media(max-width:960px){
+ .burger{display:block}
+ .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(14,13,11,0.98);padding:26px;gap:20px;border-bottom:1px solid var(--line)}
+ .menu.open{display:flex}
+ nav{background:rgba(14,13,11,0.92)}
+ .suite,.dash-body,.row,.foot,.tiers{grid-template-columns:1fr}
+ .facts{grid-template-columns:1fr 1fr}
+ .fact:nth-child(2){border-right:0}
+ .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ section,.manifesto{padding:90px 6vw}
+ .private{padding:32px 22px}
+}
+</style>
 </head>
 <body>
 
-<nav>
-    <div class="logo-wrap">
-        <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#86efac"/>
-                    <stop offset="60%" stop-color="#4ade80"/>
-                    <stop offset="100%" stop-color="#22d3ee"/>
-                </linearGradient>
-            </defs>
-            <path d="M32 56 L32 36" stroke="url(#leafGrad)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M32 36 Q14 28 10 14 Q24 18 32 36 Z" fill="url(#leafGrad)" opacity="0.95"/>
-            <path d="M32 36 Q50 28 54 14 Q40 18 32 36 Z" fill="url(#leafGrad)" opacity="0.7"/>
-            <circle cx="20" cy="22" r="2" fill="#0a1a0f"/>
-            <circle cx="44" cy="22" r="2" fill="#0a1a0f"/>
-            <circle cx="32" cy="32" r="2.5" fill="#22d3ee"/>
-        </svg>
-        <div>
-            <div class="logo-text">GardenMind</div>
-            <span class="logo-sub">by Tomaholic</span>
-        </div>
-    </div>
-    <ul>
-        <li><a href="#levels">Stufenmodell</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#features">Technologie</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-    </ul>
+<nav id="nav">
+ <a href="#top" class="logo">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8d5ad"/><stop offset="1" stop-color="#a8864e"/></linearGradient></defs>
+   <circle cx="32" cy="32" r="29" fill="none" stroke="url(#g)" stroke-width="1.2"/>
+   <circle cx="32" cy="32" r="25" fill="none" stroke="url(#g)" stroke-width="0.6"/>
+   <path d="M21 41c1-9 6-16 14-19l2-5 3 5c4 2 6 6 6 10-3-2-6-2-8-1 1 3 0 7-2 10" fill="none" stroke="url(#g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   <circle cx="40" cy="25" r="1.4" fill="#8fc9d4"/>
+  </svg>
+  <div><span class="logo-name">Maison EquiMind</span><span class="logo-sub">Private Equine Residence</span></div>
+ </a>
+ <button class="burger" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="Menü">☰</button>
+ <ul class="menu">
+  <li><a href="#suites">Suites</a></li>
+  <li><a href="#spa">Equine Spa</a></li>
+  <li><a href="#intelligence">Intelligence</a></li>
+  <li><a href="#concierge">Concierge</a></li>
+  <li><a href="#membership">Membership</a></li>
+  <li><a href="#private" class="cta">Private Viewing</a></li>
+ </ul>
 </nav>
 
-<header class="hero">
-    <div class="badge">🤖 Powered by AI · Driven by Nature</div>
-    <h1>Der Garten der<br>sich <span class="underline">selbst</span> pflegt.</h1>
-    <p class="subtitle">Willkommen bei <strong>GardenMind by Tomaholic</strong> – die weltweit führende Plattform für vollautonome Garten-Automatisierung.</p>
-    <p class="subtext">Rasenmäher und Bewässerung waren erst der Anfang. Wir bauen die KI-Infrastruktur für Gärten, die denken, pflegen und blühen – ganz ohne dich.</p>
-    <a href="#levels" class="btn btn-primary">🌿 Stufenmodell entdecken</a>
-    <a href="#vision" class="btn btn-secondary">Unsere Vision</a>
-
-    <!-- HERO IMAGE mit Mini-Roboter und schwebenden Sensoren -->
-    <div class="hero-visual">
-        <img src="hero.png" alt="GardenMind AI – Autonomer Garten der Zukunft" class="hero-image">
-        <div class="hero-glow"></div>
-
-        <!-- Mini-Roboter fährt unten am Bild -->
-        <div class="mini-robot">
-            <div class="mini-robot-antenna"></div>
-            <div class="mini-robot-body">
-                <div class="mini-robot-eye left"></div>
-                <div class="mini-robot-eye right"></div>
-            </div>
-            <div class="mini-robot-wheel left"></div>
-            <div class="mini-robot-wheel right"></div>
-        </div>
-
-        <!-- Schwebende Sensoren -->
-        <div class="floating-sensor s1">📡</div>
-        <div class="floating-sensor s2">🛰</div>
-        <div class="floating-sensor s3">💧</div>
-    </div>
-
-    <div class="stats reveal">
-        <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Automatisierung</div></div>
-        <div class="stat"><div class="stat-number">0h</div><div class="stat-label">Manuelle Arbeit</div></div>
-        <div class="stat"><div class="stat-number">6</div><div class="stat-label">Maturity Levels</div></div>
-        <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">KI-Überwachung</div></div>
-    </div>
+<header class="hero" id="top">
+ <div class="hero-inner">
+  <div class="overline">Bezirk Olten · Schweiz</div>
+  <h1>Wo aussergewöhnliche<br>Pferde <em>zu Hause</em> sind.</h1>
+  <p class="lead">Eine Private Equine Residence für rund 50 Pferde. Handwerk, Architektur und künstliche Intelligenz im Dienst eines einzigen Anspruchs: das Beste für Ihr Pferd. Jeden Tag, rund um die Uhr.</p>
+  <a href="#private" class="btn btn-gold">Private Viewing vereinbaren</a>
+  <a href="#suites" class="btn btn-line">Die Residenz entdecken</a>
+ </div>
+ <div class="scroll-hint">Entdecken</div>
 </header>
 
-<section id="levels" class="reveal">
-    <div class="section-tag">⚙️ The Garden Autonomy Framework</div>
-    <h2 class="section-title">Die 6 Stufen der Garten-Autonomie</h2>
-    <p class="section-subtitle">Wie die Levels beim autonomen Fahren – nur für Gärten. Wo steht deiner heute?</p>
-    <div class="levels">
-        <div class="level"><div class="level-num">0</div><div class="level-content"><h3>Manuell – „Der gute alte Spaten"</h3><p>Mensch macht alles. Schweiss, Rückenschmerzen, gelegentlicher Erfolg.</p></div><span class="level-tag now">Status Quo</span></div>
-        <div class="level"><div class="level-num">1</div><div class="level-content"><h3>Connected – „Smarte Sensoren"</h3><p>Bodenfeuchte-, Licht- und Temperatursensoren melden Daten an deine App. Du entscheidest noch.</p></div><span class="level-tag now">Heute</span></div>
-        <div class="level"><div class="level-num">2</div><div class="level-content"><h3>Assisted – „Rasenmäher & Bewässerung"</h3><p>Einzelne Aufgaben laufen automatisch: Mähroboter, Sprinklersysteme, Lichtsteuerung.</p></div><span class="level-tag now">Verbreitet</span></div>
-        <div class="level"><div class="level-num">3</div><div class="level-content"><h3>Cooperative – „Roboter im Team"</h3><p>Mehrere KI-Roboter koordinieren sich: Unkrautjäter, Schneider, Düngerroboter. Sie sprechen miteinander.</p></div><span class="level-tag soon">2026–2028</span></div>
-        <div class="level"><div class="level-num">4</div><div class="level-content"><h3>Autonomous – „Selbstpflegender Garten"</h3><p>Sträucher beschneiden, Bäume pflegen, Schädlinge bekämpfen, Nährstoffe ergänzen – alles automatisch.</p></div><span class="level-tag future">2028–2032</span></div>
-        <div class="level"><div class="level-num">5</div><div class="level-content"><h3>Symbiotic – „Der lebende Garten"</h3><p>Der Garten optimiert sich selbst. KI lernt aus Wetter, Klima, Pflanzenverhalten – und entwickelt deinen Garten weiter.</p></div><span class="level-tag vision">Vision 2035</span></div>
-    </div>
-</section>
-
-<section id="roadmap" class="reveal">
-    <div class="section-tag">📅 Roadmap</div>
-    <h2 class="section-title">Der Weg zum lebenden Garten</h2>
-    <p class="section-subtitle">Unsere Vision in konkreten Schritten – von heute bis 2035.</p>
-    <div class="roadmap">
-        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2026</div><h3>🚀 Foundation</h3><p>Launch von GardenMind. Sensor-Netzwerk und KI-Plattform gehen live. Erste Pilotgärten in der Schweiz.</p></div><div class="milestone-dot"></div></div>
-        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2027</div><h3>🤖 First Robot Fleet</h3><p>Erste autonome Garten-Roboter im Einsatz: Unkrautjäter, Präzisions-Bewässerung, KI-Düngung.</p></div></div>
-        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2028</div><h3>🌐 Cooperative AI</h3><p>Roboter koordinieren sich untereinander. Predictive Pest Control geht in Serie. Internationale Expansion.</p></div><div class="milestone-dot"></div></div>
-        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2030</div><h3>🌳 Tree & Shrub Care</h3><p>Drohnen-basierte Baum- und Strauchpflege. Vollautomatischer Schnitt mit Computer Vision.</p></div></div>
-        <div class="milestone left"><div class="milestone-card"><div class="milestone-year">2032</div><h3>🧠 Autonomous Gardens</h3><p>Komplett selbstpflegende Gärten in Serie. Level 4 erreicht. Erste 10.000 GardenMind-Gärten weltweit.</p></div><div class="milestone-dot"></div></div>
-        <div class="milestone right"><div class="milestone-dot"></div><div class="milestone-card"><div class="milestone-year">2035</div><h3>🌸 Symbiotic Vision</h3><p>Level 5: Der lebende Garten. KI optimiert das gesamte Ökosystem eigenständig.</p></div></div>
-    </div>
-</section>
-
-<section id="features" class="reveal">
-    <div class="section-tag">🛠 Technology Stack</div>
-    <h2 class="section-title">Was unsere KI im Garten kann</h2>
-    <p class="section-subtitle">Vergiss Rasenmäher. Hier ist, was bei uns Standard wird.</p>
-    <div class="features">
-        <div class="feature"><span class="emoji">🌳</span><h3>Baum- & Strauchpflege</h3><p>Drohnen und Greifarme schneiden Hecken millimetergenau, erkennen kranke Äste und entfernen sie.</p></div>
-        <div class="feature"><span class="emoji">🌾</span><h3>Unkraut-KI</h3><p>Computer Vision identifiziert Unkraut pflanzengenau – mechanisch oder per Mikro-Laser entfernt.</p></div>
-        <div class="feature"><span class="emoji">💧</span><h3>Precision Hydration</h3><p>Jede Pflanze bekommt exakt die Wassermenge, die sie braucht. Bis zu 60% Wasserersparnis.</p></div>
-        <div class="feature"><span class="emoji">🧪</span><h3>Auto-Düngung</h3><p>Sensoren analysieren Boden in Echtzeit. Nährstoffe werden automatisch dosiert.</p></div>
-        <div class="feature"><span class="emoji">🐛</span><h3>Predictive Pest Control</h3><p>KI erkennt Schädlinge bevor sie sich vermehren – und reagiert biologisch, gezielt, ohne Chemie.</p></div>
-        <div class="feature"><span class="emoji">🌸</span><h3>Blüh-Choreografie</h3><p>Dein Garten blüht nicht zufällig – sondern strategisch. KI plant das Farbspiel über die ganze Saison.</p></div>
-        <div class="feature"><span class="emoji">🌙</span><h3>Adaptive Lichtsteuerung</h3><p>Stimmungslicht abends, UV-Pflege nachts, Insektenfreundlich immer.</p></div>
-        <div class="feature"><span class="emoji">🛰</span><h3>Satelliten-Klima</h3><p>Hyperlokale Wetterdaten + Klimaprognosen. Dein Garten ist vorbereitet, bevor der Sturm kommt.</p></div>
-    </div>
-</section>
-
-<div class="vision reveal" id="vision">
-    <h2>Unsere Mission</h2>
-    <p>Wir glauben, dass jeder Mensch einen blühenden Garten verdient – ohne dafür sein Wochenende, seinen Rücken oder seinen Kalender zu opfern. <strong>GardenMind by Tomaholic</strong> macht aus deinem Garten ein lebendiges, selbstpflegendes Ökosystem.</p>
-    <p style="color: #86efac; font-weight: 600;">Gärtnern ist Liebe. Den Rest übernehmen wir.</p>
-    <a href="#contact" class="btn btn-primary">🌱 Werde Pionier</a>
+<div class="manifesto reveal">
+ <p>Ein Champion verdient mehr als eine Box.<br>Er verdient eine <em>Residenz</em>, ein Team, das ihn kennt, und eine Intelligenz, die nie schläft.</p>
 </div>
 
-<section id="contact" class="reveal" style="text-align:center;">
-    <div class="section-tag">🚀 Join the Movement</div>
-    <h2 class="section-title">Bereit für den Garten von morgen?</h2>
-    <p class="section-subtitle">Wir suchen Pioniere, Partner und neugierige Geister. Werde Teil der grünen KI-Revolution.</p>
-    <a href="mailto:hello@tomaholic.ch" class="btn btn-primary">📩 Kontakt aufnehmen</a>
-    <a href="#" class="btn btn-secondary">Newsletter abonnieren</a>
+<div class="facts reveal">
+ <div class="fact"><b>~50</b><span>Private Suites</span></div>
+ <div class="fact"><b>24/7</b><span>KI-Gesundheitsmonitoring</span></div>
+ <div class="fact"><b>1 : 5</b><span>Groom-Betreuung*</span></div>
+ <div class="fact"><b>ab 2'000</b><span>CHF pro Monat</span></div>
+</div>
+
+<!-- SUITES -->
+<section id="suites" class="reveal">
+ <div class="kicker">Die Suites</div>
+ <h2 class="title">Nicht eine Box. <em>Eine Suite.</em></h2>
+ <p class="sub">Jede Suite ist ein Rückzugsort mit eigenem Paddock, eigener Kamera und eigenem Klima. Gebaut für das Wohlbefinden des Pferdes und mit einer Ästhetik, die man spürt.</p>
+ <div class="suite">
+  <div class="suite-visual">
+   <div class="suite-tag">Signature Suite · Nº 07</div>
+   <div class="chandelier">✨</div>
+   <div class="horse">🐎</div>
+   <div class="floor"></div>
+   <div class="ai-chip"><i></i><b>EQUIMIND AI</b><br>Verhalten · normal<br>Heu heute · 7.1 kg</div>
+  </div>
+  <div>
+   <h3>Raum, Licht &amp; Ruhe</h3>
+   <p>Massive Eichenfronten, geschmiedete Messingbeschläge, Gewölbedecken mit Oberlichtern und warmes, dimmbares Licht. Unter den Hufen liegen gepolsterte Gummimatten über einer beheizten Bodenplatte. Durch die Stalltür sieht man direkt in den privaten Paddock.</p>
+   <ul class="spec">
+    <li><span>Suite-Fläche</span><span>deutlich über TSchV-Mindestmass</span></li>
+    <li><span>Privater Paddock</span><span>teilüberdacht, direkt angeschlossen</span></li>
+    <li><span>Boden</span><span>beheizt · gepolstert · rutschfest</span></li>
+    <li><span>Klima</span><span>individuell geregelt · gefilterte Luft</span></li>
+    <li><span>Licht</span><span>Tageslichtsimulation · Zirkadian-Steuerung</span></li>
+    <li><span>Sozialkontakt</span><span>Sicht-, Hör- &amp; Geruchkontakt</span></li>
+    <li><span>Einstreu</span><span>nach Wahl · staubarm</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- RESIDENZ -->
+<div class="band">
+<section class="reveal">
+ <div class="kicker">Die Residenz</div>
+ <h2 class="title">Ein Anwesen, <em>keine Anlage.</em></h2>
+ <p class="sub">Alles, was ein Sport- und Freizeitpferd der Spitzenklasse braucht, an einem Ort.</p>
+ <div class="grid">
+  <div class="card"><span class="num">I</span><h4>Grand Arena</h4><p>Lichtdurchflutete Reithalle mit Holzdachstuhl, Premium-Sand-Vlies-Belag und Unterbodenbewässerung. Mit Tribüne und Lounge-Blick.</p></div>
+  <div class="card"><span class="num">II</span><h4>Outdoor Arenas</h4><p>Beleuchtete Spring- und Dressurplätze mit Turnierbelag, dazu Roundpen und Longierzirkel.</p></div>
+  <div class="card"><span class="num">III</span><h4>Weiden &amp; Galoppbahn</h4><p>Gepflegte Weiden mit Rotationsmanagement, ein Paddock-Trail und eine Sandbahn für Kondition.</p></div>
+  <div class="card"><span class="num">IV</span><h4>Grooming Salon</h4><p>Beheizte Putz- und Waschplätze mit Warmwasser, Infrarot-Solarium und Turnier-Vorbereitung durch Profis.</p></div>
+  <div class="card"><span class="num">V</span><h4>Private Tack Suites</h4><p>Abschliessbare, klimatisierte Sattelkammern pro Besitzer, mit Lederpflege-Service und Deckenwäscherei.</p></div>
+  <div class="card"><span class="num">VI</span><h4>Owners' Club</h4><p>Lounge mit Kamin und Blick in die Arena, Garderoben mit Duschen, Besprechungsraum und Gästebewirtung.</p></div>
+ </div>
+</section>
+</div>
+
+<!-- SPA -->
+<section id="spa" class="reveal">
+ <div class="kicker">Equine Spa &amp; Performance</div>
+ <h2 class="title">Regeneration <em>auf Spitzenniveau.</em></h2>
+ <p class="sub">Was sonst nur Rehabilitationszentren und Rennställe bieten, gibt es hier im eigenen Haus.</p>
+ <div class="grid">
+  <div class="card"><span class="ic">🌊</span><h4>Aqua Treadmill</h4><p>Wasserlaufband mit einstellbarer Wassertiefe, Steigung und Geschwindigkeit. Für gelenkschonendes Konditionstraining und Rehabilitation.</p></div>
+  <div class="card"><span class="ic">❄️</span><h4>Cold Saltwater Spa</h4><p>Gekühltes, belüftetes Salzwasser für die Beine. Unterstützt die Regeneration nach dem Training und hilft bei Schwellungen.</p></div>
+  <div class="card"><span class="ic">🧊</span><h4>Lokale Kryotherapie</h4><p>Gezielte Kälteanwendung bei Entzündungen und Überlastung, auf tierärztliche Verordnung.</p></div>
+  <div class="card"><span class="ic">🔆</span><h4>Infrarot &amp; Vibrationsplatte</h4><p>Wärme und sanfte Vibration für Muskulatur, Durchblutung und Entspannung.</p></div>
+  <div class="card"><span class="ic">🧂</span><h4>Salz-Inhalationsraum</h4><p>Für Pferde mit empfindlichen Atemwegen, in Absprache mit dem Tierarzt.</p></div>
+  <div class="card"><span class="ic">🏃</span><h4>Laufband &amp; Führanlage</h4><p>Kontrolliertes Training bei jedem Wetter, mit Herzfrequenz- und Gangbildanalyse.</p></div>
+ </div>
+</section>
+
+<!-- INTELLIGENCE -->
+<div class="band">
+<section id="intelligence" class="reveal">
+ <div class="kicker">EquiMind Intelligence</div>
+ <h2 class="title">Eine Intelligenz, <em>die nie schläft.</em></h2>
+ <p class="sub">Jede Suite ist mit Kamera, Futterwaage, smarter Tränke und Klimasensoren ausgestattet. Eine KI lernt das individuelle Normalverhalten Ihres Pferdes und meldet sich, sobald sich etwas verändert.</p>
+
+ <div class="dash">
+  <div class="dash-head"><span class="who">„Belle Étoile" · Suite Nº 07</span><span class="live">Live</span></div>
+  <div class="dash-body">
+   <div class="cam"><div class="scan"></div><div class="bbox"><span>frisst · ruhig</span></div><div class="h">🐴</div><div class="lbl">Suite-Kamera · Verhaltensanalyse aktiv</div></div>
+   <div class="kpis">
+    <div class="kpi"><small>Raufutter heute</small><b>7.1 kg</b><em>● im persönlichen Normbereich</em></div>
+    <div class="kpi"><small>Wasser heute</small><b>24 l</b><em>● normal</em></div>
+    <div class="kpi"><small>Liegezeit</small><b>2 h 55</b><em>● erholsam</em></div>
+    <div class="kpi"><small>Gewicht</small><b>562 kg</b><em>● stabil · 30 Tage</em></div>
+    <div class="kpi"><small>Körpertemperatur</small><b>37.6 °C</b><em>● Wärmebild-Scan</em></div>
+    <div class="kpi"><small>Stallklima</small><b>14 °C</b><em>● Luftqualität sehr gut</em></div>
+   </div>
+  </div>
+  <div class="dash-note">Beispielhafte Darstellung der EquiMind Owner App</div>
+ </div>
+
+ <div class="grid" style="margin-top:70px">
+  <div class="card"><span class="ic">📷</span><h4>Verhaltens-KI</h4><p>Frühwarnung bei Anzeichen von Kolik, Festliegen oder Unruhe. Die Meldung geht sofort an den diensthabenden Groom und, wenn Sie es wünschen, auch an Sie.</p></div>
+  <div class="card"><span class="ic">⚖️</span><h4>Futterwaage &amp; Fressanalyse</h4><p>Misst, wie viel Raufutter tatsächlich gefressen wird. Erkennt Fressunlust lange bevor man sie sieht.</p></div>
+  <div class="card"><span class="ic">🌡️</span><h4>Wärmebild-Check</h4><p>Kontaktlose Temperaturmessung im Stallgang als täglicher Gesundheitscheck.</p></div>
+  <div class="card"><span class="ic">⚖️</span><h4>Walk-over-Waage</h4><p>Ihr Pferd wird beim Gang zum Paddock automatisch gewogen. So entsteht ein lückenloser Gewichtsverlauf.</p></div>
+  <div class="card"><span class="ic">🧬</span><h4>Digital Health Passport</h4><p>Impfungen, Hufschmied, Tierarzt, Fütterung und Training in einem verschlüsselten Dossier, das Sie gezielt mit Tierarzt oder Trainer teilen.</p></div>
+  <div class="card"><span class="ic">📈</span><h4>Performance Tracking</h4><p>Sensoren am Sattelgurt erfassen Takt, Symmetrie, Belastung und Herzfrequenz. Ihr Trainer sieht den Fortschritt in Echtzeit.</p></div>
+  <div class="card"><span class="ic">🔖</span><h4>RFID-Präzisionsfütterung</h4><p>Kraftfutter und Supplemente werden individuell dosiert, erfasst und dokumentiert.</p></div>
+  <div class="card"><span class="ic">🤰</span><h4>Foaling Watch</h4><p>KI-gestützte Abfohlüberwachung mit automatischem Alarm an Team und Tierarzt.</p></div>
+  <div class="card"><span class="ic">🔐</span><h4>Security by Design</h4><p>Biometrischer Zutritt, Brandfrüherkennung und verschlüsselte Videodaten. Betrieben nach den Standards eines professionellen Security Operations Center.</p></div>
+ </div>
+</section>
+</div>
+
+<!-- CONCIERGE -->
+<section id="concierge" class="reveal">
+ <div class="kicker">Concierge</div>
+ <h2 class="title">Sie wünschen. <em>Wir ermöglichen.</em></h2>
+ <p class="sub">Ein persönlicher Ansprechpartner für alles rund um Ihr Pferd. Diskret, verlässlich, rund um die Uhr erreichbar.</p>
+ <div class="grid">
+  <div class="card"><span class="num">01</span><h4>Persönlicher Groom</h4><p>Ein fester Groom, der Ihr Pferd kennt. Kleine Betreuungsgruppen statt Fliessband.</p></div>
+  <div class="card"><span class="num">02</span><h4>Nutrition Design</h4><p>Individueller Futterplan auf Basis von Heu-Analyse, Gewichtsverlauf und Trainingslast.</p></div>
+  <div class="card"><span class="num">03</span><h4>Medical Network</h4><p>Koordination von Tierarzt, Hufschmied, Osteopath, Physiotherapie und Zahnarzt, inklusive Begleitung bei Terminen.</p></div>
+  <div class="card"><span class="num">04</span><h4>Beritt &amp; Training</h4><p>Bewegung, Beritt und Unterricht durch qualifizierte Ausbilder, auf Wunsch auch mit Ihrem eigenen Trainer.</p></div>
+  <div class="card"><span class="num">05</span><h4>Show Service</h4><p>Turniervorbereitung, Transport im klimatisierten Pferdetransporter, Grooming vor Ort.</p></div>
+  <div class="card"><span class="num">06</span><h4>Absence Care</h4><p>Sie sind auf Reisen, Ihr Pferd bleibt in Bewegung. Und Sie sehen es jeden Tag live in der App.</p></div>
+ </div>
+</section>
+
+<div class="band">
+<section class="reveal">
+ <div class="quote"><p>„Luxus ist nicht, was glänzt.<br>Luxus ist, dass nichts übersehen wird."</p></div>
+</section>
+</div>
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="reveal">
+ <div class="kicker">Membership</div>
+ <h2 class="title">Drei Wege, <em>Teil der Maison</em> zu werden.</h2>
+ <p class="sub">Pension ab CHF 2'000 pro Pferd und Monat. Das individuelle Angebot stellen wir nach einem persönlichen Gespräch zusammen. Die Plätze sind limitiert.</p>
+ <div class="tiers">
+  <div class="tier"><h4>Residence</h4><div class="price">ab CHF 2'000 / Monat</div><ul><li>Private Suite mit Paddock</li><li>Vollpension &amp; Nutrition Design</li><li>EquiMind Intelligence 24/7</li><li>Owner App mit Livestream</li><li>Zugang zu allen Arenen</li></ul></div>
+  <div class="tier signature"><span class="ribbon">Signature</span><h4>Signature</h4><div class="price">auf Anfrage</div><ul><li>Alles aus Residence</li><li>Signature Suite</li><li>Persönlicher Groom</li><li>Equine Spa inklusive</li><li>Private Tack Suite</li></ul></div>
+  <div class="tier"><h4>Champion</h4><div class="price">auf Anfrage</div><ul><li>Alles aus Signature</li><li>Beritt &amp; Performance Tracking</li><li>Show Service &amp; Transport</li><li>Medical Network Begleitung</li><li>24/7 Concierge-Linie</li></ul></div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<div class="band">
+<section class="reveal">
+ <div class="kicker">Fragen</div>
+ <h2 class="title">Gut zu <em>wissen.</em></h2>
+ <p class="sub">&nbsp;</p>
+ <details><summary>Wo befindet sich die Maison EquiMind?</summary><p>Im Bezirk Olten im Kanton Solothurn. Die Lage ist zentral, mit kurzen Wegen nach Basel, Bern, Zürich und Luzern. Die genaue Adresse teilen wir nach der Anmeldung zu einem Private Viewing mit.</p></details>
+ <details><summary>Wie werden Plätze vergeben?</summary><p>Die Zahl der Suites ist bewusst limitiert. Nach einem persönlichen Gespräch und einer Besichtigung erstellen wir Ihnen ein individuelles Angebot.</p></details>
+ <details><summary>Ersetzt die KI das Personal?</summary><p>Nein. Die Technik ist ein zusätzliches Paar Augen. Die Pflege leistet ein erfahrenes Team, und die KI sorgt dafür, dass ihm nichts entgeht.</p></details>
+ <details><summary>Wer sieht die Daten und den Livestream meines Pferdes?</summary><p>Nur Sie und die Personen, die Sie freigeben. Alle Daten werden verschlüsselt und nach Schweizer Datenschutzrecht behandelt.</p></details>
+ <details><summary>Kann mein eigener Trainer oder Tierarzt kommen?</summary><p>Selbstverständlich. Wir koordinieren gerne mit Ihrem bestehenden Team.</p></details>
+</section>
+</div>
+
+<!-- PRIVATE VIEWING -->
+<section id="private" class="reveal">
+ <div class="kicker">Private Viewing</div>
+ <h2 class="title">Lernen Sie die <em>Maison</em> kennen.</h2>
+ <p class="sub">Besichtigungen finden ausschliesslich nach persönlicher Vereinbarung statt.</p>
+ <form class="private" onsubmit="sendForm(event)">
+  <div class="row">
+   <div><label for="n">Name</label><input id="n" required></div>
+   <div><label for="e">E-Mail</label><input id="e" type="email" required></div>
+  </div>
+  <div class="row">
+   <div><label for="t">Telefon</label><input id="t" type="tel"></div>
+   <div><label for="m">Membership</label><select id="m"><option>Residence</option><option>Signature</option><option>Champion</option><option>Noch offen</option></select></div>
+  </div>
+  <div class="row">
+   <div><label for="h">Name des Pferdes</label><input id="h"></div>
+   <div><label for="d">Disziplin</label><select id="d"><option>Dressur</option><option>Springen</option><option>Vielseitigkeit</option><option>Freizeit</option><option>Zucht</option><option>Andere</option></select></div>
+  </div>
+  <label for="x">Ihre Nachricht</label><textarea id="x"></textarea>
+  <button class="btn btn-gold" style="width:100%;margin:36px 0 0" type="submit">Private Viewing anfragen</button>
+  <p class="discreet">Ihre Anfrage wird vertraulich behandelt.</p>
+ </form>
 </section>
 
 <footer>
-    <div class="logo-wrap">
-        <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="leafGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#86efac"/>
-                    <stop offset="60%" stop-color="#4ade80"/>
-                    <stop offset="100%" stop-color="#22d3ee"/>
-                </linearGradient>
-            </defs>
-            <path d="M32 56 L32 36" stroke="url(#leafGradFooter)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M32 36 Q14 28 10 14 Q24 18 32 36 Z" fill="url(#leafGradFooter)" opacity="0.95"/>
-            <path d="M32 36 Q50 28 54 14 Q40 18 32 36 Z" fill="url(#leafGradFooter)" opacity="0.7"/>
-            <circle cx="20" cy="22" r="2" fill="#0a1a0f"/>
-            <circle cx="44" cy="22" r="2" fill="#0a1a0f"/>
-            <circle cx="32" cy="32" r="2.5" fill="#22d3ee"/>
-        </svg>
-        <div>
-            <div class="logo-text">GardenMind</div>
-            <span class="logo-sub">by Tomaholic</span>
-        </div>
-    </div>
-    <p>© 2026 Tomaholic · Building the future of autonomous gardens · Made with 💚 in Switzerland</p>
+ <div class="foot">
+  <div><span class="logo-name">Maison EquiMind</span><span class="logo-sub">by Tomaholic</span><p style="margin-top:18px;max-width:360px">Private Equine Residence im Bezirk Olten, Kanton Solothurn, Schweiz.</p></div>
+  <div><h5>Maison</h5><a href="#suites">Suites</a><a href="#spa">Equine Spa</a><a href="#intelligence">Intelligence</a><a href="#concierge">Concierge</a></div>
+  <div><h5>Kontakt</h5><a href="mailto:hello@tomaholic.ch">hello@tomaholic.ch</a><a href="#private">Private Viewing</a></div>
+ </div>
+ <p style="text-align:center;font-size:11.5px;margin-bottom:22px">* Zielwert für die Betreuungsrelation im Signature- und Champion-Membership.</p>
+ <div class="copy">© 2026 Tomaholic · Maison EquiMind</div>
 </footer>
 
-<button class="scroll-top" id="scrollTopBtn" aria-label="Nach oben scrollen">⬆</button>
-
-<div class="cookie-banner" id="cookieBanner">
-    <h4>🍪 Wir respektieren deine Privatsphäre</h4>
-    <p>Diese Website verwendet anonyme Analyse-Cookies, um die Nutzererfahrung zu verbessern. Du kannst der Nutzung jederzeit widersprechen.</p>
-    <div class="btn-row">
-        <button class="accept" onclick="acceptCookies()">Akzeptieren</button>
-        <button class="decline" onclick="declineCookies()">Ablehnen</button>
-    </div>
-</div>
-
 <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const counters = document.querySelectorAll('.stat-number');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.dataset.animated) {
-                entry.target.dataset.animated = 'true';
-                animateCounter(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(c => counterObserver.observe(c));
-
-    function animateCounter(el) {
-        const text = el.textContent.trim();
-        const match = text.match(/^(\d+)(.*)/);
-        if (!match) return;
-        const target = parseInt(match[1]);
-        const suffix = match[2];
-        let current = 0;
-        const duration = 1500;
-        const step = target / (duration / 16);
-        const interval = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                el.textContent = target + suffix;
-                clearInterval(interval);
-            } else {
-                el.textContent = Math.floor(current) + suffix;
-            }
-        }, 16);
-    }
-
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) scrollBtn.classList.add('visible');
-        else scrollBtn.classList.remove('visible');
-    });
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-   
-// === COOKIE CONSENT (DSG-konform) ===
-const cookieBanner = document.getElementById('cookieBanner');
-const consent = localStorage.getItem('cookie-consent');
-
-if (!consent) {
-    setTimeout(() => cookieBanner.classList.add('show'), 1500);
-} else if (consent === 'accepted') {
-    loadClarity();
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.menu').classList.remove('open')));
+function sendForm(ev){
+ ev.preventDefault();
+ const v=id=>document.getElementById(id).value;
+ const subject=encodeURIComponent('[Maison EquiMind] Private Viewing – '+v('n'));
+ const body=encodeURIComponent('Name: '+v('n')+'\nE-Mail: '+v('e')+'\nTelefon: '+v('t')+'\nMembership: '+v('m')+'\nPferd: '+v('h')+'\nDisziplin: '+v('d')+'\n\n'+v('x'));
+ window.location.href='mailto:hello@tomaholic.ch?subject='+subject+'&body='+body;
 }
-
-function acceptCookies() {
-    localStorage.setItem('cookie-consent', 'accepted');
-    cookieBanner.classList.remove('show');
-    loadClarity();
-}
-
-function declineCookies() {
-    localStorage.setItem('cookie-consent', 'declined');
-    cookieBanner.classList.remove('show');
-}
-
-// === MICROSOFT CLARITY (lädt nur nach Cookie-Zustimmung) ===
-function loadClarity() {
-    if (window.clarityLoaded) return;
-    window.clarityLoaded = true;
-
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xglxnos622");
-}
-
 </script>
-
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xglxnos622");
+</script>
 </body>
 </html>
