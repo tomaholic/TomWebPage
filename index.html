@@ -88,6 +88,13 @@ section{padding:130px 6vw;max-width:1320px;margin:0 auto}
 .ai-chip b{color:var(--cyan);font-weight:500;letter-spacing:1px}
 .ai-chip i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;animation:pulse 1.8s infinite}
 @keyframes pulse{50%{opacity:.3}}
+.suite-visual.photo{aspect-ratio:3/2;background:#191510}
+.suite-visual.photo::before{display:none}
+.suite-visual.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spa-photo{position:relative;max-width:1200px;margin:0 auto 70px;border:1px solid var(--line);overflow:hidden;aspect-ratio:3/2}
+.spa-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.spa-photo:hover img{transform:scale(1.03)}
+.spa-photo .suite-tag{z-index:2}
 .suite h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;line-height:1.1;margin-bottom:22px}
 .suite p{color:#cfc6b5;margin-bottom:26px}
 .spec{list-style:none;border-top:1px solid var(--line)}
@@ -237,11 +244,9 @@ footer{border-top:1px solid var(--line);padding:70px 6vw 34px;color:var(--muted)
  <h2 class="title">Nicht eine Box. <em>Eine Suite.</em></h2>
  <p class="sub">Jede Suite ist ein Rückzugsort mit eigenem Paddock, eigener Kamera und eigenem Klima. Gebaut für das Wohlbefinden des Pferdes und mit einer Ästhetik, die man spürt.</p>
  <div class="suite">
-  <div class="suite-visual">
+  <div class="suite-visual photo">
+   <img src="suite.png" alt="Signature Suite der Maison EquiMind mit Eichenfront, Messingbeschlägen und Blick in den privaten Paddock" loading="lazy">
    <div class="suite-tag">Signature Suite · Nº 07</div>
-   <div class="chandelier">✨</div>
-   <div class="horse">🐎</div>
-   <div class="floor"></div>
    <div class="ai-chip"><i></i><b>EQUIMIND AI</b><br>Verhalten · normal<br>Heu heute · 7.1 kg</div>
   </div>
   <div>
@@ -282,6 +287,7 @@ footer{border-top:1px solid var(--line);padding:70px 6vw 34px;color:var(--muted)
  <div class="kicker">Equine Spa &amp; Performance</div>
  <h2 class="title">Regeneration <em>auf Spitzenniveau.</em></h2>
  <p class="sub">Was sonst nur Rehabilitationszentren und Rennställe bieten, gibt es hier im eigenen Haus.</p>
+ <div class="spa-photo"><img src="spa.png" alt="Equine Spa der Maison EquiMind mit Wasserlaufband und Blick ins Grüne" loading="lazy"><div class="suite-tag">Equine Spa · Aqua Treadmill</div></div>
  <div class="grid">
   <div class="card"><span class="ic">🌊</span><h4>Aqua Treadmill</h4><p>Wasserlaufband mit einstellbarer Wassertiefe, Steigung und Geschwindigkeit. Für gelenkschonendes Konditionstraining und Rehabilitation.</p></div>
   <div class="card"><span class="ic">❄️</span><h4>Cold Saltwater Spa</h4><p>Gekühltes, belüftetes Salzwasser für die Beine. Unterstützt die Regeneration nach dem Training und hilft bei Schwellungen.</p></div>
